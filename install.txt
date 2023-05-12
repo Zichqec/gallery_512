@@ -1,5 +1,5 @@
 charset,UTF-8
 type,ghost
 
-name,Simplicity Template
-directory,simplicity_template
+name,Gallery 512
+directory,gallery_512_gkz

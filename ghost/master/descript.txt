@@ -1,15 +1,15 @@
 charset,UTF-8
 
-name,Simplicity Template
+name,Gallery 512
 type,ghost
 
 shiori,yaya.dll
 
-craftman,
-craftmanurl,
+craftman,Galla & Kat & Zichqec
+craftmanurl,https://github.com/Zichqec/gallery_512
 
-sakura.name,
-kero.name,
+sakura.name,Painting
+kero.name,Lil guy
 
 icon,icon.ico
 
