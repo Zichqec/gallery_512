@@ -30,14 +30,48 @@ OnKeyPress
 //Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
 OnSurfaceRestore
 {
-	"\1\s[10]\0\s[0]"
+	if GalleryOpen
+	{
+		"\1\s[10]\0\s[0]"
+	}
+	else
+	{
+		"\1\s[-1]\0\s[0]"
+	}
 }
 
 //Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
 OnWindowStateRestore
 {
-	"\1\s[10]\0\s[0]"
+	if GalleryOpen
+	{
+		"\1\s[10]\0\s[0]"
+	}
+	else
+	{
+		"\1\s[-1]\0\s[0]"
+	}
 }
+
+/*
+Refresh : all
+{
+	if GalleryOpen
+	{
+		
+	}
+	else
+	{
+		_i = 1
+		foreach LilGuys; _lilguy
+		{
+			if _lilguy[0] == "-1"; "\p[%(_i)]\s[-1]"
+			_i++
+		}
+		"\0\s[0]"
+	}
+}
+*/
 
 //Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
 //IF YOU'RE USING GITHUB FOR NETWORK UPDATES: DO NOT USE github.io URLS! It will cause you pain and suffering. USE raw.githubusercontent!!!
@@ -174,4 +208,98 @@ OnNotifyUserInfo : void
 		SHIORI3FW.UserBirthday[_i] = TOINT(SHIORI3FW.UserBirthday[_i])
 	}
 	SHIORI3FW.UserSex = reference[3]
+}
+
+/*
+
+NEW MOVEMENT CODE because the old stuff sucks and i need to make it all fresh anyways
+
+Needs to detect the width of the current character (property system my love)
+
+Needs to detect the width/edges of the current screen
+
+Needs to decide on a minimum movement length
+
+Needs to decide on a movement speed, maybe calculated by length
+
+I think I can improve this a lot from my previous code...
+
+*/
+
+OnWalkStart
+{
+	WalkingCharacter = "0"
+	if reference0 != ""; WalkingCharacter = reference0
+	
+	if WalkBorder[TOINT(WalkingCharacter)] == ""; WalkBorder[TOINT(WalkingCharacter)] = "0,%(DisplayWidth)" //In case these are undefined
+	
+	"\![get,property,OnWalkAround,currentghost.scope(%(WalkingCharacter)).rect]"
+}
+
+OnWalkAround
+{
+	_char = TOINT(WalkingCharacter)
+	ERASEVAR("WalkingCharacter") //globals, yuck
+	
+	_speed = 5 //ms per px
+	
+	//left top right bottom
+	_char_left = TOINT(reference0[0])
+	_char_right = TOINT(reference0[2])
+	_width = TOINT(_char_right - _char_left)
+	_center = _width / 2
+	_center_pos = _char_right - _center
+	
+	LOGGING("_width: %(_width)")
+	_left_edge = TOINT(WalkBorder[_char][0]) //+ _width //think i dont need this extra buffer?
+	_right_edge = TOINT(WalkBorder[_char][1]) - _width
+	
+	LOGGING("_char_left: %(_char_left)")
+	LOGGING("_char_right: %(_char_right)")
+	LOGGING("_left_edge: %(_left_edge)")
+	LOGGING("_right_edge: %(_right_edge)")
+	
+	_target_pos = 0
+	_goodpos = 0
+	_i = 0
+	while !_goodpos
+	{
+		//TODO don't think i set this up to snug itself into the corners but do i care, idk
+		_target_pos = RAND(_right_edge - _left_edge) + _left_edge
+		
+		if ABS(ABS(_center_pos) - ABS(_target_pos)) >= _width; _goodpos = 1
+		_i++
+		if _i >= 1000; break
+	}
+	_left_or_right = "right"
+	if _target_pos <= _center_pos; _left_or_right = "left"
+	
+	LOGGING("_target_pos: %(_target_pos)")
+	LOGGING("_center_pos: %(_center_pos)")
+	LOGGING("_left_or_right: %(_left_or_right)")
+	
+	_time = ABS(ABS(_center_pos) - ABS(_target_pos)) * _speed
+	
+	LOGGING("_time: %(_time)")
+	
+	"\p[%(_char)]\![move,--X=%(_target_pos),--Y=fix,--time=%(_time),--base=primaryscreen]" //todo moveasync later maybe?
+	
+}
+
+OnDisplayHandover
+{
+	//Make a simple array for each character tracking the left and right boundary of the screen they are on
+	//Left,Right
+	WalkBorder[reference1] = "%(reference3[0]),%(reference3[2])"
+}
+
+OnDisplayChange
+{
+	DisplayWidth = reference1
+}
+
+ABS
+{
+	if _argv[0] < 0; _argv[0] *= -1
+	_argv[0]
 }

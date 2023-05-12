@@ -16,6 +16,10 @@ OnSakuraMenu : all
 	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
 	"\n\n"
 	
+	if GalleryOpen; "\![*]\q[Close the gallery,OnToggleGallery,0]"
+	else; "\![*]\q[Open the gallery,OnToggleGallery,1]"
+	"\n\n"
+	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
 	
 	"\![*]\q[Nevermind,blank]"	
@@ -24,6 +28,20 @@ OnSakuraMenu : all
 OnLastTalk
 {
 	LastTalk
+}
+
+OnToggleGallery
+{
+	GalleryOpen = reference0
+	
+	if GalleryOpen
+	{
+		"\1\s[10]"
+	}
+	else
+	{
+		"\1\s[-1]"
+	}
 }
 
 OnTalkRateMenu : all
