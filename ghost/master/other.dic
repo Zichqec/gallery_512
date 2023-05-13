@@ -30,27 +30,13 @@ OnKeyPress
 //Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
 OnSurfaceRestore
 {
-	if GalleryOpen
-	{
-		"\1\s[10]\0\s[0]"
-	}
-	else
-	{
-		"\1\s[-1]\0\s[0]"
-	}
+	Refresh
 }
 
 //Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
 OnWindowStateRestore
 {
-	if GalleryOpen
-	{
-		"\1\s[10]\0\s[0]"
-	}
-	else
-	{
-		"\1\s[-1]\0\s[0]"
-	}
+	Refresh
 }
 
 /*
@@ -67,20 +53,17 @@ i need to plan out a lil guy array
 
 Refresh : all
 {
-	if GalleryOpen
+	for _i = 1; _i < ARRAYSIZE(SHIORI3FW.IsVisible); _i++
 	{
-		
-	}
-	else
-	{
-		_i = 1
-		foreach LilGuys; _lilguy
+		if GalleryOpen
 		{
-			if _lilguy[0] == "-1"; "\p[%(_i)]\s[-1]"
-			_i++
+			_guy = LilGuys[_i]
+			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])00]" //TODO add color option later
+			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 		}
-		"\0\s[0]"
+		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 	}
+	"\0\s[100]"
 }
 
 
@@ -237,6 +220,14 @@ I think I can improve this a lot from my previous code...
 
 */
 
+OnGetWidth
+{	
+	_char_left = TOINT(reference0[0])
+	_char_right = TOINT(reference0[2])
+	GuyWidth = TOINT(_char_right - _char_left)
+	if GuyWidth == ""; GuyWidth = 240 //default
+}
+
 OnWalkStart
 {
 	WalkingCharacter = "0"
@@ -252,7 +243,7 @@ OnWalkAround
 	_char = TOINT(WalkingCharacter)
 	ERASEVAR("WalkingCharacter") //globals, yuck
 	
-	_speed = 5 //ms per px
+	_speed = GuySpeed //ms per px
 	
 	//left top right bottom
 	_char_left = TOINT(reference0[0])
@@ -289,7 +280,7 @@ OnWalkAround
 	LOGGING("_center_pos: %(_center_pos)")
 	LOGGING("_left_or_right: %(_left_or_right)")
 	
-	_time = ABS(ABS(_center_pos) - ABS(_target_pos)) * _speed
+	_time = ABS(ABS(_center_pos) - ABS(_target_pos)) * _speed //TODO i wonder if this should be calculating from character's left edge rather than center point
 	
 	LOGGING("_time: %(_time)")
 	
@@ -300,8 +291,8 @@ OnWalkAround
 OnDisplayHandover
 {
 	//Make a simple array for each character tracking the left and right boundary of the screen they are on
-	//Left,Right
-	WalkBorder[reference1] = "%(reference3[0]),%(reference3[2])"
+	//Left,Right.Top - WE ONLY NEED TOP IN ONE SPOT OK
+	WalkBorder[reference1] = "%(reference3[0]),%(reference3[2]),%(reference[1])"
 }
 
 OnDisplayChange

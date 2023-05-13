@@ -12,12 +12,70 @@ OnAiTalk
 	LastTalk
 }
 
-LilGuysTalk : nonoverlap_pool
+LilGuysTalk : all
 {
-	"rabble rabble something artsy"
+	_lilguys = IARRAY
+	foreach LilGuys; _lilguy
+	{
+		if _lilguy == "painting"; continue
+		_lilguys ,= _lilguy[0]
+	}
+
+	_guy = ANY(_lilguys)
+	LOGGING("====================================================================")
+	LOGGING("_guy: %(_guy)")
+	LOGGING("_lilguys: %(_lilguys)")
+	
+	"\p[%(LSO + 1)]" //TODO ADD BLOON AND SURFACE ALSO
+	_talk = ""
+	if _guy == "0"; _talk = PretentiousGuyTalk
+	elseif _guy == "1"; _talk = SweetGuyTalk
+	elseif _guy == "2"; _talk = FriendlyGuyTalk
+	elseif _guy == "3"; _talk = UnimpressedGuyTalk
+	elseif _guy == "4"; _talk = ShyGuyTalk
+	
+	if _talk == "" || RAND(100) < 5; _talk = GenericGuyTalk
+	_talk
+}
+
+PretentiousGuyTalk : nonoverlap
+{
+	"Pretentious"
+}
+
+SweetGuyTalk : nonoverlap
+{
+	"Sweet"
+}
+
+FriendlyGuyTalk : nonoverlap
+{
+	"Friendly"
+}
+
+UnimpressedGuyTalk : nonoverlap
+{
+	"Unimpressed"
+}
+
+ShyGuyTalk : nonoverlap
+{
+	"Shy"
+}
+
+GenericGuyTalk : nonoverlap
+{
+	"Generic"
 }
 
 PaintingTalk : nonoverlap_pool
 {
+	//Generic dialogues
 	"something contemplative and sad idk"
+	
+	//Rain theme dialogue
+	if ASEARCH("Rain",CurrentThemes) != -1
+	{
+		
+	}
 }
