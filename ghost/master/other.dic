@@ -9,6 +9,45 @@ OnTranslate
 	}
 	
 	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
+	_talk = REPLACE(_talk,"\0\b[0]","\0\b[%(SakuraBalloon)0]")
+	_talk = REPLACE(_talk,"\0\b[2]","\0\b[%(SakuraBalloon)2]")
+	
+	
+	void RE_GREP(_talk,"\\p\[\d+\]\\b\[\d\]")
+	_tags = RE_GETSTR
+	_i = 0
+	_tag_replace_array = IARRAY
+	foreach _tags; _tag
+	{
+		_size = 0
+		if "\b[2]" _in_ _tag; _size = 2
+		if GuyBalloon == 1; _size += 4
+		
+		_char = ""
+		_char = SPLIT(_tag,"]")[0]
+		_char = REPLACE(_char,"\p[","")
+		_char = TOINT(_char)
+		
+		LOGGING(_char,_bloon)
+		
+		_sona = LilGuys[_char][0,"|"]
+		_shape = 0
+		if _sona == 0; _shape = 6
+		elseif _sona == 1; _shape = 3
+		elseif _sona == 2; _shape = 5
+		elseif _sona == 3; _shape = 1
+		elseif _sona == 4; _shape = 2
+		
+		_tag_replace_array ,= "\p[%(_char)]\b[1%(_shape)%(_size)]"
+		
+		_talk = REPLACE(_talk,_tag,"__TALK_TAG_%(_i)__")
+		_i++
+	}
+	
+	for _i = 0; _i < ARRAYSIZE(_tags); _i++
+	{
+		_talk = REPLACE(_talk,"__TALK_TAG_%(_i)__",_tag_replace_array[_i])
+	}
 	
 	TOSTR(_talk)
 }
@@ -58,12 +97,20 @@ Refresh : all
 		if GalleryOpen
 		{
 			_guy = LilGuys[_i]
-			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])00]" //TODO add color option later
+			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])%(GuyColor)0]" //TODO add color option later
 			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 		}
 		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 	}
-	"\0\s[100]"
+	"\0\s[100]" //TODO painting here
+}
+
+BalloonIsInTheWay
+{
+	_i = 0
+	_value = ASEARCH("Status",var.req.key)
+	if "balloon" _in_ var.req.value[_value]; _i = 1
+	_i
 }
 
 
@@ -234,7 +281,8 @@ OnWalkStart
 	if reference0 != ""; WalkingCharacter = reference0
 	
 	if WalkBorder[TOINT(WalkingCharacter)] == ""; WalkBorder[TOINT(WalkingCharacter)] = "0,%(DisplayWidth)" //In case these are undefined
-	
+	if BalloonIsInTheWay; "\C"
+	--
 	"\![get,property,OnWalkAround,currentghost.scope(%(WalkingCharacter)).rect]"
 }
 
@@ -284,7 +332,10 @@ OnWalkAround
 	
 	LOGGING("_time: %(_time)")
 	
-	"\p[%(_char)]\s[1001]\![move,--X=%(_target_pos),--Y=fix,--time=%(_time),--base=primaryscreen]\s[1000]" //todo moveasync later maybe?
+	_shape = LilGuys[_char][1,'|']
+	if BalloonIsInTheWay; "\C"
+	--
+	"\p[%(_char)]\s[1%(_shape)%(GuyColor)1]\![move,--X=%(_target_pos),--Y=fix,--time=%(_time),--base=primaryscreen]\s[1%(_shape)%(GuyColor)0]" //todo moveasync later maybe?
 	
 }
 

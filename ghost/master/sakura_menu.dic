@@ -7,7 +7,7 @@ SakuraMenuGreetings : nonoverlap
 //Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
-	"\0%(Refresh)\b2\![set,autoscroll,disable]"
+	"\0\b[2]%(Refresh)\![set,autoscroll,disable]"
 	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
 	
 	"\n\n\_q"
@@ -19,8 +19,9 @@ OnSakuraMenu : all
 	if GalleryOpen; "\![*]\q[Close the gallery,OnToggleGallery,0]"
 	else; "\![*]\q[Open the gallery,OnToggleGallery,1]"
 	"\n\n"
-	"\![*]\q[Debug,OnDebug]\n"
 	
+	"\![*]\q[Debug,OnDebug]\n"
+	"\![*]\q[Customize,OnCustomize]\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
 	
@@ -95,6 +96,76 @@ OnToggleGallery
 	Refresh
 }
 
+OnCustomize : all
+{
+	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\_q"
+	"Painting balloons:\n"
+	_bloons = ("Silver,0","Black,1","Copper,3","Navy,2","none","Starry,4")
+	
+	_i = 0
+	foreach _bloons; _bloon
+	{
+		if _bloon == "none"; {"\n \n[-100]\f[align,right]"; continue}
+		if _bloon[1] == SakuraBalloon; "\![*]"
+		"\__q[OnChangeSakuraBalloon,%(_bloon[1])]%(_bloon[0])\__q"
+		if _i % 2 == 0; "\n \n[-100]\f[align,right]"
+		else; "\n\f[align,left]"
+		_i++
+	}
+	
+	"\n\n\f[align,left]"
+	
+	"Guy balloons:\n"
+	if GuyBalloon == 1; "\![*]"
+	"\q[Dark,OnChangeGuyBalloon,1]\n \n[-100]\f[align,right]"
+	if GuyBalloon == 0; "\![*]"
+	"\q[Light,OnChangeGuyBalloon,0]"
+	"\n\n\f[align,left]"
+	
+	"Guys:\n"
+	if GuyColor == 0; "\![*]"
+	"\q[Dark,OnChangeGuyColor,0]\n \n[-100]\f[align,right]"
+	if GuyColor == 5; "\![*]"
+	"\q[Light,OnChangeGuyColor,5]"
+	"\n\n\f[align,left]"
+	
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
+	"\![unlock,balloonrepaint]"
+	
+	""
+	/*
+	Silver
+	Black
+	Navy
+	Copper
+	Starry
+	
+	Light
+	Dark
+	
+	*/
+}
+
+OnChangeSakuraBalloon
+{
+	SakuraBalloon = reference0
+	OnCustomize
+}
+
+OnChangeGuyBalloon
+{
+	GuyBalloon = reference0
+	OnCustomize
+}
+
+OnChangeGuyColor
+{
+	GuyColor = reference0
+	Refresh
+	--
+	OnCustomize
+}
+
 OnTalkRateMenu : all
 {	
 	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
@@ -105,7 +176,7 @@ OnTalkRateMenu : all
 	elseif aitalkinterval == 300; _talkrate = "5 minutes"
 	elseif aitalkinterval == 600; _talkrate = "10 minutes"
 	
-	"\0%(Refresh)\b2\![set,autoscroll,disable]\_q"
+	"\0%(Refresh)\b[2]\![set,autoscroll,disable]\_q"
 	"Current interval: %(_talkrate)\n\n"
 	
 	"\![*]\q[Off,OnTalkRateChange,0]\n"
@@ -159,7 +230,7 @@ OnAddLilGuy : all
 	WalkingCharacter = (_num,_newguy[1,'|'])
 	_left_edge = TOINT(WalkBorder[0][0])
 	//TODO need color option here later
-	"\p[%(_num)]\![set,alpha,0]\s[1%(_newguy[1,'|'])01]"
+	"\p[%(_num)]\![set,alpha,0]\s[1%(_newguy[1,'|'])%(GuyColor)1]"
 	
 	"\![set,alignmenttodesktop,free]" //+ "free\n\_w[1000]"
 	"\![move,--X=%(_left_edge),--Y=%(WalkBorder[0][2]),--base=primaryscreen]" //+ "move to left edge\n\_w[1000]"
@@ -183,7 +254,7 @@ OnAddLilGuy2 : all
 	"\p[%(_num)]"
 	"\![set,alignmenttodesktop,free]" //+ "free\n\_w[1000]"
 	"\![move,--X=%(_left_edge - GuyWidth),--Y=%(_top_edge),--base=primaryscreen]\![set,alpha,100]" //+ "move to lefty spot\n\_w[1000]"
-	"\![move,--X=%(_left_edge),--Y=%(_top_edge),--time=%(_time),--base=primaryscreen]\s[1%(_newguy)00]" //+ "scoot\n\_w[1000]"
+	"\![move,--X=%(_left_edge),--Y=%(_top_edge),--time=%(_time),--base=primaryscreen]\s[1%(_newguy)%(GuyColor)0]" //+ "scoot\n\_w[1000]"
 	"\![set,alignmenttodesktop,bottom]" //+ "bind\n\_w[1000]"
 }
 
@@ -230,7 +301,7 @@ OnRemoveLilGuy2 : all
 	LOGGING("_char_left: %(_char_left)")
 	//_right_edge
 	LOGGING("_oldguy: %(_oldguy)")
-	"\p[%(_char)]\s[1%(_oldguy[1,'|'])01]"
+	"\p[%(_char)]\s[1%(_oldguy[1,'|'])%(GuyColor)1]"
 	"\![move,--X=%(_right_edge),--time=%(_time),--base=primaryscreen]\s[-1]"
 	
 }
