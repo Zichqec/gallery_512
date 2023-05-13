@@ -3,3 +3,4 @@ type,ghost
 
 name,Gallery 512
 directory,gallery_512_gkz
+balloon.directory,open_exhibition_gkz
