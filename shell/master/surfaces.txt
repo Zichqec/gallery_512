@@ -25,7 +25,107 @@ surface0
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————
 
-surface10
+surface1000
 {
-	collision,0,0,130,65,head
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1001,0,0,0
+	animation0.pattern1,replace,1002,50,0,0
+	animation0.pattern2,replace,1001,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1001
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1001,0,0,0
+	animation0.pattern1,replace,1002,50,0,0
+	animation0.pattern2,replace,1001,50,0,0
+	animation0.pattern3,replace,1000,50,0,0
+	animation0.pattern3,replace,1000,50,0,0
+}
+
+surface1100
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1101,0,0,0
+	animation0.pattern1,replace,1102,50,0,0
+	animation0.pattern2,replace,1101,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1101
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1101,0,0,0
+	animation0.pattern1,replace,1102,50,0,0
+	animation0.pattern2,replace,1101,50,0,0
+	animation0.pattern3,replace,1100,50,0,0
+	animation0.pattern3,replace,1100,50,0,0
+}
+
+surface1200
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1201,0,0,0
+	animation0.pattern1,replace,1202,50,0,0
+	animation0.pattern2,replace,1201,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1201
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1201,0,0,0
+	animation0.pattern1,replace,1202,50,0,0
+	animation0.pattern2,replace,1201,50,0,0
+	animation0.pattern3,replace,1200,50,0,0
+	animation0.pattern3,replace,1200,50,0,0
+}
+
+surface1300
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1301,0,0,0
+	animation0.pattern1,replace,1302,50,0,0
+	animation0.pattern2,replace,1301,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1301
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1301,0,0,0
+	animation0.pattern1,replace,1302,50,0,0
+	animation0.pattern2,replace,1301,50,0,0
+	animation0.pattern3,replace,1300,50,0,0
+	animation0.pattern3,replace,1300,50,0,0
+}
+
+surface1400
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1401,0,0,0
+	animation0.pattern1,replace,1402,50,0,0
+	animation0.pattern2,replace,1401,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1401
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1401,0,0,0
+	animation0.pattern1,replace,1402,50,0,0
+	animation0.pattern2,replace,1401,50,0,0
+	animation0.pattern3,replace,1400,50,0,0
+	animation0.pattern3,replace,1400,50,0,0
 }

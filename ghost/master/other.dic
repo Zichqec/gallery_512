@@ -54,6 +54,17 @@ OnWindowStateRestore
 }
 
 /*
+
+im gonna die
+but before then, refresh code
+need to use the isvisible array i think for the else loop
+um
+and then set it up to do nnnnormal surfaces for if the lil guys are visible
+i need to plan out a lil guy array
+
+*/
+
+
 Refresh : all
 {
 	if GalleryOpen
@@ -71,7 +82,7 @@ Refresh : all
 		"\0\s[0]"
 	}
 }
-*/
+
 
 //Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
 //IF YOU'RE USING GITHUB FOR NETWORK UPDATES: DO NOT USE github.io URLS! It will cause you pain and suffering. USE raw.githubusercontent!!!
@@ -282,7 +293,7 @@ OnWalkAround
 	
 	LOGGING("_time: %(_time)")
 	
-	"\p[%(_char)]\![move,--X=%(_target_pos),--Y=fix,--time=%(_time),--base=primaryscreen]" //todo moveasync later maybe?
+	"\p[%(_char)]\s[1001]\![move,--X=%(_target_pos),--Y=fix,--time=%(_time),--base=primaryscreen]\s[1000]" //todo moveasync later maybe?
 	
 }
 

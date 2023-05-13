@@ -19,6 +19,7 @@ OnSakuraMenu : all
 	if GalleryOpen; "\![*]\q[Close the gallery,OnToggleGallery,0]"
 	else; "\![*]\q[Open the gallery,OnToggleGallery,1]"
 	"\n\n"
+	"\![*]\q[Test movement,OnWalkStart,1]\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
 	

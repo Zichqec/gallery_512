@@ -5,5 +5,7 @@ name,Default Shell
 craftman,
 craftmanurl,
 
-seriko.alignmenttodesktop,free
 seriko.use_self_alpha,1
+
+seriko.alignmenttodesktop,bottom
+sakura.seriko.alignmenttodesktop,free
