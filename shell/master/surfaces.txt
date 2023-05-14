@@ -35,6 +35,19 @@ surface100
 	animation10000.pattern13,overlay,10003,100,0,0
 	animation10000.pattern14,overlay,10002,100,0,0
 	animation10000.pattern15,overlay,10001,100,0,0
+	
+	//Frames
+	animation1000002.interval,bind
+	animation1000002.pattern0,overlay,102,0,0,0
+	
+	animation1000003.interval,bind
+	animation1000003.pattern0,overlay,103,0,0,0
+	
+	animation1000004.interval,bind
+	animation1000004.pattern0,overlay,104,0,0,0
+	
+	animation1000005.interval,bind
+	animation1000005.pattern0,overlay,105,0,0,0
 }
 
 surface200
@@ -57,6 +70,19 @@ surface200
 	animation20001.pattern7,overlay,20002,100,0,0
 	animation20001.pattern8,overlay,20001,100,0,0
 	animation20001.pattern9,overlay,-1,100,0,0
+	
+	//Frames
+	animation2000002.interval,bind
+	animation2000002.pattern0,overlay,202,0,0,0
+	
+	animation2000003.interval,bind
+	animation2000003.pattern0,overlay,203,0,0,0
+	
+	animation2000004.interval,bind
+	animation2000004.pattern0,overlay,204,0,0,0
+	
+	animation2000005.interval,bind
+	animation2000005.pattern0,overlay,205,0,0,0
 }
 
 surface300
@@ -79,6 +105,19 @@ surface300
 	animation30000.pattern10,overlay,30002,50,0,0
 	animation30000.pattern11,overlay,30001,100,0,0
 	animation30000.pattern12,overlay,30000,200,0,0
+	
+	//Frames
+	animation3000002.interval,bind
+	animation3000002.pattern0,overlay,302,0,0,0
+	
+	animation3000003.interval,bind
+	animation3000003.pattern0,overlay,303,0,0,0
+	
+	animation3000004.interval,bind
+	animation3000004.pattern0,overlay,304,0,0,0
+	
+	animation3000005.interval,bind
+	animation3000005.pattern0,overlay,305,0,0,0
 }
 
 surface400
@@ -86,6 +125,19 @@ surface400
 	//Frameless
 	animation401.interval,bind
 	animation401.pattern0,overlay,401,0,0,0
+	
+	//Frames
+	animation4000002.interval,bind
+	animation4000002.pattern0,overlay,402,0,0,0
+
+	animation4000003.interval,bind
+	animation4000003.pattern0,overlay,403,0,0,0
+	
+	animation4000004.interval,bind
+	animation4000004.pattern0,overlay,404,0,0,0
+	
+	animation4000005.interval,bind
+	animation4000005.pattern0,overlay,405,0,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————

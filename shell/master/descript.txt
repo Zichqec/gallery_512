@@ -42,6 +42,26 @@ sakura.bindgroup301.name,Frame - Offset,Frameless
 sakura.bindgroup401.name,Frame - Cluster,Frameless
 //See if addid will work for adding these on ones where they are required???
 
+sakura.bindgroup1000002.name,Frame - Landscape,Gilded
+sakura.bindgroup2000002.name,Frame - Portrait,Gilded
+sakura.bindgroup3000002.name,Frame - Offset,Gilded
+sakura.bindgroup4000002.name,Frame - Cluster,Gilded
+
+sakura.bindgroup1000003.name,Frame - Landscape,DIY
+sakura.bindgroup2000003.name,Frame - Portrait,DIY
+sakura.bindgroup3000003.name,Frame - Offset,DIY
+sakura.bindgroup4000003.name,Frame - Cluster,DIY
+
+sakura.bindgroup1000004.name,Frame - Landscape,Studio
+sakura.bindgroup2000004.name,Frame - Portrait,Studio
+sakura.bindgroup3000004.name,Frame - Offset,Studio
+sakura.bindgroup4000004.name,Frame - Cluster,Studio
+
+sakura.bindgroup1000005.name,Frame - Landscape,Laurels
+sakura.bindgroup2000005.name,Frame - Portrait,Laurels
+sakura.bindgroup3000005.name,Frame - Offset,Laurels
+sakura.bindgroup4000005.name,Frame - Cluster,Laurels
+
 
 //seriko.zorder,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,0
 //↑ bugged? also wanna request being able to just..... do this in reverse. pls.
