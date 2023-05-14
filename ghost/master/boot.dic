@@ -8,6 +8,7 @@ OnFirstBoot
 	GuySpeed = 5
 	GuyColor = 0
 	GuyBalloon = 0 //on/off
+	GuyCap = 10
 	SakuraBalloon = 0
 	PaintingType = 1
 	
@@ -28,6 +29,7 @@ OnInitialize
 	if !ISVAR("GuyBalloon"); GuyBalloon = 0 //on/off
 	if !ISVAR("SakuraBalloon"); SakuraBalloon = 0
 	if !ISVAR("PaintingType"); PaintingType = 1
+	if !ISVAR("GuyCap"); GuyCap = 10
 	
 	
 	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically

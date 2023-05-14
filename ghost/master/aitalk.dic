@@ -14,18 +14,28 @@ OnAiTalk
 
 OnSecondChange
 {
-	if GalleryOpen
+	if GalleryOpen && GuyCount > 0
 	{
 		_rand = RAND(100)
-		LOGGING("_rand: %(_rand)")
-		LOGGING("ARRAYSIZE(LilGuys) - 1: %(ARRAYSIZE(LilGuys) - 1)")
-		LOGGING
+		
 		if _rand < (ARRAYSIZE(LilGuys) - 1) * 2
 		{
 			if RAND(2)
 			{
 				if BalloonIsInTheWay; "\C"
-				"\![raise,OnWalkStart,%(RAND(ARRAYSIZE(LilGuys) - 1) + 1)]"
+				_rguy = 1
+				_guy = "blank"
+				_j = 0
+				while _guy == "blank" || _guy == "painting"
+				{
+					_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
+					_guy = LilGuys[_rguy]
+					LOGGING("_guy: %(_guy)")
+					_j++
+					if _j >= 5000; break
+				}
+				
+				"\![raise,OnWalkStart,%(_rguy)]"
 			}
 			else
 			{
@@ -36,27 +46,94 @@ OnSecondChange
 	}
 }
 
-LilGuysTalk : all
+//guys coming and going - may need to move this to OnSecondChange if it is slow
+OnMinuteChange
 {
-	_lilguys = IARRAY
+	LOGGING("====================================================================")
+	if GalleryOpen
+	{
+		_i = ""
+		_rand = RAND(GuyCap)
+		LOGGING("_rand: %(_rand)")
+		LOGGING("GuyCount: %(GuyCount)")
+		if _rand < GuyCap
+		{
+			if RAND(2) && GuyCount < GuyCap //coming
+			{
+				_i = "\![raise,OnAddLilGuy]"
+			}
+			elseif GuyCount > 0 //going
+			{
+				_rguy = 1
+				_guy = "blank"
+				_j = 0
+				LOGGING("====================================================================")
+				LOGGING("GUY TO LEAVE MAYBE")
+				while _guy == "blank" || _guy == "painting"
+				{
+					_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
+					_guy = LilGuys[_rguy]
+					LOGGING("_guy: %(_guy)")
+					_j++
+					if _j >= 5000; break
+				}
+				LOGGING;LOGGING
+				_i = "\![raise,OnRemoveLilGuy,%(_rguy)]"
+			}
+			if _i != "" && BalloonIsInTheWay; _i += "\C"
+			_i
+		}
+	}
+}
+
+GuyCount
+{
+	_i = 0
 	foreach LilGuys; _lilguy
 	{
-		if _lilguy == "painting"; continue
-		_lilguys ,= _lilguy[0,'|']
+		if _lilguy == "blank" || _lilguy == "painting"; continue
+		_i++
 	}
+	_i
+}
 
-	_guy = ANY(_lilguys)
-	
-	"\p[%(LSO + 1)]" //TODO ADD BLOON AND SURFACE ALSO
-	_talk = ""
-	if _guy == "0"; _talk = PretentiousGuyTalk
-	elseif _guy == "1"; _talk = SweetGuyTalk
-	elseif _guy == "2"; _talk = FriendlyGuyTalk
-	elseif _guy == "3"; _talk = UnimpressedGuyTalk
-	elseif _guy == "4"; _talk = ShyGuyTalk
-	
-	if _talk == "" || RAND(100) < 5; _talk = GenericGuyTalk
-	_talk + "\_w[2000]"
+LilGuysTalk : all
+{
+		LOGGING("====================================================================")
+	if GuyCount > 0
+	{
+		// _lilguys = IARRAY
+		// foreach LilGuys; _lilguy
+		// {
+			// if _lilguy == "painting"; continue
+			// _lilguys ,= _lilguy[0,'|']
+		// }
+
+		_rguy = 1
+		_guy = "blank"
+		_j = 0
+		LOGGING("ARRAYSIZE(LilGuys): %(ARRAYSIZE(LilGuys))")
+		while _guy == "blank" || _guy == "painting"
+		{
+			LOGGING("_rguy: %(_rguy)")
+			_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
+			_guy = LilGuys[_rguy]
+			LOGGING("_guy: %(_guy)")
+			_j++
+			if _j >= 5000; break
+		}
+		
+		"\p[%(_rguy)]\s[1%(_guy[1,'|'])%(GuyColor)0]\p[%(_rguy)]"
+		_talk = ""
+		if _guy[0,'|'] == "0"; _talk = PretentiousGuyTalk
+		elseif _guy[0,'|'] == "1"; _talk = SweetGuyTalk
+		elseif _guy[0,'|'] == "2"; _talk = FriendlyGuyTalk
+		elseif _guy[0,'|'] == "3"; _talk = UnimpressedGuyTalk
+		elseif _guy[0,'|'] == "4"; _talk = ShyGuyTalk
+		
+		if _talk == "" || RAND(100) < 5; _talk = GenericGuyTalk
+		_talk + "\_w[2000]"
+	}
 }
 
 
@@ -159,10 +236,20 @@ GenericGuyTalk : nonoverlap
 	}
 }
 
+SodaGuyTalk : nonoverlap
+{
+	
+}
+
+JacketGuyTalk : nonoverlap
+{
+	
+}
+
 PaintingTalk : nonoverlap_pool
 {
 	//Generic dialogues
-	"something contemplative and sad idk"
+	"\b[0]something contemplative and sad idk"
 	
 	//Rain theme dialogue
 	if Theme("Rain")

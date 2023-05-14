@@ -290,7 +290,7 @@ OnRemoveLilGuy
 
 OnRemoveLilGuy2 : all
 {
-	_char = WalkingCharacter
+	_char = TOINT(WalkingCharacter)
 	ERASEVAR("WalkingCharacter") //yucky
 	
 	LOGGING("====================================================================")
