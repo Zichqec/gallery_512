@@ -7,8 +7,10 @@ SakuraMenuGreetings : nonoverlap
 //Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
-	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]"
-	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
+	// if SHIORI3FW.Eventid == "OnMouseDoubleClick"; "\b[-1]"
+	// else; "\C"
+	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]"
+	
 	
 	"\n\n\_q"
 	
@@ -28,7 +30,9 @@ OnSakuraMenu : all
 	"\![*]\q[Settings,OnSettingsMenu]\n\n"
 	
 	
-	"\![*]\q[Nevermind,blank]"
+	"\![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
+	"\_l[0,0]\_q"
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
 }
 
 OnLastTalk
@@ -141,7 +145,7 @@ OnChangePaintingType
 
 OnSettingsMenu : all
 {
-	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\![close,inputbox,OnChangeGuyCap]\_q"
+	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\![close,inputbox,OnChangeGuyCap]\_q"
 	"\f[align,center]— Settings —\n\f[align,left]"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
@@ -149,7 +153,7 @@ OnSettingsMenu : all
 	"\![*]\q[Change guy limit,OnGuyCapMenu]\n\n"
 	"\![*]\q[Replay first boot test,OnFirstBoot.Start]\n\n"
 	
-	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
 }
 
 OnTalkRateMenu : all
@@ -273,7 +277,7 @@ OnAddLilGuy : all
 	LOGGING("_newguy: %(_newguy)")
 	WalkingCharacter = (_num,_newguy[1,'|'])
 	_left_edge = TOINT(WalkBorder[0][0])
-	//TODO need color option here later
+	
 	"\p[%(_num)]\![set,alpha,0]\![set,scaling,%(GuyScale)]\s[1%(_newguy[1,'|'])%(GuyColor)1]"
 	
 	"\![set,alignmenttodesktop,free]" //+ "free\n\_w[1000]"

@@ -7,7 +7,7 @@ OnMouseDoubleClick
 		//If you want to add double click interactions, reference4 will be the name of the hitbox the mouse is over
 		if reference3 == 0
 		{
-			OnSakuraMenu
+			"\b[2]\![raise,OnSakuraMenu]"
 		}
 		else
 		{
