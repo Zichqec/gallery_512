@@ -218,9 +218,38 @@ PretentiousGuyTalk : nonoverlap
 		"\b[0]The clouds are a reflection of the inner workings of the artist's mind. Heavy. Large. Shapely."
 	}
 	
+	if Theme("Nature")
+	{
+		"\b[0]The open air is good for the mind."
+		"\b[0]The artist really understands the metaphor of the open space."
+		"\b[0]Man vs. Nature. A classic."
+	}
+	
 	if Theme("Spooky")
 	{
 		"\b[0]The mood of the piece really gets under one's skin."
+		"\b[0]I suspect the artist had deep, unresolved trauma."
+		"\b[0]Only a true master could imagine something like this."
+	}
+	
+	if Theme("Swing")
+	{
+		"\b[0]Ahh...\w8\w8\w8 I can smell the true skill from here."
+		"\b[0]It's clear that the artist has a deep connection to the subject."
+	}
+	
+	if Theme("Boat")
+	{
+		"\b[0]Clearly the overwhelming waves are a look at the artist's inner angst."
+		"\b[0]A storm. The waves. The stature of man. It all makes sense."
+		"\b[0]The metaphor of a single sailor...\w8\w8\w8 It's all so clear."
+	}
+	
+	if Theme("Umbrella")
+	{
+		"\b[0]Obviously the figures in the background are just as significant as that in the foreground."
+		"\b[0]The boat. The puddle. Paper in water. Truly profound."
+		"\b[0]The clouds are so...\w8\w8 Perfection."
 	}
 }
 
@@ -240,11 +269,33 @@ SweetGuyTalk : nonoverlap
 	"\b[0]You can practically feel the hours of effort that went into perfecting these brush strokes."
 
 	
-	if Theme("Rain")
+	if Theme("Nature")
 	{
-		"\b[0]Sweet talk about rain"
-		
+			"\b[0]It really makes me feel like I'm outside."
+			"\b[0]I wonder if they painted this outdoors."
 	}
+	
+	if Theme("Umbrella")
+	{
+		"\b[0]The use of the bright and subdued colors really adds a sence of peace."
+		"\b[0]The little boat is so charming!"
+		"\b[0]Next time I need to bring my sketchbook, I'll have to remember how the rain brushstrokes look."
+	}
+	
+	if Theme("Swing")
+	{
+		"\b[0]What a happy scene."
+		"\b[0]The opening in the greenery really adds scale and depth."
+		"\b[0]What a lovely dress!"
+	}
+	
+	if Theme("Boat")
+	{
+		"\b[0]The use of colors to create the sense of depth in the ocean is lovely."
+		"\b[0]I wonder how they did the woodgrain on the ship..."
+		"\b[0]This almost makes me want to go sailing."
+	}
+	
 	if Theme("Spooky")
 	{
 		"\b[0]They look...Nice..."
@@ -269,9 +320,12 @@ FriendlyGuyTalk : nonoverlap
 	"\b[0]What an incredible artist! So talented!"
 
 	
-	if Theme("Rain")
+	if Theme("Nature")
 	{
-		"\b[0]Friendly talk about rain"
+		"\b[0]Oh!! I should arrange a picnic."
+		"\b[0]Rain or shine, the outdoors are lovely."
+		"\b[0]Gosh, I hope they're staying safe."
+		"\b[0]Hm, makes me want to take a nap, in a good way!"
 	}
 	
 	if Theme("Swing")
@@ -299,12 +353,7 @@ FriendlyGuyTalk : nonoverlap
 		"\b[0]I wonder what she's thinking about. I bet she holds good conversation."
 		"\b[0]What a skillful artist, I don't think I could come up with something like this."
 	}
-	
-	if Theme("Nature")
-	{
-		"\b[0]Hm, makes me want to take a nap, in a good way!"
 	}
-}
 
 UnimpressedGuyTalk : nonoverlap
 {
@@ -335,9 +384,11 @@ UnimpressedGuyTalk : nonoverlap
 		"\b[0]It'd be better if there was a seamonster."
 	}
 	
-	if Theme("Rain")
+	if Theme("Nature")
 	{
-		"\b[0]Unimpressed talk about rain"
+		"\b[0]Another uninspired look at the outdoors."
+		"\b[0]Why is everyone so obsessed with nature?"
+		"\b[0]What a lazy theme."
 	}
 	
 	if Theme("Spooky")
@@ -382,6 +433,29 @@ ShyGuyTalk : nonoverlap
 	if Theme("Spooky")
 	{
 		"\b[0]… No. \w8"
+	}
+	
+	if Theme("Swing")
+	{
+		"\b[0]Do gardens like that actually exist?"
+		"\b[0]I bet it's so quiet there..."
+		"\b[0]I would never have the patience to tend a garden like that."
+	}
+	
+	if Theme("Umbrella")
+	{
+		"\b[0]This feels familiar, it makes me happy."
+		"\b[0]I feel calm looking at this."
+		"\b[0]The boat almost looks like an envelope..."
+		"\b[0]I should walk more."
+	}
+	
+	if Theme("Boat")
+	{
+		"\b[0]This is unsetteling." 
+		"\b[0]There's so much ocean in the ocean."
+		"\b[0]I don't think I'm cut out to sail."
+		"\b[0]I'm glad there isn't a seamonster in this..."
 	}
 }
 
