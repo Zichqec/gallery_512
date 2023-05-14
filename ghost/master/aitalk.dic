@@ -134,7 +134,7 @@ PaintingTalk : nonoverlap_pool
 	"something contemplative and sad idk"
 	
 	//Rain theme dialogue
-	if ASEARCH("Rain",CurrentThemes) != -1
+	if Theme("Rain")
 	{
 		
 	}
