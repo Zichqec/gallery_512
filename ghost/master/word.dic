@@ -27,3 +27,35 @@ favoredcolors
 */
 
 //And if you're not interested in making word lists like this at all, you can just remove this whole file! Or use it for something else, you do you
+
+colorrep
+{
+	"life’s highs and lows"
+	"the serenity of a soul"
+	"the struggle against society as a whole"
+	"the artist’s childhood trauma"
+}
+
+itisso
+{
+	"cold"
+	"loud"
+	"busy"
+	"stuffy"
+	"smelly"
+	"quiet"
+	"empty"
+	"bright"
+	"squishy"
+	"narrow"
+	"vague"
+	"fuzzy"
+	"pungent"
+	"musty"
+	"echoey"
+	"crowded"
+	"mind-numbingly warm"
+	"tingley"
+	"moldy"
+	"breezy"
+}
