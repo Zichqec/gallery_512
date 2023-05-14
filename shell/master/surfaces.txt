@@ -135,6 +135,25 @@ surface400
 	animation401.interval,runonce
 	animation401.pattern0,overlay,401,0,0,0
 	
+	animation40000.interval,bind
+	animation40000.pattern0,overlay,40000,0,0,0
+	
+	animation40001.interval,bind + always
+	animation40001.pattern0,overlay,40001,0,0,0
+	animation40001.pattern1,overlay,40002,100,0,0
+	animation40001.pattern2,overlay,40003,100,0,0
+	animation40001.pattern3,overlay,40001,100,0,0
+	
+	animation40002.interval,bind + always
+	animation40002.pattern0,overlay,40004,0,0,0
+	animation40002.pattern1,overlay,40005,300,0,0
+	animation40002.pattern2,overlay,40006,300,0,0
+	animation40002.pattern3,overlay,40007,300,0,0
+	animation40002.pattern4,overlay,40006,700-1500,0,0
+	animation40002.pattern5,overlay,40005,300,0,0
+	animation40002.pattern6,overlay,40004,300,0,0
+	animation40002.pattern7,overlay,40004,700-1500,0,0
+	
 	//Frames
 	animation4000002.interval,bind
 	animation4000002.pattern0,overlay,402,0,0,0

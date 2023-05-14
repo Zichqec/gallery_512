@@ -28,6 +28,9 @@ sakura.bindgroup20000.addid,20001
 
 sakura.bindgroup30000.name,Offset,Swing
 
+sakura.bindgroup40000.name,Cluster,Rain
+sakura.bindgroup40000.addid,40001
+sakura.bindgroup40000.addid,40002
 
 // sakura.bindgroup101.default,1
 // sakura.bindgroup201.default,1
