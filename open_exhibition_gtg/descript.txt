@@ -1,8 +1,10 @@
 charset,UTF-8
 type,balloon
 name,Open Exhibition
-craftman,
-craftmanw,
+craftman,Galla
+craftmanw,Galla
+craftmanurl,https://gallathegalla.github.io/gtg-ghosts/
+homeurl,https://raw.githubusercontent.com/GallaTheGalla/open_exhibition/main/
 
 use_self_alpha,1
 use_input_alpha,1

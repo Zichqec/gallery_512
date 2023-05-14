@@ -14,7 +14,7 @@ descript
 surface100
 {
 	//Frameless
-	animation101.interval,bind
+	animation101.interval,runonce
 	animation101.pattern0,overlay,101,0,0,0
 	
 	//Boat
@@ -48,12 +48,15 @@ surface100
 	
 	animation1000005.interval,bind
 	animation1000005.pattern0,overlay,105,0,0,0
+	
+	animation1000006.interval,bind
+	animation1000006.pattern0,overlay,106,0,0,0
 }
 
 surface200
 {
 	//Frameless
-	animation201.interval,bind
+	animation201.interval,runonce
 	animation201.pattern0,overlay,201,0,0,0
 	
 	animation20000.interval,bind
@@ -83,12 +86,15 @@ surface200
 	
 	animation2000005.interval,bind
 	animation2000005.pattern0,overlay,205,0,0,0
+	
+	animation2000006.interval,bind
+	animation2000006.pattern0,overlay,206,0,0,0
 }
 
 surface300
 {
 	//Frameless
-	animation301.interval,bind
+	animation301.interval,runonce
 	animation301.pattern0,overlay,301,0,0,0
 	
 	animation30000.interval,bind + always
@@ -118,12 +124,15 @@ surface300
 	
 	animation3000005.interval,bind
 	animation3000005.pattern0,overlay,305,0,0,0
+	
+	animation3000006.interval,bind
+	animation3000006.pattern0,overlay,306,0,0,0
 }
 
 surface400
 {
 	//Frameless
-	animation401.interval,bind
+	animation401.interval,runonce
 	animation401.pattern0,overlay,401,0,0,0
 	
 	//Frames
@@ -138,6 +147,9 @@ surface400
 	
 	animation4000005.interval,bind
 	animation4000005.pattern0,overlay,405,0,0,0
+	
+	animation4000006.interval,bind
+	animation4000006.pattern0,overlay,406,0,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————
@@ -247,6 +259,72 @@ surface1401
 	animation0.pattern4,replace,1400,50,0,0
 }
 
+surface1500
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1501,0,0,0
+	animation0.pattern1,replace,1502,50,0,0
+	animation0.pattern2,replace,1501,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1501
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1501,0,0,0
+	animation0.pattern1,replace,1502,50,0,0
+	animation0.pattern2,replace,1501,50,0,0
+	animation0.pattern3,replace,1500,50,0,0
+	animation0.pattern4,replace,1500,50,0,0
+}
+
+surface1600
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1601,0,0,0
+	animation0.pattern1,replace,1602,50,0,0
+	animation0.pattern2,replace,1601,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1601
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1601,0,0,0
+	animation0.pattern1,replace,1602,50,0,0
+	animation0.pattern2,replace,1601,50,0,0
+	animation0.pattern3,replace,1600,50,0,0
+	animation0.pattern4,replace,1600,50,0,0
+}
+
+surface1700
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1701,0,0,0
+	animation0.pattern1,replace,1702,50,0,0
+	animation0.pattern2,replace,1701,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1701
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1701,0,0,0
+	animation0.pattern1,replace,1702,50,0,0
+	animation0.pattern2,replace,1701,50,0,0
+	animation0.pattern3,replace,1700,50,0,0
+	animation0.pattern4,replace,1700,50,0,0
+}
+
+
+
+
 
 
 surface1050
@@ -352,4 +430,87 @@ surface1451
 	animation0.pattern2,replace,1451,50,0,0
 	animation0.pattern3,replace,1450,50,0,0
 	animation0.pattern4,replace,1450,50,0,0
+}
+
+surface1550
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1551,0,0,0
+	animation0.pattern1,replace,1552,50,0,0
+	animation0.pattern2,replace,1551,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1551
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1551,0,0,0
+	animation0.pattern1,replace,1552,50,0,0
+	animation0.pattern2,replace,1551,50,0,0
+	animation0.pattern3,replace,1550,50,0,0
+	animation0.pattern4,replace,1550,50,0,0
+}
+
+surface1650
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1651,0,0,0
+	animation0.pattern1,replace,1652,50,0,0
+	animation0.pattern2,replace,1651,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1651
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1651,0,0,0
+	animation0.pattern1,replace,1652,50,0,0
+	animation0.pattern2,replace,1651,50,0,0
+	animation0.pattern3,replace,1650,50,0,0
+	animation0.pattern4,replace,1650,50,0,0
+}
+
+surface1750
+{
+	animation0.interval,talk,4
+	animation0.pattern0,replace,1751,0,0,0
+	animation0.pattern1,replace,1752,50,0,0
+	animation0.pattern2,replace,1751,50,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	
+	//animation100.interval,never
+}
+
+surface1751
+{
+	animation0.interval,always
+	animation0.pattern0,replace,1751,0,0,0
+	animation0.pattern1,replace,1752,50,0,0
+	animation0.pattern2,replace,1751,50,0,0
+	animation0.pattern3,replace,1750,50,0,0
+	animation0.pattern4,replace,1750,50,0,0
+}
+
+//,1600,1601,1700,1701
+surface.append1500,1501
+{
+	animation1503.interval,runonce
+	animation1503.pattern0,overlay,1503,0,0,0
+	
+	animation1504.interval,runonce
+	animation1504.pattern0,overlay,1504,0,0,0
+}
+
+//,1650,1651,1750,1751
+surface.append,1550,1551
+{
+	animation1503.interval,runonce
+	animation1503.pattern0,overlay,1553,0,0,0
+	
+	animation1504.interval,runonce
+	animation1504.pattern0,overlay,1554,0,0,0
 }

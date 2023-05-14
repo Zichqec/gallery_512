@@ -18,6 +18,9 @@ sakura.seriko.alignmenttodesktop,free
 // sakura.bindgroup300.name,Style,Offset
 // sakura.bindgroup400.name,Style,Cluster
 
+// kero.bindgroup1503.name,Snack,Hotdog
+// kero.bindgroup1504.name,Snack,Soda can
+
 sakura.bindgroup10000.name,Landscape,Boat
 
 sakura.bindgroup20000.name,Portrait,Eyes
@@ -26,20 +29,20 @@ sakura.bindgroup20000.addid,20001
 sakura.bindgroup30000.name,Offset,Swing
 
 
-sakura.bindgroup101.default,1
-sakura.bindgroup201.default,1
-sakura.bindgroup301.default,1
-sakura.bindgroup401.default,1
+// sakura.bindgroup101.default,1
+// sakura.bindgroup201.default,1
+// sakura.bindgroup301.default,1
+// sakura.bindgroup401.default,1
 
-sakura.bindoption101.group,Frame - Landscape,mustselect
-sakura.bindoption201.group,Frame - Portrait,mustselect
-sakura.bindoption301.group,Frame - Offset,mustselect
-sakura.bindoption401.group,Frame - Cluster,mustselect
+// sakura.bindoption101.group,Frame - Landscape,mustselect
+// sakura.bindoption201.group,Frame - Portrait,mustselect
+// sakura.bindoption301.group,Frame - Offset,mustselect
+// sakura.bindoption401.group,Frame - Cluster,mustselect
 
-sakura.bindgroup101.name,Frame - Landscape,Frameless
-sakura.bindgroup201.name,Frame - Portrait,Frameless
-sakura.bindgroup301.name,Frame - Offset,Frameless
-sakura.bindgroup401.name,Frame - Cluster,Frameless
+// sakura.bindgroup101.name,Frame - Landscape,Frameless
+// sakura.bindgroup201.name,Frame - Portrait,Frameless
+// sakura.bindgroup301.name,Frame - Offset,Frameless
+// sakura.bindgroup401.name,Frame - Cluster,Frameless
 //See if addid will work for adding these on ones where they are required???
 
 sakura.bindgroup1000002.name,Frame - Landscape,Gilded
@@ -61,6 +64,11 @@ sakura.bindgroup1000005.name,Frame - Landscape,Laurels
 sakura.bindgroup2000005.name,Frame - Portrait,Laurels
 sakura.bindgroup3000005.name,Frame - Offset,Laurels
 sakura.bindgroup4000005.name,Frame - Cluster,Laurels
+
+sakura.bindgroup1000006.name,Frame - Landscape,Rosewood
+sakura.bindgroup2000006.name,Frame - Portrait,Rosewood
+sakura.bindgroup3000006.name,Frame - Offset,Rosewood
+sakura.bindgroup4000006.name,Frame - Cluster,Rosewood
 
 
 //seriko.zorder,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,0

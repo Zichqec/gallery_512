@@ -1,4 +1,4 @@
 charset,UTF-8
 type,balloon
 name,Open Exhibition
-directory,open_exhibition_gkz
+directory,open_exhibition_gtg
