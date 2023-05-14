@@ -239,7 +239,6 @@ PretentiousGuyTalk : nonoverlap
 	"\b[0]This gallery should be ashamed of itself; this piece alone is worth more than they could ever pay. Cheapskates!"
 	"\b[0]The spot on the rug just here - a wonderful touch! It adds such deep meaning, like the painting itself stretches beyond the canvas and into the real world around us."
 
-	
 	if Theme("Rain")
 	{
 		"\b[0]It's like the artist made this for me. The rain. The clouds."
@@ -285,7 +284,7 @@ PretentiousGuyTalk : nonoverlap
 SweetGuyTalk : nonoverlap
 {
 	"\b[0]Sweet"
-	"\b[0]it smells so nice here, it really enhances the experience."
+	"\b[0]It smells so nice here, it really enhances the experience."
 	"\b[0]I wish I'd brought my tea, next time."
 	"\b[0]They have a really great sense of shape, very consistent."
 	"\b[0]I love the way these shadows fall."
@@ -387,7 +386,7 @@ FriendlyGuyTalk : nonoverlap
 UnimpressedGuyTalk : nonoverlap
 {
 	"\b[0]Unimpressed"
-	"\b[0]is it really ONLY this big?" 
+	"\b[0]Is it really ONLY this big?" 
 	"\b[0]I thought there’d be more to see..."
 	"\b[0]A coffee kiosk would really help this place"
 	"\b[0]Did you even try?"
@@ -498,7 +497,7 @@ GenericGuyTalk : nonoverlap
 	
 	if Theme("Rain")
 	{
-		
+		"\b[0]Is there a leak in the roof?"
 	}
 }
 
