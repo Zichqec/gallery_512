@@ -254,27 +254,27 @@ PretentiousGuyTalk : nonoverlap
 		"\b[0]Man vs. Nature. A classic."
 	}
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]The mood of the piece really gets under one's skin."
 		"\b[0]I suspect the artist had deep, unresolved trauma."
 		"\b[0]Only a true master could imagine something like this."
 	}
 	
-	if Theme("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]Ahh...\w8\w8\w8 I can smell the true skill from here."
 		"\b[0]It's clear that the artist has a deep connection to the subject."
 	}
 	
-	if Theme("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
 		"\b[0]Clearly the overwhelming waves are a look at the artist's inner angst."
 		"\b[0]A storm. The waves. The stature of man. It all makes sense."
 		"\b[0]The metaphor of a single sailor...\w8\w8\w8 It's all so clear."
 	}
 	
-	if Theme("Umbrella")
+	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]Obviously the figures in the background are just as significant as that in the foreground."
 		"\b[0]The boat. The puddle. Paper in water. Truly profound."
@@ -304,28 +304,28 @@ SweetGuyTalk : nonoverlap
 			"\b[0]I wonder if they painted this outdoors."
 	}
 	
-	if Theme("Umbrella")
+	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]The use of the bright and subdued colors really adds a sence of peace."
 		"\b[0]The little boat is so charming!"
 		"\b[0]Next time I need to bring my sketchbook, I'll have to remember how the rain brushstrokes look."
 	}
 	
-	if Theme("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]What a happy scene."
 		"\b[0]The opening in the greenery really adds scale and depth."
 		"\b[0]What a lovely dress!"
 	}
 	
-	if Theme("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
 		"\b[0]The use of colors to create the sense of depth in the ocean is lovely."
 		"\b[0]I wonder how they did the woodgrain on the ship..."
 		"\b[0]This almost makes me want to go sailing."
 	}
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]They look...Nice..."
 		"\b[0]I do like the way the contrast of the green works against the black to give the eyes a spark of life."
@@ -357,26 +357,26 @@ FriendlyGuyTalk : nonoverlap
 		"\b[0]Hm, makes me want to take a nap, in a good way!"
 	}
 	
-	if Theme("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]Oh! I'd love to go to a garden party."
 		"\b[0]Hm... I should buy a swing."
 		"\b[0]That's right, I should buy some flowers for the kitchen, really brighten the place up."
 	}
 	
-	if Theme ("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
 		"\b[0]I hope someone helps them!"
 		"\b[0]I bet there are some nice fish in there."
 	}
 	
-	if Theme ("Umbrella")
+	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]I hope they get where they're going without getting soaked."
 		"\b[0]Oh, I love the clouds!"
 	}
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]Wow! What a tone change!"
 		"\b[0]I wonder what she's thinking about. I bet she holds good conversation."
@@ -406,7 +406,7 @@ UnimpressedGuyTalk : nonoverlap
 	"\b[0]Look at the way the paint is flaking. Didn't even use good paints for this ""masterpiece""."
 
 
-	if Theme("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
 		"\b[0]Oooh, a boaaat, truly inspired."
 		"\b[0]I hope they fall in."
@@ -420,7 +420,7 @@ UnimpressedGuyTalk : nonoverlap
 		"\b[0]What a lazy theme."
 	}
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]I've been more scared."
 		"\b[0]Come on, we've all seen that trick before."
@@ -429,7 +429,7 @@ UnimpressedGuyTalk : nonoverlap
 		"\b[0]Does this ""artist"" even know what ""spooky"" means?" 
 	}
 	
-	if Theme ("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]Oh, good, a generic pretty landscape"
 		"\b[0]Have they ever heard of anatomy?"
@@ -459,19 +459,19 @@ ShyGuyTalk : nonoverlap
 		"\b[0]It looks peaceful there. \w8"
 	}
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]... No. \w8"
 	}
 	
-	if Theme("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]Do gardens like that actually exist?"
 		"\b[0]I bet it's so quiet there..."
 		"\b[0]I would never have the patience to tend a garden like that."
 	}
 	
-	if Theme("Umbrella")
+	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]This feels familiar, it makes me happy."
 		"\b[0]I feel calm looking at this."
@@ -479,7 +479,7 @@ ShyGuyTalk : nonoverlap
 		"\b[0]I should walk more."
 	}
 	
-	if Theme("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
 		"\b[0]This is unsetteling." 
 		"\b[0]There's so much ocean in the ocean."
