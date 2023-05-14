@@ -38,6 +38,10 @@ OnTranslate
 		elseif _sona == 3; _shape = 1
 		elseif _sona == 4; _shape = 2
 		
+		elseif _sona == 100; _shape = 4
+		elseif _sona == 101; _shape = 0
+		elseif _sona == 102; _shape = 6
+		
 		_tag_replace_array ,= "\p[%(_char)]\b[1%(_shape)%(_size)]"
 		
 		_talk = REPLACE(_talk,_tag,"__TALK_TAG_%(_i)__")
@@ -57,6 +61,8 @@ OnTranslate
 		_talk = REPLACE(_talk,"- ","-\w8 ")
 		_talk = REPLACE(_talk,"; ",";\w8 ")
 		_talk = REPLACE(_talk,": ",":\w8 ")
+		_talk = REPLACE(_talk,"? ","?\w8 ")
+		_talk = REPLACE(_talk,"! ","!\w8 ")
 	}
 	
 	TOSTR(_talk)

@@ -131,6 +131,10 @@ LilGuysTalk : all
 		elseif _guy[0,'|'] == "3"; _talk = UnimpressedGuyTalk
 		elseif _guy[0,'|'] == "4"; _talk = ShyGuyTalk
 		
+		elseif _guy[0,'|'] == "100"; _talk = SodaGuyTalk
+		elseif _guy[0,'|'] == "101"; _talk = JacketGuyTalk
+		elseif _guy[0,'|'] == "102"; _talk = CurlyGuyTalk
+		
 		if _talk == "" || RAND(100) < 5; _talk = GenericGuyTalk
 		_talk + "\_w[2000]"
 	}
@@ -243,6 +247,11 @@ SodaGuyTalk : nonoverlap
 }
 
 JacketGuyTalk : nonoverlap
+{
+	
+}
+
+CurlyGuyTalk : nonoverlap
 {
 	
 }
