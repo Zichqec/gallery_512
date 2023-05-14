@@ -427,3 +427,41 @@ CurrentPainting
 		Painting.Cluster
 	}
 }
+
+italic
+{
+	"\f[italic,1]"
+}
+
+italicoff
+{
+	"\f[italic,0]"
+}
+
+bold
+{
+	"\f[bold,1]"
+}
+
+boldoff
+{
+	"\f[bold,0]"
+}
+
+timeslot
+{
+	case hour
+	{
+		when 1-6; "night"
+		when 7-12; "morning"
+		when 13-18; "afternoon"
+		others; "evening" //19-23, 0
+	}
+}
+
+/*
+0-5  1-6
+6-11  6-12
+12-17  13-18
+18-23  19-0
+*/

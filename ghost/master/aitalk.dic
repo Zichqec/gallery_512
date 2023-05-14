@@ -22,25 +22,11 @@ OnSecondChange
 		{
 			if RAND(2)
 			{
-				if BalloonIsInTheWay; "\C"
-				_rguy = 1
-				_guy = "blank"
-				_j = 0
-				while _guy == "blank" || _guy == "painting"
-				{
-					_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
-					_guy = LilGuys[_rguy]
-					LOGGING("_guy: %(_guy)")
-					_j++
-					if _j >= 5000; break
-				}
-				
-				"\![raise,OnWalkStart,%(_rguy)]"
+				OnGuyMove
 			}
 			else
 			{
-				if BalloonIsInTheWay; "\C"
-				OnAiTalk
+				OnGuyTalk
 			}
 		}
 	}
@@ -52,38 +38,69 @@ OnMinuteChange
 	LOGGING("====================================================================")
 	if GalleryOpen
 	{
-		_i = ""
 		_rand = RAND(GuyCap)
-		LOGGING("_rand: %(_rand)")
-		LOGGING("GuyCount: %(GuyCount)")
 		if _rand < GuyCap
 		{
 			if RAND(2) && GuyCount < GuyCap //coming
 			{
-				_i = "\![raise,OnAddLilGuy]"
+				OnGuyArrive
 			}
 			elseif GuyCount > 0 //going
 			{
-				_rguy = 1
-				_guy = "blank"
-				_j = 0
-				LOGGING("====================================================================")
-				LOGGING("GUY TO LEAVE MAYBE")
-				while _guy == "blank" || _guy == "painting"
-				{
-					_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
-					_guy = LilGuys[_rguy]
-					LOGGING("_guy: %(_guy)")
-					_j++
-					if _j >= 5000; break
-				}
-				LOGGING;LOGGING
-				_i = "\![raise,OnRemoveLilGuy,%(_rguy)]"
+				OnGuyLeave
 			}
-			if _i != "" && BalloonIsInTheWay; _i += "\C"
-			_i
 		}
 	}
+}
+
+OnGuyTalk
+{
+	if BalloonIsInTheWay; "\C"
+	--
+	OnAiTalk
+}
+
+OnGuyMove
+{
+	if BalloonIsInTheWay; "\C"
+	_rguy = 1
+	_guy = "blank"
+	_j = 0
+	while _guy == "blank" || _guy == "painting"
+	{
+		_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
+		_guy = LilGuys[_rguy]
+		LOGGING("_guy: %(_guy)")
+		_j++
+		if _j >= 5000; break
+	}
+	
+	if BalloonIsInTheWay; "\C"
+	--
+	"\![raise,OnWalkStart,%(_rguy)]"
+}
+
+OnGuyArrive
+{
+	if BalloonIsInTheWay; "\C"
+	--
+	"\![raise,OnAddLilGuy]"
+}
+
+OnGuyLeave
+{
+	_rguy = 1
+	_guy = "blank"
+	_j = 0
+	while _guy == "blank" || _guy == "painting"
+	{
+		_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
+		_guy = LilGuys[_rguy]
+		_j++
+		if _j >= 5000; break
+	}
+	
+	"\![raise,OnRemoveLilGuy,%(_rguy)]"
 }
 
 GuyCount
@@ -99,7 +116,6 @@ GuyCount
 
 LilGuysTalk : all
 {
-		LOGGING("====================================================================")
 	if GuyCount > 0
 	{
 		// _lilguys = IARRAY
@@ -112,13 +128,13 @@ LilGuysTalk : all
 		_rguy = 1
 		_guy = "blank"
 		_j = 0
-		LOGGING("ARRAYSIZE(LilGuys): %(ARRAYSIZE(LilGuys))")
+		
 		while _guy == "blank" || _guy == "painting"
 		{
-			LOGGING("_rguy: %(_rguy)")
+			
 			_rguy = RAND(ARRAYSIZE(LilGuys) - 1) + 1
 			_guy = LilGuys[_rguy]
-			LOGGING("_guy: %(_guy)")
+			
 			_j++
 			if _j >= 5000; break
 		}
@@ -175,6 +191,11 @@ When you write punctuation, if it is followed by a space, it will add a pause au
 
 To add an envelope: %(envelope_name_here)
 So to add the envelope "food", you'd put %(food)
+
+For italic and bold:
+
+%(italic) to turn italic on, %(italicoff) to turn italic off
+%(bold) to turn bold on, %(boldoff) to turn bold off
 
 */
 
