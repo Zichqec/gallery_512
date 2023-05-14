@@ -7,7 +7,7 @@ SakuraMenuGreetings : nonoverlap
 //Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
-	"\0\b[2]%(Refresh)\![set,autoscroll,disable]"
+	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]"
 	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
 	
 	"\n\n\_q"
@@ -20,71 +20,15 @@ OnSakuraMenu : all
 	else; "\![*]\q[Open the gallery,OnToggleGallery,1]"
 	"\n\n"
 	
-	"\![*]\q[Debug,OnDebug]\n"
+	if SHIORI3FW.DebugMode == 1; "\![*]\q[Debug,OnDebug]\n"
+	
 	"\![*]\q[Customize,OnCustomize]\n"
 	
-	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	//"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	"\![*]\q[Settings,OnSettingsMenu]\n\n"
+	
 	
 	"\![*]\q[Nevermind,blank]"
-}
-
-OnDebug : all
-{
-	"\0\b[2]\_q"
-	"\![*]\q[Test movement,OnWalkStart,1]\n"
-	"\![*]\q[Add lil guy,OnAddLilGuy]\n"
-	"\![*]\q[Remove lil guy,OnRemoveGuyMenu]\n"
-	"\![*]\q[Clear all guys,OnClearGuys]\n"
-	"\n"
-	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
-}
-
-OnRemoveGuyMenu : all
-{
-	"\![no-pause]\0\b[2]\![set,autoscroll,disable]\_q"
-	"Remove which guy?\n\n"
-	
-	
-	for _i = 1; _i < ARRAYSIZE(LilGuys); _i++
-	{
-		if LilGuys[_i] == "blank"; continue
-		"\![*]\__q[OnRemoveLilGuy,%(_i)]"
-		
-		_sona = LilGuys[_i][0,'|']
-		_shape = LilGuys[_i][1,'|']
-		
-		switch _sona
-		{
-			"Pretentious"
-			"Sweet"
-			"Friendly"
-			"Unimpressed"
-			"Shy"
-		}
-		" - "
-		switch _shape
-		{
-			"Small"
-			"Tiny"
-			"Tall"
-			"Large"
-			"Wide"
-			"Soda"
-			"Jacket"
-			"Curly"
-		}
-		
-		"\__q\n"
-	}
-	"\n"
-	"\![*]\q[Back,OnDebug]  \![*]\q[Close,blank]"
-}
-
-OnClearGuys
-{
-	LilGuys = IARRAY
-	LilGuys ,= "painting"
-	Refresh
 }
 
 OnLastTalk
@@ -106,7 +50,7 @@ OnToggleGallery
 
 OnCustomize : all
 {
-	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\_q"
+	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q"
 	"Painting balloons:\n"
 	_bloons = ("Silver,0","Black,1","Copper,3","Navy,2","none","Starry,4")
 	
@@ -195,6 +139,15 @@ OnChangePaintingType
 	OnCustomize
 }
 
+OnSettingsMenu : all
+{
+	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
+	"\f[align,center]— Settings —\n\f[align,left]"
+	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
+}
+
 OnTalkRateMenu : all
 {	
 	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
@@ -205,7 +158,7 @@ OnTalkRateMenu : all
 	elseif aitalkinterval == 300; _talkrate = "5 minutes"
 	elseif aitalkinterval == 600; _talkrate = "10 minutes"
 	
-	"\0%(Refresh)\b[2]\![set,autoscroll,disable]\_q"
+	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
 	"Current interval: %(_talkrate)\n\n"
 	
 	"\![*]\q[Off,OnTalkRateChange,0]\n"
@@ -215,7 +168,7 @@ OnTalkRateMenu : all
 	"\![*]\q[5 minutes,OnTalkRateChange,300]\n"
 	"\![*]\q[10 minutes,OnTalkRateChange,600]\n"
 	"\n"
-	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
+	"\![*]\q[Back,OnSettingsMenu]  \![*]\q[Nevermind,blank]"
 }
 
 OnTalkRateChange
@@ -284,14 +237,15 @@ OnAddLilGuy2 : all
 	ERASEVAR("WalkingCharacter")
 	_left_edge = TOINT(WalkBorder[0][0])
 	_right_edge = TOINT(WalkBorder[0][1])
+	_rand_spot = RAND(DisplayWidth - GuyWidth)
 	
-	_time = (GuyWidth * 2) * GuySpeed
+	_time = ((GuyWidth + _rand_spot) * 2) * GuySpeed
 	
 	
 	"\p[%(_num)]"
 	"\![set,alignmenttodesktop,free]" //+ "free\n\_w[1000]"
 	"\![move,--X=%(_left_edge - GuyWidth),--Y=%(_top_edge),--base=primaryscreen]\![set,alpha,100]" //+ "move to lefty spot\n\_w[1000]"
-	"\![move,--X=%(_left_edge),--Y=%(_top_edge),--time=%(_time),--base=primaryscreen]\s[1%(_newguy)%(GuyColor)0]" //+ "scoot\n\_w[1000]"
+	"%(FadeIn)\![move,--X=%(_left_edge + _rand_spot),--Y=%(_top_edge),--time=%(_time),--base=primaryscreen]\s[1%(_newguy)%(GuyColor)0]" //+ "scoot\n\_w[1000]"
 	"\![set,alignmenttodesktop,bottom]" //+ "bind\n\_w[1000]"
 }
 
@@ -339,10 +293,11 @@ OnRemoveLilGuy2 : all
 	//_right_edge
 	LOGGING("_oldguy: %(_oldguy)")
 	"\p[%(_char)]\s[1%(_oldguy[1,'|'])%(GuyColor)1]"
-	"\![move,--X=%(_right_edge),--time=%(_time),--base=primaryscreen]\s[-1]"
+	"\![move,--X=%(_right_edge),--time=%(_time),--base=primaryscreen]%(FadeOut)\s[-1]"
 	
 }
 
+//not used yet
 OkGuysPresent
 {
 	_guys = IARRAY
@@ -352,4 +307,75 @@ OkGuysPresent
 		elseif TOINT(_lilguy[0,'|']) >= 100; _guys ,= _lilguy[0,'|']
 	}
 	_guys
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+OnDebug : all
+{
+	"\0\b[2]\![no-pause]\_q"
+	"\![*]\q[Test movement,OnWalkStart,1]\n"
+	"\![*]\q[Add lil guy,OnAddLilGuy]\n"
+	"\![*]\q[Remove lil guy,OnRemoveGuyMenu]\n"
+	"\![*]\q[Clear all guys,OnClearGuys]\n"
+	"\n"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
+}
+
+OnRemoveGuyMenu : all
+{
+	"\![no-pause]\0\b[2]\![set,autoscroll,disable]\_q"
+	"Remove which guy?\n\n"
+	
+	
+	for _i = 1; _i < ARRAYSIZE(LilGuys); _i++
+	{
+		if LilGuys[_i] == "blank"; continue
+		"\![*]\__q[OnRemoveLilGuy,%(_i)]"
+		
+		_sona = LilGuys[_i][0,'|']
+		_shape = LilGuys[_i][1,'|']
+		
+		switch _sona
+		{
+			"Pretentious"
+			"Sweet"
+			"Friendly"
+			"Unimpressed"
+			"Shy"
+		}
+		" - "
+		switch _shape
+		{
+			"Small"
+			"Tiny"
+			"Tall"
+			"Large"
+			"Wide"
+			"Soda"
+			"Jacket"
+			"Curly"
+		}
+		
+		"\__q\n"
+	}
+	"\n"
+	"\![*]\q[Back,OnDebug]  \![*]\q[Close,blank]"
+}
+
+OnClearGuys
+{
+	LilGuys = IARRAY
+	LilGuys ,= "painting"
+	Refresh
 }

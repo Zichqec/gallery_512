@@ -465,3 +465,22 @@ timeslot
 12-17  13-18
 18-23  19-0
 */
+
+
+FadeIn : all
+{
+	for _i = 0; _i < 100; _i += 5
+	{
+		"\![set,alpha,%(_i)]\w1"
+	}
+	"\![set,alpha,100]"
+}
+
+FadeOut : all
+{
+	for _i = 100; _i > 0; _i -= 5
+	{
+		"\![set,alpha,%(_i)]\w1"
+	}
+	"\![set,alpha,0]"
+}

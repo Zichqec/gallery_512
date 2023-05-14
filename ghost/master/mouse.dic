@@ -11,7 +11,7 @@ OnMouseDoubleClick
 		}
 		else
 		{
-			OnKeroMenu
+			//OnKeroMenu
 		}
 	}
 }
