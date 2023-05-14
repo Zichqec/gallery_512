@@ -41,7 +41,7 @@ OnDebug : all
 
 OnRemoveGuyMenu : all
 {
-	"\0\b[2]\![set,autoscroll,disable]\_q"
+	"\![no-pause]\0\b[2]\![set,autoscroll,disable]\_q"
 	"Remove which guy?\n\n"
 	
 	
@@ -69,6 +69,9 @@ OnRemoveGuyMenu : all
 			"Tall"
 			"Large"
 			"Wide"
+			"Soda"
+			"Jacket"
+			"Curly"
 		}
 		
 		"\__q\n"
@@ -227,6 +230,14 @@ OnAddLilGuy : all
 	_guysona = RAND(5)
 	_shape = RAND(5)
 	
+	if RAND(20) == 0
+	{
+		_guysona = RAND(3) + 100
+		if _guysona == 100; _shape = 5
+		elseif _guysona == 101; _shape = 6
+		elseif _guysona == 102; _shape = 7
+	}
+	
 	_num = 0
 	_filled = 0
 	for _i = 0; _i < ARRAYSIZE(LilGuys); _i++
@@ -325,4 +336,15 @@ OnRemoveLilGuy2 : all
 	"\p[%(_char)]\s[1%(_oldguy[1,'|'])%(GuyColor)1]"
 	"\![move,--X=%(_right_edge),--time=%(_time),--base=primaryscreen]\s[-1]"
 	
+}
+
+OkGuysPresent
+{
+	_guys = IARRAY
+	foreach LilGuys; _lilguy
+	{
+		if _lilguy == "blank" || _lilguy == "painting"; continue
+		elseif TOINT(_lilguy[0,'|']) >= 100; _guys ,= _lilguy[0,'|']
+	}
+	_guys
 }
