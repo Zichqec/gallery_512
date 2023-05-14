@@ -48,9 +48,29 @@ LilGuysTalk : all
 	_talk
 }
 
+/*
+
+QUICK SAKURASCRIPT TAG REFERENCE:
+
+\b[0] - Small balloon
+\b[2] - Big balloon
+↑ Every dialogue MUST start with one of these, *no exceptions.* It has to be the very first thing or the balloons won't do style/shape properly
+
+\n - Linebreak
+\w8 - Pause for 400 ms
+\w4 - Pause for 200 ms
+
+To add an envelope: %(envelope_name_here)
+So to add the envelope "food", you'd put %(food)
+
+*/
+
 PretentiousGuyTalk : nonoverlap
 {
 	"\b[0]Pretentious"
+	"\b[0]More pretentious"
+	"\b[0]Even more pretentious"
+	"\b[0]Excessively much pretentious"
 	
 	if Theme("Rain")
 	{
