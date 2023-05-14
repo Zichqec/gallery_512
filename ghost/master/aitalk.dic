@@ -35,9 +35,6 @@ LilGuysTalk : all
 	}
 
 	_guy = ANY(_lilguys)
-	LOGGING("====================================================================")
-	LOGGING("_guy: %(_guy)")
-	LOGGING("_lilguys: %(_lilguys)")
 	
 	"\p[%(LSO + 1)]" //TODO ADD BLOON AND SURFACE ALSO
 	_talk = ""
@@ -54,31 +51,61 @@ LilGuysTalk : all
 PretentiousGuyTalk : nonoverlap
 {
 	"\b[0]Pretentious"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Pretentious talk about rain"
+	}
 }
 
 SweetGuyTalk : nonoverlap
 {
 	"\b[0]Sweet"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Sweet talk about rain"
+	}
 }
 
 FriendlyGuyTalk : nonoverlap
 {
 	"\b[0]Friendly"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Friendly talk about rain"
+	}
 }
 
 UnimpressedGuyTalk : nonoverlap
 {
 	"\b[0]Unimpressed"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Unimpressed talk about rain"
+	}
 }
 
 ShyGuyTalk : nonoverlap
 {
 	"\b[0]Shy"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Shy talk about rain"
+	}
 }
 
 GenericGuyTalk : nonoverlap
 {
 	"\b[0]Generic"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Generic talk about rain"
+	}
 }
 
 PaintingTalk : nonoverlap_pool
