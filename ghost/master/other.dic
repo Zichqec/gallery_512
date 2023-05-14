@@ -11,6 +11,7 @@ OnTranslate
 	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
 	_talk = REPLACE(_talk,"\0\b[0]","\0\b[%(SakuraBalloon)0]")
 	_talk = REPLACE(_talk,"\0\b[2]","\0\b[%(SakuraBalloon)2]")
+	if SHIORI3FW.BalloonName != "Open Exhibition"; _talk = REPLACE(_talk,"—","\f[name,calibri]—\f[name,default]")
 	
 	
 	void RE_GREP(_talk,"\\p\[\d+\]\\b\[\d\]")
@@ -113,12 +114,12 @@ Refresh : all
 		if GalleryOpen
 		{
 			_guy = LilGuys[_i]
-			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])%(GuyColor)0]\![set,alpha,100]" //TODO add color option later
-			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]\![set,alpha,100]"
+			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])%(GuyColor)0]\![set,alpha,100]\![set,scaling,%(GuyScale)]"
+			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 		}
-		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]\![set,alpha,100]"
+		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 	}
-	"\0\s[%(PaintingType)00]\![set,alpha,100]" //TODO painting here
+	"\0\s[%(PaintingType)00]"
 }
 
 BalloonIsInTheWay
@@ -483,4 +484,10 @@ FadeOut : all
 		"\![set,alpha,%(_i)]\w1"
 	}
 	"\![set,alpha,0]"
+}
+
+br
+{
+	if SHIORI3FW.BalloonName == "Open Exhibition"; "\n"
+	else; " "
 }

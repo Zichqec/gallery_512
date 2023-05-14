@@ -143,7 +143,10 @@ OnSettingsMenu : all
 {
 	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
 	"\f[align,center]— Settings —\n\f[align,left]"
-	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	
+	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
+	"\![*]\q[Change guy scaling,OnGuyScaleMenu]\n"
+	"\![*]\q[Change guy limit,OnGuyCapMenu]\n\n"
 	
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
 }
@@ -175,6 +178,30 @@ OnTalkRateChange
 {
 	aitalkinterval = TOINT(reference0)
 }
+
+OnGuyScaleMenu : all
+{
+	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
+	"Current scaling: %(GuyScale)\n\n"
+	
+	"\![*]\q[200%,OnChangeGuyScale,200]\n"
+	"\![*]\q[150%,OnChangeGuyScale,150]\n"
+	"\![*]\q[100%,OnChangeGuyScale,100]\n"
+	"\![*]\q[50%,OnChangeGuyScale,50]\n"
+	"\![*]\q[20%,OnChangeGuyScale,20]\n"
+	"\n"
+	"\![*]\q[Back,OnSettingsMenu]  \![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
+}
+
+OnChangeGuyScale
+{
+	GuyScale = TOINT(reference0)
+	Refresh
+	--
+	OnGuyScaleMenu
+}
+
+
 
 OnAddLilGuy : all
 {
