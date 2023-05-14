@@ -162,7 +162,7 @@ PaintingInfo : array
 	//Name,theme,theme,theme...
 	
 	//Landscape
-	"Boat,Rain,Nature,Person,Ocean"
+	"Boat,Rain,Nature,Person,Ocean,Nature"
 	
 	//Portrait
 	"Eyes,Spooky,Person"
@@ -171,7 +171,7 @@ PaintingInfo : array
 	"Swing,Nature,Foliage,Person"
 	
 	//Cluster
-	"Rain,Rain"
+	"Rain,Rain,Umbrella,Nature"
 }
 
 /*
@@ -247,33 +247,132 @@ SweetGuyTalk : nonoverlap
 	}
 	if Theme("Spooky")
 	{
-		"\b[0]The mood of the piece really gets under one's skin."
+		"\b[0]They look...Nice..."
+		"\b[0]I do like the way the contrast of the green works against the black to give the eyes a spark of life."
+		"\b[0]I hope she's happy."
+
 	}
 }
 
 FriendlyGuyTalk : nonoverlap
 {
 	"\b[0]Friendly"
+	"\b[0]I should bring my friends here.”
+	"\b[0]I wonder if anyone else is having fun.”
+	"\b[0]It's got so much energy! Like, it really makes you go ""wow""!"
+	"\b[0]Ooh, this one is really fun!"
+	"\b[0]This one suits me, don't you think?"
+	"\b[0]This is so cool. I wish I could draw something as neat as this!"
+	"\b[0]Looking at this makes me feel happy!"
+	"\b[0]Oh, I know who would like this! I'll have to bring %(ANY('him,her,them')) sometime!"
+	"\b[0]This might be my favorite painting ever!"
+	"\b[0]What an incredible artist! So talented!"
+
 	
 	if Theme("Rain")
 	{
 		"\b[0]Friendly talk about rain"
+	}
+	
+	if Theme("Swing")
+	{
+		"\b[0]Oh! I'd love to go to a garden party."
+		"\b[0]Hm... I should buy a swing."
+		"\b[0]That's right, I should buy some flowers for the kitchen, really brighten the place up."
+	}
+	
+	if Theme ("Boat")
+	{
+		"\b[0]I hope someone helps them!"
+		"\b[0]I bet there are some nice fish in there."
+	}
+	
+	if Theme ("Umbrella")
+	{
+		"\b[0]I hope they get where they're going without getting soaked."
+		"\b[0]Oh, I love the clouds!"
+	}
+	
+	if Theme("Spooky")
+	{
+		"\b[0]Wow! What a tone change!"
+		"\b[0]I wonder what she's thinking about. I bet she holds good conversation."
+		"\b[0]What a skillful artist, I don't think I could come up with something like this."
+	}
+	
+	if Theme("Nature")
+	{
+		"\b[0]Hm, makes me want to take a nap, in a good way!"
 	}
 }
 
 UnimpressedGuyTalk : nonoverlap
 {
 	"\b[0]Unimpressed"
+	"\b[0]is it really ONLY this big?" 
+	"\b[0]I thought there’d be more to see…"
+	"\b[0]A coffee kiosk would really help this place"
+	"\b[0]Did you even try?"
+	"\b[0]You missed a spot."
+	"\b[0]Why's this even here? Looks like someone's kid drew it."
+	"\b[0]I think I saw this out by the road with a ""free"" sign on it last week."
+	"\b[0]I mean, it exists. I'll give it that."
+	"\b[0]The gallery really wasted their money on this one, if they even had to pay for it."
+	"\b[0]Wow.\w8\w8\w8\w8\w8 There are no words for what a complete and utter failure this is, on every level."
+	"\b[0]The closer you look the worse it gets."
+	"\b[0]That is not a flattering shade of blue."
+	"\b[0]Come on, mix in a little white, this isn't difficult."
+	"\b[0]I saw a kid in art class make one just like this when I was in 3rd grade, except his was better."
+	"\b[0]This piece really makes you wonder why some people even bother."
+	"\b[0]Look, if you're gonna be putting out stuff like this, just... stop trying." 
+	"\b[0]Look at the way the paint is flaking. Didn't even use good paints for this ""masterpiece""."
+
+
+	if Theme("Boat")
+	{
+		"\b[0]Oooh, a boaaat, truly inspired."
+		"\b[0]I hope they fall in."
+		"\b[0]It'd be better if there was a seamonster."
+	}
 	
 	if Theme("Rain")
 	{
 		"\b[0]Unimpressed talk about rain"
+	}
+	
+	if Theme("Spooky")
+	{
+		"\b[0]I've been more scared."
+		"\b[0]Come on, we've all seen that trick before."
+		"\b[0]Please, brushing my teeth would be scarier than this."
+		"\b[0]This does not live up to the chills promised by the title at all."
+		"\b[0]Does this ""artist"" even know what ""spooky"" means?" 
+	}
+	
+	if Theme ("Swing")
+	{
+		"\b[0]Oh, good, a generic pretty landscape"
+		"\b[0]Have they ever heard of anatomy?"
+		"\b[0]I drew better clouds in elementrary school."
+		"\b[0]What was the inspiration for this? Generic-Core?"
 	}
 }
 
 ShyGuyTalk : nonoverlap
 {
 	"\b[0]I wonder if there is a bench somewhere… \w8"
+	"\b[0]I wonder if anyone else has noticed the little crack in the paint just there..."
+	"\b[0]It's pretty nice."
+	"\b[0]I wonder what they were trying to say with this?"
+	"\b[0]This is definitely an improvement from their older works."
+	"\b[0]Something about the lighting is just a little off..."
+	"\b[0]It's a good effort."
+	"\b[0]Hmmm."
+	"\b[0]Oh, there's a little smudge..."
+	"\b[0]I like it."
+	"\b[0]I feel like I'm missing something, here..."
+	"\b[0]Wonder what the context is."
+
 	
 	if Theme("Nature")
 	{
@@ -311,8 +410,60 @@ JacketGuyTalk : nonoverlap
 }
 
 CurlyGuyTalk : nonoverlap
-{
+{	 
+	"\b[0]Hm, it's relaxing in here. I should find somewhere to sit and read."
+	"\b[0]…Do I know that guy? "
+	"\b[0]I wonder what the artist was feeling. I know what I’m feeling… But is that the point?"
+	"\b[0]…I wish I could paint like this. Maybe I should start practicing again."
+	"\b[0]Where is the exit?"
+	"\b[0]Would they sell me the painting? I think it would really tie my study together."
+	"\b[0]I need to speak with the curator before I go. The lighting in here is absurd." 
+	"\b[0]I wonder if Kier would like it here."
+	"\b[0]This is nice. I should come more often."
+	"\b[0]I can not believe they got this piece. I thought the artist was keeping it for their private collection."
 	
+	
+	if Theme("Spooky")
+	{
+		"\b[0]Huh, she looks familiar."
+		"\b[0]I feel like I’m being watched…"
+		"\b[0]I should try and buy this one for my mother. It’s certainly her vibe."
+		"\b[0]I wonder what happens if you challenge her to a staring contest…"
+		"\b[0]I had a professor like this in school, just as charming."
+	}
+	if Theme("Umbrella")
+	{
+		"\b[0]Huh… I feel… Lonely."
+		"\b[0]Was this collection made to be one piece, or…"
+		"\b[0]What’s the significance of the boat?"
+	}
+	if Theme("Rain")
+	{
+		"\b[0]…Do I need a new umbrella?"
+		"\b[0]I need to find a good rain-sounds machine." 
+		"\b[0]I should buy a new book and candle."
+	}
+	if Theme("Nature")
+	{
+		"\b[0]I should get outside more."
+		"\b[0]Should I try hiking?"
+	}
+	if Theme("Boat")
+	{
+		"\b[0]I wonder what the sailor sees…"
+		"\b[0]I feel like a sea monster is going to pop out at any second."
+		"\b[0]Kinda gloomy…"
+		"\b[0]I hope they didn’t fall overboard."
+		"\b[0]I should take Kier to the beach again."
+	}
+	if Theme("Swing")
+	{
+		"\b[0]This is so peaceful."
+		"\b[0]I wonder if I could get a garden to look like that." 
+		"\b[0]Would I look good in a dress?"
+		"\b[0]When was the last time I was on a swing?"
+		"\b[0]What is the swinger thinking about? Maybe nothing, maybe swinging is like meditation."
+	}
 }
 
 PaintingTalk : nonoverlap_pool
