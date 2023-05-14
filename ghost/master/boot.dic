@@ -45,27 +45,25 @@ OnInitialize
 
 OnBoot
 {
-	_temp = SPLIT(SHIORI3FW.UserBirthday,":")
-	_user_birthday = "%(_temp)[1]/%(_temp[2])" //M/D, if you want it D/M you can switch it around
-	_today = "%(_month)/%(_day)" //Again, switch this around if using D/M
+	"\0\s[-1]\p[1]\![set,alpha,0]\s[1000]\_w[100]\![get,property,OnFinishBoot,currentghost.scope(1).rect]"
+}
+
+//Boot dialogue goes in here!!!!!
+OnFinishBoot
+{
+	_char_left = TOINT(reference0[0])
+	_char_right = TOINT(reference0[2])
+	GuyWidth = TOINT(_char_right - _char_left)
+	if GuyWidth == ""; GuyWidth = 240 //default
 	
-	
-	"\p[1]\![set,alpha,0]\s[1000]\![get,property,OnGetWidth,currentghost.scope(1).rect]\s[-1]\![set,alpha,100]"
+	"\p[1]\s[-1]\![set,alpha,100]\0"
 	--
 	Refresh
 	--
-	if _today == _user_birthday
+	if DoFirstbootAgain == 1; "\![raise,OnFirstBoot]"
+	else
 	{
-		"\0%(Refresh)It is %(username)'s birthday today.\w8 Happy birthday, %(username).\w8 Developer,\w4 you can add an interesting message here.\w8 It can be as long as you like.\w8 Or, you can remove it entirely."
-	}
-	elseif _today == "1/1" //You can add whatever cool dates you want with more elseifs here
-	{
-		"\0%(Refresh)It's new year's day.\w8 Happy %(year),\w4 %(username)."
-	}
-	else //Normal boot
-	{
-		"\0%(Refresh)Hello %(username).\w8 Good to see you."
-		"\0%(Refresh)Hello.\w8 Ready to make something cool?"
+		"\0\b[0]Normal boot yay - GuyWidth %(GuyWidth)"
 	}
 }
 
@@ -75,4 +73,9 @@ OnClose
 	"\0%(Refresh)Goodbye."
 	--
 	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
+}
+
+OnShellScaling
+{
+	"\p[1]\![set,alpha,0]\s[1000]\![get,property,OnGetWidth,currentghost.scope(1).rect]\s[-1]\![set,alpha,100]"
 }

@@ -95,6 +95,11 @@ OnLastTalk
 OnToggleGallery
 {
 	GalleryOpen = reference0
+	if !GalleryOpen
+	{
+		LilGuys = IARRAY
+		LilGuys ,= "painting"
+	}
 	
 	Refresh
 }

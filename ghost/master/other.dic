@@ -113,12 +113,12 @@ Refresh : all
 		if GalleryOpen
 		{
 			_guy = LilGuys[_i]
-			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])%(GuyColor)0]" //TODO add color option later
-			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
+			if !(_guy == "" || _guy == "blank"); "\p[%(_i)]\s[1%(_guy[1,'|'])%(GuyColor)0]\![set,alpha,100]" //TODO add color option later
+			elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]\![set,alpha,100]"
 		}
-		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
+		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]\![set,alpha,100]"
 	}
-	"\0\s[%(PaintingType)00]" //TODO painting here
+	"\0\s[%(PaintingType)00]\![set,alpha,100]" //TODO painting here
 }
 
 BalloonIsInTheWay
