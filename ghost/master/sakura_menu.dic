@@ -147,6 +147,7 @@ OnSettingsMenu : all
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Change guy scaling,OnGuyScaleMenu]\n"
 	"\![*]\q[Change guy limit,OnGuyCapMenu]\n\n"
+	"\![*]\q[Replay first boot test,OnFirstBoot.Start]\n\n"
 	
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
 }

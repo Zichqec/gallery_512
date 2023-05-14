@@ -16,11 +16,10 @@ OnFirstBoot : all
 	PaintingType = 1
 	DoFirstbootAgain = 0
 	
-	"\b[0]\t\*Ah, %(username), just in time. Are you ready for another busy %(timeslot)? Today is the first showing of the new exhibition. I'll have you know, I've been hard at work putting it together.\_q"
-	"\n\n\_q\![*]\__q[OnFirstBoot.NewExhibition]New exhibition?\__q"
-	"\n\n\_q\![*]\__q[OnFirstBoot.LookingForwardToIt]I'm looking forward to it!\__q"
-	"\n\n\_q\![*]\__q[OnFirstBoot.LetMePutMyStuffDown]Please,\_w[0] let me put my stuff down first...\__q"
+	OnFirstBoot.Start
 }
+
+
 
 OnInitialize
 {
@@ -66,7 +65,7 @@ OnFinishBoot
 	--
 	Refresh
 	--
-	if DoFirstbootAgain == 1; "\![raise,OnFirstBoot]"
+	if DoFirstbootAgain == 1; "\![raise,OnFirstBoot.Start]"
 	else
 	{
 		"\0\b[0]Normal boot yay - GuyWidth %(GuyWidth)"
@@ -84,6 +83,14 @@ OnClose
 OnShellScaling
 {
 	"\p[1]\![set,alpha,0]\s[1000]\![get,property,OnGetWidth,currentghost.scope(1).rect]\s[-1]\![set,alpha,100]"
+}
+
+OnFirstBoot.Start : all
+{
+	"\b[2]\s[100]\t\*Ah, %(username), just in time. Are you ready for another busy %(timeslot)? Today is the first showing of the new exhibition. I'll have you know, I've been hard at work putting it together.\_q"
+	"\n\n\_q\![*]\__q[OnFirstBoot.NewExhibition]New exhibition?\__q"
+	"\n\n\_q\![*]\__q[OnFirstBoot.LookingForwardToIt]I'm looking forward to it!\__q"
+	"\n\n\_q\![*]\__q[OnFirstBoot.LetMePutMyStuffDown]Please,\_w[0] let me put my stuff down first...\__q"
 }
 
 OnFirstBoot.NewExhibition : all
