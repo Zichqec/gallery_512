@@ -141,7 +141,7 @@ OnChangePaintingType
 
 OnSettingsMenu : all
 {
-	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
+	"\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\![close,inputbox,OnChangeGuyCap]\_q"
 	"\f[align,center]— Settings —\n\f[align,left]"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
@@ -201,6 +201,32 @@ OnChangeGuyScale
 	OnGuyScaleMenu
 }
 
+OnGuyCapMenu : all
+{
+	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
+	"Current cap: %(GuyCap)\n\n"
+	"\![open,sliderinput,OnChangeGuyCap,-1,%(GuyCap),5,100]"
+	"\n"
+	"\![*]\q[Back,OnSettingsMenu]  \![*]\q[Nevermind,OnCancelGuyCapChange]\![unlock,balloonrepaint]"
+	
+	// "\![*]\q[10 guys,OnGuyCapChange,30]\n"
+	// "\![*]\q[1 minute,OnGuyCapChange,60]\n"
+	// "\![*]\q[3 minutes,OnGuyCapChange,180]\n"
+	// "\![*]\q[5 minutes,OnGuyCapChange,300]\n"
+	// "\![*]\q[10 minutes,OnGuyCapChange,600]\n"
+}
+
+OnChangeGuyCap
+{
+	GuyCap = TOINT(reference0)
+	OnGuyCapMenu
+}
+
+OnCancelGuyCapChange
+{
+	"\![close,inputbox,OnChangeGuyCap]"
+}
+
 
 
 OnAddLilGuy : all
@@ -247,7 +273,7 @@ OnAddLilGuy : all
 	WalkingCharacter = (_num,_newguy[1,'|'])
 	_left_edge = TOINT(WalkBorder[0][0])
 	//TODO need color option here later
-	"\p[%(_num)]\![set,alpha,0]\s[1%(_newguy[1,'|'])%(GuyColor)1]"
+	"\p[%(_num)]\![set,alpha,0]\![set,scaling,%(GuyScale)]\s[1%(_newguy[1,'|'])%(GuyColor)1]"
 	
 	"\![set,alignmenttodesktop,free]" //+ "free\n\_w[1000]"
 	"\![move,--X=%(_left_edge),--Y=%(WalkBorder[0][2]),--base=primaryscreen]" //+ "move to left edge\n\_w[1000]"
