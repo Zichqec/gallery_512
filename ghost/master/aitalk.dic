@@ -162,17 +162,16 @@ PaintingInfo : array
 	//Name,theme,theme,theme...
 	
 	//Landscape
-	"Boat,Rain,Nature"
+	"Boat,Rain,Nature,Person,Ocean"
 	
 	//Portrait
-	"Eyes,Spooky"
+	"Eyes,Spooky,Person"
 	
 	//Offset
-	"Swing,Nature,Swinging,Idk man"
+	"Swing,Nature,Foliage,Person"
 	
 	//Cluster
-	"Cluster,Rain"
-	
+	"Rain,Rain"
 }
 
 /*
@@ -201,14 +200,19 @@ For italic and bold:
 
 PretentiousGuyTalk : nonoverlap
 {
-	"\b[0]Pretentious"
-	"\b[0]More pretentious"
-	"\b[0]Even more pretentious"
-	"\b[0]Excessively much pretentious"
+	"\b[0]Even the lighting in here is a metaphor. \w8" 
+	"\b[0]The colors in the piece represent %(colorrep). \w8"
 	
 	if Theme("Rain")
 	{
-		"\b[0]Pretentious talk about rain"
+		"\b[0]It's like the artist made this for me. The rain. The clouds. \w8"
+		"\b[0]The rain reflects the artist's soul. \w8"
+		"\b[0]The clouds are a reflection of the inner workings of the artist's mind. Heavy. Large. Shapely. \w8"
+	}
+	
+	if Theme("Spooky")
+	{
+		"The mood of the piece really gets under one's skin. \w8"
 	}
 }
 
@@ -244,21 +248,30 @@ UnimpressedGuyTalk : nonoverlap
 
 ShyGuyTalk : nonoverlap
 {
-	"\b[0]Shy"
+	"\b[0]I wonder if there is a bench somewhere… \w8"
 	
-	if Theme("Rain")
+	if Theme("Nature")
 	{
-		"\b[0]Shy talk about rain"
+		"\b[0]It looks peaceful there. \w8"
+	}
+	
+	if Theme("Spooky")
+	{
+		"\b[0]… No. \w8"
 	}
 }
 
 GenericGuyTalk : nonoverlap
 {
-	"\b[0]Generic"
+	"\b[0]Where is the bathroom? \w8"
+	"\b[0]I'm getting tired. \w8"
+	"\b[0]I need a snack… \w8"
+	"\b[0]Why is it so %(itisso) in here? \w8"
+	"\b[0]What are all these plaques for, anyways? \w8"
 	
 	if Theme("Rain")
 	{
-		"\b[0]Generic talk about rain"
+		
 	}
 }
 
