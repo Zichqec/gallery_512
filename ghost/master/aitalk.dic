@@ -503,7 +503,44 @@ GenericGuyTalk : nonoverlap
 
 SodaGuyTalk : nonoverlap
 {
-	
+	"\b[0]I wonder if this place does the weird cheese platters?"
+	"\b[0]I expected it to smell more artsy in here..."
+	"\b[0]Why is the ceiling so high?"
+	"\b[0]Glad I didn't dress up for this."
+	"\b[0]Oh, sorry, did I bump into you?"
+	"\b[0]*eating*"
+	"\b[0]*drink fizzing*"
+	"\b[0]I feel like there aren't enough college kids hanging around..."
+	"\b[0]... I should get a new set of colored pencils."
+	"\b[0]Should've worn my sneakers."
+
+	if CurrentPainting == "Mr. Lifield's Widow"
+	{
+		"\b[0]Oh. Cool. Weird, but cool."
+		"\b[0]I wouldn't want that one in my bedroom."
+		"\b[0]Widow... By choice, it looks like."
+	}
+
+	if CurrentPainting == "Cosmetic Sunshine"
+	{
+		"\b[0]Huh. Party decor."
+		"\b[0]I want the boat on a shirt."
+		"\b[0]Yeah it's about isolation or whatever, but it's sort of comforting, too."
+	}
+
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
+	{
+		"\b[0]... Pirates..."
+		"\b[0]I hope no one here gets motion sickness..."
+		"\b[0]Kinda wish it were me, though."
+	}
+
+	if CurrentPainting == "Spring Flight in the Garden"
+	{
+		"\b[0]What is that swing attached to?"
+		"\b[0]It kinda makes me dizzy."
+		"\b[0]Cute hat."
+	}
 }
 
 JacketGuyTalk : nonoverlap
