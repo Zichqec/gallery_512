@@ -14,21 +14,50 @@ OnAiTalk
 
 OnSecondChange
 {
-	if GalleryOpen && GuyCount > 0
+	if GalleryOpen
 	{
-		_rand = RAND(100)
+		_rand = RAND(100) + 1
 		
-		if _rand < (ARRAYSIZE(LilGuys) - 1) * 2
-		{
-			if RAND(2)
-			{
-				OnGuyMove
-			}
-			else
-			{
-				OnGuyTalk
-			}
-		}
+		//look lemme tell you a secret, im actually rly bad at math. i feel like this is a bad way to do it but i dont have time to figure out a better fancy way for jam so THIS WHAT WE GOIN WITH GUYS dont @ me
+		_lowcount = GuyCap / 5 //20%
+		_highcount = _lowcount * 4 //80%
+		_lowcount = _lowcount * 2
+		
+		_arrive_level = 10
+		if GuyCount <= _lowcount; _arrive_level += 20
+		if GuyCount == 0; _arrive_level = 100
+		
+		_leave_level = 10
+		if GuyCount >= _highcount; _leave_level += 20
+		if GuyCount >= GuyCap; _leave_level += 20
+		
+		LOGGING("====================================================================")
+		LOGGING("_arrive_level: %(_arrive_level)")
+		LOGGING("_leave_level: %(_leave_level)")
+		LOGGING("_lowcount: %(_lowcount)")
+		LOGGING("_highcount: %(_highcount)")
+		LOGGING("_rand: %(_rand)")
+		LOGGING("GuyCount: %(GuyCount)")
+		LOGGING
+		LOGGING
+		
+		if _rand <= _arrive_level && GuyCount < GuyCap; OnGuyArrive //0-10 + bonus
+		elseif _rand <= _leave_level + 10; OnGuyLeave //11-20 + bonus
+		elseif _rand <= 60; OnGuyMove //21-60
+		else; OnGuyTalk //61-100
+		
+		//if _rand 
+		// if _rand < GuyCount * 2
+		// {
+			// if RAND(2)
+			// {
+				// OnGuyMove
+			// }
+			// else
+			// {
+				// OnGuyTalk
+			// }
+		// }
 	}
 }
 
@@ -162,16 +191,16 @@ PaintingInfo : array
 	//Name,theme,theme,theme...
 	
 	//Landscape
-	"Boat,Rain,Nature,Person,Ocean,Nature"
+	"Expedition of the Monarch's Triumph,Rain,Nature,Person,Ocean,Nature"
 	
 	//Portrait
-	"Eyes,Spooky,Person"
+	"Mr. Lifield's Widow,Spooky,Person"
 	
 	//Offset
-	"Swing,Nature,Foliage,Person"
+	"Spring Flight in the Garden,Nature,Foliage,Person"
 	
 	//Cluster
-	"Rain,Rain,Umbrella,Nature"
+	"Cosmetic Sunshine,Rain,Umbrella,Nature"
 }
 
 /*
@@ -207,7 +236,7 @@ PretentiousGuyTalk : nonoverlap
 	"\b[0]My life is enriched just by looking at this piece. It is cleansing my soul as I speak."
 	"\b[0]You should all be grateful you're allowed in here. Some of you are distinctly not worthy to be in the presence of such masterpieces."
 	"\b[0]Ahh...\w8\w8\w8 Art by a true artist. Refreshing."
-	"\b[0]his gallery should be ashamed of itself; this piece alone is worth more than they could ever pay. Cheapskates!"
+	"\b[0]This gallery should be ashamed of itself; this piece alone is worth more than they could ever pay. Cheapskates!"
 	"\b[0]The spot on the rug just here - a wonderful touch! It adds such deep meaning, like the painting itself stretches beyond the canvas and into the real world around us."
 
 	
@@ -308,8 +337,8 @@ SweetGuyTalk : nonoverlap
 FriendlyGuyTalk : nonoverlap
 {
 	"\b[0]Friendly"
-	"\b[0]I should bring my friends here.”
-	"\b[0]I wonder if anyone else is having fun.”
+	"\b[0]I should bring my friends here."
+	"\b[0]I wonder if anyone else is having fun."
 	"\b[0]It's got so much energy! Like, it really makes you go ""wow""!"
 	"\b[0]Ooh, this one is really fun!"
 	"\b[0]This one suits me, don't you think?"
@@ -359,7 +388,7 @@ UnimpressedGuyTalk : nonoverlap
 {
 	"\b[0]Unimpressed"
 	"\b[0]is it really ONLY this big?" 
-	"\b[0]I thought there’d be more to see…"
+	"\b[0]I thought there’d be more to see..."
 	"\b[0]A coffee kiosk would really help this place"
 	"\b[0]Did you even try?"
 	"\b[0]You missed a spot."
@@ -411,7 +440,7 @@ UnimpressedGuyTalk : nonoverlap
 
 ShyGuyTalk : nonoverlap
 {
-	"\b[0]I wonder if there is a bench somewhere… \w8"
+	"\b[0]I wonder if there is a bench somewhere... \w8"
 	"\b[0]I wonder if anyone else has noticed the little crack in the paint just there..."
 	"\b[0]It's pretty nice."
 	"\b[0]I wonder what they were trying to say with this?"
@@ -432,7 +461,7 @@ ShyGuyTalk : nonoverlap
 	
 	if Theme("Spooky")
 	{
-		"\b[0]… No. \w8"
+		"\b[0]... No. \w8"
 	}
 	
 	if Theme("Swing")
@@ -463,7 +492,7 @@ GenericGuyTalk : nonoverlap
 {
 	"\b[0]Where is the bathroom?"
 	"\b[0]I'm getting tired."
-	"\b[0]I need a snack…"
+	"\b[0]I need a snack..."
 	"\b[0]Why is it so %(itisso) in here?"
 	"\b[0]What are all these plaques for, anyways?"
 	
@@ -486,9 +515,9 @@ JacketGuyTalk : nonoverlap
 CurlyGuyTalk : nonoverlap
 {	 
 	"\b[0]Hm, it's relaxing in here. I should find somewhere to sit and read."
-	"\b[0]…Do I know that guy? "
-	"\b[0]I wonder what the artist was feeling. I know what I’m feeling… But is that the point?"
-	"\b[0]…I wish I could paint like this. Maybe I should start practicing again."
+	"\b[0]... Do I know that guy?"
+	"\b[0]I wonder what the artist was feeling. I know what I’m feeling... But is that the point?"
+	"\b[0]... I wish I could paint like this. Maybe I should start practicing again."
 	"\b[0]Where is the exit?"
 	"\b[0]Would they sell me the painting? I think it would really tie my study together."
 	"\b[0]I need to speak with the curator before I go. The lighting in here is absurd." 
@@ -497,23 +526,23 @@ CurlyGuyTalk : nonoverlap
 	"\b[0]I can not believe they got this piece. I thought the artist was keeping it for their private collection."
 	
 	
-	if Theme("Spooky")
+	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]Huh, she looks familiar."
-		"\b[0]I feel like I’m being watched…"
+		"\b[0]I feel like I’m being watched..."
 		"\b[0]I should try and buy this one for my mother. It’s certainly her vibe."
-		"\b[0]I wonder what happens if you challenge her to a staring contest…"
+		"\b[0]I wonder what happens if you challenge her to a staring contest..."
 		"\b[0]I had a professor like this in school, just as charming."
 	}
-	if Theme("Umbrella")
+	if CurrentPainting == "Cosmetic Sunshine"
 	{
-		"\b[0]Huh… I feel… Lonely."
-		"\b[0]Was this collection made to be one piece, or…"
+		"\b[0]Huh... I feel... Lonely."
+		"\b[0]Was this collection made to be one piece, or..."
 		"\b[0]What’s the significance of the boat?"
 	}
 	if Theme("Rain")
 	{
-		"\b[0]…Do I need a new umbrella?"
+		"\b[0]... Do I need a new umbrella?"
 		"\b[0]I need to find a good rain-sounds machine." 
 		"\b[0]I should buy a new book and candle."
 	}
@@ -522,15 +551,15 @@ CurlyGuyTalk : nonoverlap
 		"\b[0]I should get outside more."
 		"\b[0]Should I try hiking?"
 	}
-	if Theme("Boat")
+	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
-		"\b[0]I wonder what the sailor sees…"
+		"\b[0]I wonder what the sailor sees..."
 		"\b[0]I feel like a sea monster is going to pop out at any second."
-		"\b[0]Kinda gloomy…"
+		"\b[0]Kinda gloomy..."
 		"\b[0]I hope they didn’t fall overboard."
 		"\b[0]I should take Kier to the beach again."
 	}
-	if Theme("Swing")
+	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]This is so peaceful."
 		"\b[0]I wonder if I could get a garden to look like that." 

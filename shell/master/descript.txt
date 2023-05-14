@@ -21,14 +21,14 @@ sakura.seriko.alignmenttodesktop,free
 // kero.bindgroup1503.name,Snack,Hotdog
 // kero.bindgroup1504.name,Snack,Soda can
 
-sakura.bindgroup10000.name,Landscape,Boat
+sakura.bindgroup10000.name,Landscape,Expedition of the Monarch's Triumph
 
-sakura.bindgroup20000.name,Portrait,Eyes
+sakura.bindgroup20000.name,Portrait,Mr. Lifield's Widow
 sakura.bindgroup20000.addid,20001
 
-sakura.bindgroup30000.name,Offset,Swing
+sakura.bindgroup30000.name,Offset,Spring Flight in the Garden
 
-sakura.bindgroup40000.name,Cluster,Rain
+sakura.bindgroup40000.name,Cluster,Cosmetic Sunshine
 sakura.bindgroup40000.addid,40001
 sakura.bindgroup40000.addid,40002
 

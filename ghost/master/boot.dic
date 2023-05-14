@@ -9,6 +9,8 @@ OnFirstBoot
 	GuyColor = 0
 	GuyBalloon = 0 //on/off
 	GuyCap = 10
+	LilGuys = IARRAY
+	LilGuys ,= "painting"
 	SakuraBalloon = 0
 	PaintingType = 1
 	
@@ -36,6 +38,8 @@ OnInitialize
 	{
 		LastTalk = ""
 		GalleryOpen = 0
+		LilGuys = IARRAY
+		LilGuys ,= "painting"
 	}
 }
 
