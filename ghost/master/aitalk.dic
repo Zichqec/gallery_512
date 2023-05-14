@@ -14,14 +14,25 @@ OnAiTalk
 
 OnSecondChange
 {
-	_rand = RAND(100)
-	LOGGING("_rand: %(_rand)")
-	LOGGING("ARRAYSIZE(LilGuys) - 1: %(ARRAYSIZE(LilGuys) - 1)")
-	LOGGING
-	if _rand < (ARRAYSIZE(LilGuys) - 1) * 2
+	if GalleryOpen
 	{
-		if BalloonIsInTheWay; "\C"
-		"\![raise,OnWalkStart,%(RAND(ARRAYSIZE(LilGuys) - 1) + 1)]"
+		_rand = RAND(100)
+		LOGGING("_rand: %(_rand)")
+		LOGGING("ARRAYSIZE(LilGuys) - 1: %(ARRAYSIZE(LilGuys) - 1)")
+		LOGGING
+		if _rand < (ARRAYSIZE(LilGuys) - 1) * 2
+		{
+			if RAND(2)
+			{
+				if BalloonIsInTheWay; "\C"
+				"\![raise,OnWalkStart,%(RAND(ARRAYSIZE(LilGuys) - 1) + 1)]"
+			}
+			else
+			{
+				if BalloonIsInTheWay; "\C"
+				OnAiTalk
+			}
+		}
 	}
 }
 
@@ -35,9 +46,6 @@ LilGuysTalk : all
 	}
 
 	_guy = ANY(_lilguys)
-	LOGGING("====================================================================")
-	LOGGING("_guy: %(_guy)")
-	LOGGING("_lilguys: %(_lilguys)")
 	
 	"\p[%(LSO + 1)]" //TODO ADD BLOON AND SURFACE ALSO
 	_talk = ""
@@ -48,37 +56,107 @@ LilGuysTalk : all
 	elseif _guy == "4"; _talk = ShyGuyTalk
 	
 	if _talk == "" || RAND(100) < 5; _talk = GenericGuyTalk
-	_talk
+	_talk + "\_w[2000]"
 }
+
+
+PaintingInfo : array
+{
+	//Name,theme,theme,theme...
+	
+	//Landscape
+	"Boat,Rain,Nature"
+	
+	//Portrait
+	"Eyes,Spooky"
+	
+	//Offset
+	"Swing,Nature,Swinging,Idk man"
+	
+	//Cluster
+	
+}
+
+/*
+
+QUICK SAKURASCRIPT TAG REFERENCE:
+
+\b[0] - Small balloon
+\b[2] - Big balloon
+↑ Every dialogue MUST start with one of these, *no exceptions.* It has to be the very first thing or the balloons won't do style/shape properly
+
+\n - Linebreak
+\w8 - Pause for 400 ms
+\w4 - Pause for 200 ms
+NOTE: I have code set up to add pauses after common punctuation (if I missed any, tell me and I can add it)
+When you write punctuation, if it is followed by a space, it will add a pause automatically. If you put something else in place of a space, it won't add the pause. So "Test. Test." will have a pause after the first Test, but "Test.\_w[0] Test." will not have any pauses. (That \_w[0] tag adds a pause of 0ms, i'm just using it as a dummy tag to prevent autopause from kicking in)
+
+To add an envelope: %(envelope_name_here)
+So to add the envelope "food", you'd put %(food)
+
+*/
 
 PretentiousGuyTalk : nonoverlap
 {
 	"\b[0]Pretentious"
+	"\b[0]More pretentious"
+	"\b[0]Even more pretentious"
+	"\b[0]Excessively much pretentious"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Pretentious talk about rain"
+	}
 }
 
 SweetGuyTalk : nonoverlap
 {
 	"\b[0]Sweet"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Sweet talk about rain"
+	}
 }
 
 FriendlyGuyTalk : nonoverlap
 {
 	"\b[0]Friendly"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Friendly talk about rain"
+	}
 }
 
 UnimpressedGuyTalk : nonoverlap
 {
 	"\b[0]Unimpressed"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Unimpressed talk about rain"
+	}
 }
 
 ShyGuyTalk : nonoverlap
 {
 	"\b[0]Shy"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Shy talk about rain"
+	}
 }
 
 GenericGuyTalk : nonoverlap
 {
 	"\b[0]Generic"
+	
+	if Theme("Rain")
+	{
+		"\b[0]Generic talk about rain"
+	}
 }
 
 PaintingTalk : nonoverlap_pool
@@ -87,7 +165,7 @@ PaintingTalk : nonoverlap_pool
 	"something contemplative and sad idk"
 	
 	//Rain theme dialogue
-	if ASEARCH("Rain",CurrentThemes) != -1
+	if Theme("Rain")
 	{
 		
 	}

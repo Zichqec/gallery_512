@@ -49,6 +49,16 @@ OnTranslate
 		_talk = REPLACE(_talk,"__TALK_TAG_%(_i)__",_tag_replace_array[_i])
 	}
 	
+	//Autopause - yes i typed this in manually and i didn't even look at my existing autopause function
+	if "\![no-pause]" !_in_ _talk
+	{
+		_talk = REPLACE(_talk,". ",".\w8 ")
+		_talk = REPLACE(_talk,", ",",\w4 ")
+		_talk = REPLACE(_talk,"- ","-\w8 ")
+		_talk = REPLACE(_talk,"; ",";\w8 ")
+		_talk = REPLACE(_talk,": ",":\w8 ")
+	}
+	
 	TOSTR(_talk)
 }
 
@@ -355,4 +365,59 @@ ABS
 {
 	if _argv[0] < 0; _argv[0] *= -1
 	_argv[0]
+}
+
+Theme
+{
+	_info = SPLIT(CurrentPaintingInfo,",")
+	_info[0] = IARRAY
+	ASEARCH(_argv[0],_info) != -1
+}
+
+CurrentPaintingInfo
+{
+	foreach PaintingInfo; _info
+	{
+		if _info[0] == CurrentPainting; {_info; return}
+	}
+	"Empty"
+}
+
+//[character ID, category name, part name, option, on-1/off-0, thumbnail path]
+OnNotifyDressupInfo
+{
+	LOGGING("====================================================================")
+	LOGGING("DRESSUP INFO")
+	LOGGING; LOGGING
+	Painting.Landscape = "Empty"
+	Painting.Portrait = "Empty"
+	Painting.Offset = "Empty"
+	Painting.Cluster = "Empty"
+	
+	foreach reference; _ref
+	{
+		LOGGING("_ref: %(_ref)")
+		LOGGING("_ref[1,C_BYTE1]: %(_ref[1,C_BYTE1])")
+		LOGGING("_ref[2,C_BYTE1]: %(_ref[2,C_BYTE1])")
+		LOGGING("_ref[4,C_BYTE1]: %(_ref[4,C_BYTE1])")
+		if _ref[4,C_BYTE1] == "1"
+		{
+			if _ref[1,C_BYTE1] == "Landscape"; Painting.Landscape = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Portrait"; Painting.Portrait = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Offset"; Painting.Offset = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Cluster"; Painting.Cluster = _ref[2,C_BYTE1]
+		}
+		LOGGING
+	}
+}
+
+CurrentPainting
+{
+	switch PaintingType - 1
+	{
+		Painting.Landscape
+		Painting.Portrait
+		Painting.Offset
+		Painting.Cluster
+	}
 }
