@@ -129,6 +129,19 @@ OnCustomize : all
 	"\q[Light,OnChangeGuyColor,5]"
 	"\n\n\f[align,left]"
 	
+	"Painting type:\n"
+	_types = ("Landscape","Portrait","Offset","Cluster")
+	_i = 1
+	foreach _types; _type
+	{
+		if _i == PaintingType; "\![*]"
+		"\__q[OnChangePaintingType,%(_i)]%(_type)\__q"
+		if _i % 2 == 1; "\n \n[-100]\f[align,right]"
+		else; "\n\f[align,left]"
+		_i++
+	}
+	"\n\n\f[align,left]"
+	
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
 	"\![unlock,balloonrepaint]"
 	
@@ -161,6 +174,14 @@ OnChangeGuyBalloon
 OnChangeGuyColor
 {
 	GuyColor = reference0
+	Refresh
+	--
+	OnCustomize
+}
+
+OnChangePaintingType
+{
+	PaintingType = reference0
 	Refresh
 	--
 	OnCustomize

@@ -9,3 +9,34 @@ seriko.use_self_alpha,1
 
 seriko.alignmenttodesktop,bottom
 sakura.seriko.alignmenttodesktop,free
+
+// sakura.bindgroup100.default,1
+// sakura.bindoption100.group,Style,mustselect
+
+// sakura.bindgroup100.name,Style,Landscape
+// sakura.bindgroup200.name,Style,Portrait
+// sakura.bindgroup300.name,Style,Offset
+// sakura.bindgroup400.name,Style,Cluster
+
+sakura.bindgroup10000.name,Landscape,Boat
+
+sakura.bindgroup20000.name,Portrait,Eyes
+sakura.bindgroup20000.addid,20001
+
+sakura.bindgroup30000.name,Offset,Swing
+
+
+sakura.bindgroup101.default,1
+sakura.bindgroup201.default,1
+sakura.bindgroup301.default,1
+sakura.bindgroup401.default,1
+
+sakura.bindoption101.group,Frame - Landscape,mustselect
+sakura.bindoption201.group,Frame - Portrait,mustselect
+sakura.bindoption301.group,Frame - Offset,mustselect
+sakura.bindoption401.group,Frame - Cluster,mustselect
+
+sakura.bindgroup101.name,Frame - Landscape,Frameless
+sakura.bindgroup201.name,Frame - Portrait,Frameless
+sakura.bindgroup301.name,Frame - Offset,Frameless
+sakura.bindgroup401.name,Frame - Cluster,Frameless

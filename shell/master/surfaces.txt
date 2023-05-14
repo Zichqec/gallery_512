@@ -11,16 +11,81 @@ descript
 }
 
 //—————————————————————————————— Sakura surfaces ——————————————————————————————
-
-surface0
+surface100
 {
-	collision,0,0,135,65,head
+	//Frameless
+	animation101.interval,bind
+	animation101.pattern0,overlay,101,0,0,0
 	
-	//Example code for blink animation - uncomment if you want it
-	//animation0.interval,random,4
-	//animation0.pattern1,overlay,101,0,0,0
-	//animation0.pattern2,overlay,102,100,0,0
-	//animation0.pattern3,overlay,-1,50,0,0
+	//Boat
+	animation10000.interval,bind + always
+	animation10000.pattern0,overlay,10000,0,0,0
+	animation10000.pattern1,overlay,10001,100,0,0
+	animation10000.pattern2,overlay,10002,100,0,0
+	animation10000.pattern3,overlay,10003,100,0,0
+	animation10000.pattern4,overlay,10004,100,0,0
+	animation10000.pattern5,overlay,10005,100,0,0
+	animation10000.pattern6,overlay,10006,100,0,0
+	animation10000.pattern7,overlay,10007,100,0,0
+	animation10000.pattern8,overlay,10008,100,0,0
+	animation10000.pattern9,overlay,10007,100,0,0
+	animation10000.pattern10,overlay,10006,100,0,0
+	animation10000.pattern11,overlay,10005,100,0,0
+	animation10000.pattern12,overlay,10004,100,0,0
+	animation10000.pattern13,overlay,10003,100,0,0
+	animation10000.pattern14,overlay,10002,100,0,0
+	animation10000.pattern15,overlay,10001,100,0,0
+}
+
+surface200
+{
+	//Frameless
+	animation201.interval,bind
+	animation201.pattern0,overlay,201,0,0,0
+	
+	animation20000.interval,bind
+	animation20000.pattern0,overlay,20000,0,0,0
+	
+	animation20001.interval,bind + random,20
+	animation20001.pattern0,overlay,20001,0,0,0
+	animation20001.pattern1,overlay,20002,100,0,0
+	animation20001.pattern2,overlay,20003,100,0,0
+	animation20001.pattern3,overlay,20004,100,0,0
+	animation20001.pattern4,overlay,20005,100,0,0
+	animation20001.pattern5,overlay,20004,200-500,0,0
+	animation20001.pattern6,overlay,20003,100,0,0
+	animation20001.pattern7,overlay,20002,100,0,0
+	animation20001.pattern8,overlay,20001,100,0,0
+	animation20001.pattern9,overlay,-1,100,0,0
+}
+
+surface300
+{
+	//Frameless
+	animation301.interval,bind
+	animation301.pattern0,overlay,301,0,0,0
+	
+	animation30000.interval,bind + always
+	animation30000.pattern0,overlay,30000,0,0,0
+	animation30000.pattern1,overlay,30001,250,0,0
+	animation30000.pattern2,overlay,30002,200,0,0
+	animation30000.pattern3,overlay,30003,100,0,0
+	animation30000.pattern4,overlay,30004,50,0,0
+	animation30000.pattern5,overlay,30005,100,0,0
+	animation30000.pattern6,overlay,30006,200,0,0
+	animation30000.pattern7,overlay,30005,250,0,0
+	animation30000.pattern8,overlay,30004,200,0,0
+	animation30000.pattern9,overlay,30003,100,0,0
+	animation30000.pattern10,overlay,30002,50,0,0
+	animation30000.pattern11,overlay,30001,100,0,0
+	animation30000.pattern12,overlay,30000,200,0,0
+}
+
+surface400
+{
+	//Frameless
+	animation401.interval,bind
+	animation401.pattern0,overlay,401,0,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————
@@ -44,6 +109,7 @@ surface1001
 	animation0.pattern2,replace,1001,50,0,0
 	animation0.pattern3,replace,1000,50,0,0
 	animation0.pattern4,replace,1000,50,0,0
+}
 
 surface1100
 {

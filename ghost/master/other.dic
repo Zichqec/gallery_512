@@ -102,7 +102,7 @@ Refresh : all
 		}
 		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 	}
-	"\0\s[100]" //TODO painting here
+	"\0\s[%(PaintingType)00]" //TODO painting here
 }
 
 BalloonIsInTheWay
