@@ -10,6 +10,7 @@ craftmanurl,https://github.com/Zichqec/gallery_512
 
 sakura.name,Painting
 kero.name,Lil guy
+balloon,Open Exhibition
 
 icon,guycon.ico
 

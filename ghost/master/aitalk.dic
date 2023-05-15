@@ -858,7 +858,7 @@ PaintingTalk : nonoverlap_pool
 	"\0\b[0]Would I look better if there was %(environment)?"
 	"\0\b[0]I once spoke with a statue. End of story."
 	"\0\b[0]You know what I do miss? Reading."
-	"\0\b[0]Tell me a story. About an artist... \w8\w8 Please."
+	"\0\b[0]Tell me a story. About an artist... \w8\w8Please."
 	
 	//Rain theme dialogue
 	if Theme("Rain")
