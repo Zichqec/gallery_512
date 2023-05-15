@@ -11,6 +11,6 @@ craftmanurl,https://github.com/Zichqec/gallery_512
 sakura.name,Painting
 kero.name,Lil guy
 
-icon,icon.ico
+icon,guycon.ico
 
 sstp.allowunspecifiedsend,0
