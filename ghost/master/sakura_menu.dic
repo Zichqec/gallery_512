@@ -313,6 +313,7 @@ OnAddLilGuy2 : all
 	ERASEVAR("WalkingCharacter")
 	_left_edge = TOINT(WalkBorder[0][0])
 	_right_edge = TOINT(WalkBorder[0][1])
+	_width = ABS(ABS(WalkBorder[1]) - ABS(WalkBorder[0]))
 	_rand_spot = RAND(DisplayWidth - GuyWidth)
 	
 	_time = ((GuyWidth + _rand_spot) * 2) * GuySpeed
@@ -387,17 +388,26 @@ OkGuysPresent
 
 SodaGuyPresent
 {
-	ASEARCH("100",OkGuysPresent) != -1
+	_guys = ARRAYSIZE(ASEARCHEX("100",OkGuysPresent))
+	if _guys == 1; 1
+	elseif _guys > 1; 2
+	else; 0
 }
 
 JacketGuyPresent
 {
-	ASEARCH("101",OkGuysPresent) != -1
+	_guys = ARRAYSIZE(ASEARCHEX("101",OkGuysPresent))
+	if _guys == 1; 1
+	elseif _guys > 1; 2
+	else; 0
 }
 
 CurlyGuyPresent
 {
-	ASEARCH("102",OkGuysPresent) != -1
+	_guys = ARRAYSIZE(ASEARCHEX("102",OkGuysPresent))
+	if _guys == 1; 1
+	elseif _guys > 1; 2
+	else; 0
 }
 
 
