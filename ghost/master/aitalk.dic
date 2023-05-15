@@ -258,12 +258,15 @@ PretentiousGuyTalk : nonoverlap
 		"\b[0]The mood of the piece really gets under one's skin."
 		"\b[0]I suspect the artist had deep, unresolved trauma."
 		"\b[0]Only a true master could imagine something like this."
+		"\b[0]A lonely, lonely, person must have created this."
 	}
 	
 	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]Ahh...\w8\w8\w8 I can smell the true skill from here."
 		"\b[0]It's clear that the artist has a deep connection to the subject."
+		"\b[0]The sunlight. The flowers. We're all growing."
+		"\b[0]Their use of classical techniques really enhances this."
 	}
 	
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
@@ -305,8 +308,10 @@ SweetGuyTalk : nonoverlap
 	
 	if Theme("Nature")
 	{
-			"\b[0]It really makes me feel like I'm outside."
-			"\b[0]I wonder if they painted this outdoors."
+		"\b[0]It really makes me feel like I'm outside."
+		"\b[0]I wonder if they painted this outdoors."
+		"\b[0]Would dirt work ON a painting?"
+		"\b[0]Do different altitudes change the way paint dries?"
 	}
 	
 	if CurrentPainting == "Cosmetic Sunshine"
@@ -314,6 +319,7 @@ SweetGuyTalk : nonoverlap
 		"\b[0]The use of the bright and subdued colors really adds a sence of peace."
 		"\b[0]The little boat is so charming!"
 		"\b[0]Next time I need to bring my sketchbook, I'll have to remember how the rain brushstrokes look."
+		"\b[0]Oh, using that color for the rain is so interesting."
 	}
 	
 	if CurrentPainting == "Spring Flight in the Garden"
@@ -321,6 +327,7 @@ SweetGuyTalk : nonoverlap
 		"\b[0]What a happy scene."
 		"\b[0]The opening in the greenery really adds scale and depth."
 		"\b[0]What a lovely dress!"
+		"\b[0]I wonder what the artist was feeling when they made this. It makes me happy."
 	}
 	
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
@@ -328,6 +335,7 @@ SweetGuyTalk : nonoverlap
 		"\b[0]The use of colors to create the sense of depth in the ocean is lovely."
 		"\b[0]I wonder how they did the woodgrain on the ship..."
 		"\b[0]This almost makes me want to go sailing."
+		"\b[0]The way they captured movement is very interesting."
 	}
 	
 	if CurrentPainting == "Mr. Lifield's Widow"
@@ -341,7 +349,7 @@ SweetGuyTalk : nonoverlap
 	if CurrentPainting == "Empty"
 	{
 		"\b[0]Oh... I must be early..."
-		"\b[0]Uh... Oh no."
+		"\b[0]Uh, I guess I'll see if they need any help."
 	}
 }
 
@@ -357,6 +365,7 @@ FriendlyGuyTalk : nonoverlap
 	"\b[0]Oh, I know who would like this! I'll have to bring %(ANY('him,her,them')) sometime!"
 	"\b[0]This might be my favorite painting ever!"
 	"\b[0]What an incredible artist! So talented!"
+	"\b[0]I need a print of this for my wall!"
 
 	
 	if Theme("Nature")
@@ -436,6 +445,8 @@ UnimpressedGuyTalk : nonoverlap
 	{
 		"\b[0]I already need to change my socks."
 		"\b[0]More unimpressive outdoors art."
+		"\b[0]Why are there so many pieces that feature rain?"
+		"\b[0]Welcome to the Rain Zone, am I right?"
 	}
 	
 	if Theme("Nature")
@@ -516,6 +527,8 @@ ShyGuyTalk : nonoverlap
 		"\b[0]Do gardens like that actually exist?"
 		"\b[0]I bet it's so quiet there..."
 		"\b[0]I would never have the patience to tend a garden like that."
+		"\b[0]This reminds me of a book."
+		
 	}
 	
 	if CurrentPainting == "Cosmetic Sunshine"
@@ -524,6 +537,8 @@ ShyGuyTalk : nonoverlap
 		"\b[0]I feel calm looking at this."
 		"\b[0]The boat almost looks like an envelope..."
 		"\b[0]I should walk more."
+		"\b[0]I wonder what songs the artist was listening to."
+		"\b[0]Romantacizing the mundane... I like it."
 	}
 	
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
@@ -532,6 +547,7 @@ ShyGuyTalk : nonoverlap
 		"\b[0]There's so much ocean in the ocean."
 		"\b[0]I don't think I'm cut out to sail."
 		"\b[0]I'm glad there isn't a seamonster in this..."
+		"\b[0]Oh, I think I get sea sick, actually."
 	}
 	
 	if CurrentPainting == "Empty"
@@ -548,10 +564,40 @@ GenericGuyTalk : nonoverlap
 	"\b[0]I need a snack..."
 	"\b[0]Why is it so %(itisso) in here?"
 	"\b[0]What are all these plaques for, anyways?"
+	"\b[0]What does any of this mean?"
+	"\b[0]Where can I buy some paint?"
+	"\b[0]This is fun."
+	"\b[0]Huh. This one's cute."
 	
 	if Theme("Rain")
 	{
 		"\b[0]Is there a leak in the roof?"
+		"\b[0]Are they allowed to have that much water in here?"
+	}
+	
+	if Theme("Nature")
+	{
+		"\b[0]Ah, fresh air."
+		"\b[0]The great outdoors, now indoors."
+		"\b[0]One time, I found this beetle, and I fed it some leaves and - "
+	}
+	
+	if Theme("Spooky")
+	{
+		"\b[0]AH!"
+		"\b[0]Gallery's haunted."
+		"\b[0]Aaawww!"
+		"\b[0]Wait... What month is it?"
+		"\b[0]I gotta take a picture of this."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]... Okay."
+		"\b[0]Why are they hanging blank canvases on the wall?"
+		"\b[0]Is this a statement?"
+		"\b[0]I get it, it's like the duct tape banana. Smart."
+		"\b[0]I waited in line for this?"
 	}
 }
 
