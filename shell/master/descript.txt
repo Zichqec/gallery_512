@@ -2,8 +2,8 @@ charset,UTF-8
 type,shell
 
 name,Default Shell
-craftman,
-craftmanurl,
+craftman,Galla & Kat & Zichqec
+craftmanurl,https://github.com/Zichqec/gallery_512
 
 seriko.use_self_alpha,1
 

@@ -18,23 +18,27 @@ OnSakuraMenu : all
 	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
 	"\n\n"
 	
-	if GalleryOpen; "\![*]\q[Close the gallery,OnToggleGallery,0]"
-	else; "\![*]\q[Open the gallery,OnToggleGallery,1]"
-	"\n\n"
+	switch GalleryOpen
+	{
+		"\![*]\q[Open the gallery,OnToggleGallery,1]"
+		"\![*]\q[Close the gallery,OnToggleGallery,0]"
+	}
+	"\n"
 	
-	if SHIORI3FW.DebugMode == 1; "\![*]\q[Debug,OnDebug]\n"
 	
+	
+	"\![*]\q[Ready the gallery,OnChangePaintingMenu]\n\n"
 	"\![*]\q[Customize,OnCustomize]\n"
-	
 	//"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
-	"\![*]\q[Settings,OnSettingsMenu]\n\n"
-	
+	"\![*]\q[Settings,OnSettingsMenu]\n"
+	if SHIORI3FW.DebugMode == 1; "\![*]\q[Debug,OnDebug]\n"
+	"\n"
 	switch GalleryOpen
 	{
 		"\![*]\q[Goodbye!,OnGoodbye]"
 		"\f[color,disable]\![*]Goodbye!\f[color,default]"
 	}
-	"\n"
+	"  "
 	
 	
 	"\![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
@@ -59,10 +63,87 @@ OnToggleGallery
 	Refresh
 }
 
+OnChangePaintingMenu : all
+{	
+	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q"
+		
+	"\f[align,center]— Canvas —\n\f[align,left]"
+	_types = ("Landscape","Portrait","Offset","Cluster")
+	_i = 1
+	foreach _types; _type
+	{
+		if _i == PaintingType; "\![*]"
+		"\__q[OnChangePaintingType,%(_i)]%(_type)\__q"
+		if _i % 2 == 1; "\n \n[-100]\f[align,right]"
+		else; "\n\f[align,left]"
+		_i++
+	}
+	"\n\n\f[align,left]"
+	
+	"\f[align,center]— Frame —\n\f[align,left]"
+	
+	_types = ("Gilded","DIY","Studio","Laurels","Rosewood")
+	_i = 0
+	foreach _types; _type
+	{
+		if _type == CurrentFrame; "\![*]"
+		"\__q[OnChangePaintingFrame,%(_type)]%(_type)\__q"
+		
+		if _i % 2 == 1; "\n \n[-100]\f[align,right]"
+		else; "\n\f[align,left]"
+		_i++
+	}
+	"\n\n\f[align,left]"
+	
+	
+	"\f[align,center]— Painting —\n\f[align,left]"
+	_landscapes = ("Expedition of the Monarch's Triumph")
+	_portraits = ("Mr. Lifield's Widow")
+	_offsets = ("Spring Flight in the Garden")
+	_clusters = ("Cosmetic Sunshine")
+	_paintings = IARRAY
+	
+	if PaintingType == 1; _paintings = _landscapes
+	elseif PaintingType == 2; _paintings = _portraits
+	elseif PaintingType == 3; _paintings = _offsets
+	elseif PaintingType == 4; _paintings = _clusters
+	
+	foreach _paintings; _painting
+	{
+		_onoff = CurrentPainting == _painting
+		if _onoff; "\![*]"
+		"\__q[OnChangePainting,%(_painting),%(!_onoff)]%(_painting)\__q\n"
+	}
+	"\n"
+	"\f[align,center]\n"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
+	"\![unlock,balloonrepaint]"
+}
+
+OnChangePaintingType
+{
+	PaintingType = reference0
+	Refresh
+	--
+	OnChangePaintingMenu
+}
+
+OnChangePaintingFrame
+{
+	_onoff = 1
+	if reference0 == CurrentFrame; _onoff = 0
+	"\C\![no-pause]\![bind,Frame - %(CurrentPaintingType),%(reference0),%(_onoff)] \![raise,OnChangePaintingMenu]"
+}
+
+OnChangePainting
+{
+	"\C\![no-pause]\![bind,%(CurrentPaintingType),%(reference0),%(reference1)] \![raise,OnChangePaintingMenu]"
+}
+
 OnCustomize : all
 {
 	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q"
-	"Painting balloons:\n"
+	"\f[align,center]— Painting balloons —\n\f[align,left]"
 	_bloons = ("Silver,0","Black,1","Copper,3","Navy,2","none","Starry,4")
 	
 	_i = 0
@@ -78,33 +159,33 @@ OnCustomize : all
 	
 	"\n\n\f[align,left]"
 	
-	"Guy balloons:\n"
+	"\f[align,center]— Guy balloons —\n\f[align,left]"
 	if GuyBalloon == 1; "\![*]"
 	"\q[Dark,OnChangeGuyBalloon,1]\n \n[-100]\f[align,right]"
 	if GuyBalloon == 0; "\![*]"
 	"\q[Light,OnChangeGuyBalloon,0]"
 	"\n\n\f[align,left]"
 	
-	"Guys:\n"
+	"\f[align,center]— Guys —\n\f[align,left]"
 	if GuyColor == 0; "\![*]"
 	"\q[Dark,OnChangeGuyColor,0]\n \n[-100]\f[align,right]"
 	if GuyColor == 5; "\![*]"
 	"\q[Light,OnChangeGuyColor,5]"
 	"\n\n\f[align,left]"
 	
-	"Painting type:\n"
-	_types = ("Landscape","Portrait","Offset","Cluster")
-	_i = 1
-	foreach _types; _type
-	{
-		if _i == PaintingType; "\![*]"
-		"\__q[OnChangePaintingType,%(_i)]%(_type)\__q"
-		if _i % 2 == 1; "\n \n[-100]\f[align,right]"
-		else; "\n\f[align,left]"
-		_i++
-	}
-	"\n\n\f[align,left]"
-	
+	// "Painting type:\n"
+	// _types = ("Landscape","Portrait","Offset","Cluster")
+	// _i = 1
+	// foreach _types; _type
+	// {
+		// if _i == PaintingType; "\![*]"
+		// "\__q[OnChangePaintingType,%(_i)]%(_type)\__q"
+		// if _i % 2 == 1; "\n \n[-100]\f[align,right]"
+		// else; "\n\f[align,left]"
+		// _i++
+	// }
+	// "\n\n\f[align,left]"
+	"\f[align,center]\n"
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
 	"\![unlock,balloonrepaint]"
 	
@@ -142,13 +223,7 @@ OnChangeGuyColor
 	OnCustomize
 }
 
-OnChangePaintingType
-{
-	PaintingType = reference0
-	Refresh
-	--
-	OnCustomize
-}
+
 
 OnSettingsMenu : all
 {

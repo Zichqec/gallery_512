@@ -458,6 +458,27 @@ CurrentPainting
 	}
 }
 
+CurrentPaintingType
+{
+	switch PaintingType - 1
+	{
+		"Landscape"
+		"Portrait"
+		"Offset"
+		"Cluster"
+	}
+}
+
+CurrentFrame
+{
+	switch PaintingType - 1
+	{
+		Frame.Landscape
+		Frame.Portrait
+		Frame.Offset
+		Frame.Cluster
+	}
+}
 
 italic
 {

@@ -612,7 +612,7 @@ SodaGuyTalk : nonoverlap
 	"\b[0]I feel like there aren't enough college kids hanging around..."
 	"\b[0]... I should get a new set of colored pencils."
 	"\b[0]Should've worn my sneakers."
-	"\b[0]I could go for a handwitch."
+	"\b[0]I could go for a %(ANY('hamwitch,handwitch,handwich'))."
 
 	if CurrentPainting == "Mr. Lifield's Widow"
 	{
@@ -626,6 +626,7 @@ SodaGuyTalk : nonoverlap
 		"\b[0]Huh. Party decor."
 		"\b[0]I want the boat on a shirt."
 		"\b[0]Yeah it's about isolation or whatever, but it's sort of comforting, too."
+		"\b[0]That's basically what my dissociations feel like."
 	}
 
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
@@ -852,7 +853,7 @@ PaintingTalk : nonoverlap_pool
 	"\0\b[0]Please do make sure the windows are properly sealed, I can feel my paint curling."
 	"\0\b[0]Have you ever considered... The meaning of art?"
 	"\0\b[0]So... Been to any good exibitions lately?"
-	"\0\b[0]Have you ever seen paint so %(paint)?
+	"\0\b[0]Have you ever seen paint so %(paint)?"
 	"\0\b[0]One day, I'd like to travel again. You'll join me, won't you?"
 	"\0\b[0]Would I look better if there was %(environment)?"
 	"\0\b[0]I once spoke with a statue. End of story."
