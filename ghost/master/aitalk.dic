@@ -200,7 +200,7 @@ PaintingInfo : array
 	"Spring Flight in the Garden,Nature,Foliage,Person"
 	
 	//Cluster
-	"Cosmetic Sunshine,Rain,Umbrella,Nature"
+	"Cosmetic Sunshine,Rain,Umbrella,Nature,Person"
 }
 
 /*
@@ -408,7 +408,7 @@ FriendlyGuyTalk : nonoverlap
 		"\b[0]Haha! Is it a DIY gallery??"
 		"\b[0]Oh, like a wine and paint night!"
 	}
-	}
+}
 
 UnimpressedGuyTalk : nonoverlap
 {
@@ -429,7 +429,7 @@ UnimpressedGuyTalk : nonoverlap
 	"\b[0]I saw a kid in art class make one just like this when I was in 3rd grade, except his was better."
 	"\b[0]This piece really makes you wonder why some people even bother."
 	"\b[0]Look, if you're gonna be putting out stuff like this, just... stop trying." 
-	"\b[0]Look at the way the paint is flaking. Didn't even use good paints for this ""masterpiece""."
+	"\b[0]Look at the way the paint is flaking. Didn't even use good paints for this%(br)""masterpiece""."
 
 
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
@@ -646,60 +646,92 @@ SodaGuyTalk : nonoverlap
 JacketGuyTalk : nonoverlap
 {
 	"\b[0]Pretty neat."
+	"\b[0]Nice vibes here."
+	"\b[0]Maybe I should try painting sometime."
+	"\b[0]Someone must spend a lot of time cleaning this place."
+	"\b[0]Wonder how long it took to make this?"
+	"\b[0]It's cool.\w8\w8\w8\w8\w8\w8 I don't get it, but it's cool."
+	"\b[0]Hmm...\w8\w8\w8\w8 Neat."
+	"\b[0]I like it."
+	"\b[0]They've got some nice stuff here."
+	"\b[0]It's all so fancy."
 	
 	
 	if Theme("Rain")
 	{
 		"\b[0]I should check on my rain gear."
+		"\b[0]Wonder if this would bother them..."
+		"\b[0]I can almost hear the thunder."
 	}
 	
 	if Theme("Nature")
 	{
-		
+		"\b[0]It's nice to see the outdoors without actually having to go there."
+		"\b[0]The openness is a little unsettling, honestly..."
+		"\b[0]It's a relief to not be out there."
 	}
 	
 	if Theme("Person")
 	{
-		
+		"\b[0]How did they stuck in there..."
+		"\b[0]Can they hear us out here?"
+		"\b[0]What does being made of paint feel like?"
 	}
 	
 	if Theme("Ocean")
 	{
-		
+		"\b[0]Hmm... They've done a good job of conveying the depth."
+		"\b[0]What secrets are hidden under the water...?"
+		"\b[0]Anything could be down there...\w8\w8\w8\w8\w8 Bet there's mermaids."
 	}
 	
 	if Theme("Spooky")
 	{
 		"\b[0]There's a cozy vibe here. If not in the usual sense."
 		"\b[0]This one's pretty neat if you watch it long enough."
-		"\b[0]I bet she'd enjoy this..."
+		"\b[0]Bet she'd enjoy this..."
 	}
 	
 	if Theme("Foliage")
 	{
-		
+		"\b[0]It's not the same if you can't hear the leaves rustling..."
+		"\b[0]Makes me want to spend some time outside. Maybe one night when the weather's nice..."
+		"\b[0]Reminds me of long walks home..."
 	}
 	
 	if Theme("Umbrella")
 	{
-		
+		"\b[0]At least they've got some kind of shelter."
+		"\b[0]It's good to be prepared for the rain."
+		"\b[0]Wonder where they got that umbrella, it looks nice."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]Is it supposed to be meditative...?\w8\w8\w8\w8 Ok. Dunno if I'm doing it right but it's kinda nice."
+		"\b[0]Maybe it's a paint-your-own type of thing?\w8\w8 Guess I shoulda brought paint..."
+		"\b[0]Neat."
 	}
 	
 	if CurrentPainting == "Expedition of the Monarch's Triumph"
 	{
-		
+		"\b[0]They look lonely. Maybe they're lost."
+		"\b[0]Maybe they're running from something."
+		"\b[0]Can't imagine I'd ever end up on a boat like that... Wonder what it's like."
 	}
 	
 	if CurrentPainting == "Mr. Lifield's Widow"
 	{
-		
+		"\b[0]Does she ever get a break? A snack? Anything?"
+		"\b[0]I'm glad she has friends. I'd be lonely if I was stuck in a painting alone."
+		"\b[0]Bet I could style mine like rings..."
 	}
 	
 	if CurrentPainting == "Spring Flight in the Garden"
 	{
 		"\b[0]That looks like fun."
 		"\b[0]I'd like to be one of those clouds..."
-		"\b[0]I bet it took forever to paint all those leaves.\w8\w8\w8 Might be a nice way to pass the time, though..."
+		"\b[0]Bet it took forever to paint all those leaves.\w8\w8\w8 Might be a nice way to pass the time, though..."
 		"\b[0]A lot of nice colors in this one."
 		"\b[0]What happens if you put the canvasses in different rooms?"
 	}
@@ -707,7 +739,23 @@ JacketGuyTalk : nonoverlap
 	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]I want to ride on the boat..."
-		
+		"\b[0]Hope they can find better shelter."
+		"\b[0]Those other people look like they're getting wet."
+		"\b[0]One, two, three, four... Are there five?"
+	}
+	
+	if SodaGuyPresent > 0
+	{
+		"\b[0]Where did he get snacks...?"
+		"\b[0]I want a hotdog too..."
+		"\b[0]Maybe he has the right idea..."
+	}
+	
+	if JacketGuyPresent == 2
+	{
+		"\b[0]Hey, neat jacket."
+		"\b[0]'Sup?"
+		"\b[0]That jacket looks familiar..."
 	}
 }
 
@@ -768,19 +816,19 @@ CurlyGuyTalk : nonoverlap
 	}
 	if SodaGuyPresent
 	{
-		"\b[0]W...Where did you get the snacks?"
+		"\b[0]W... Where did you get the snacks?"
 		"\b[0]Why are you hands sticky??"
 		"\b[0]He's so cute..."
 	}
 	
-	if JacketGuyPresent
+	if JacketGuyPresent > 0
 	{
-		"\b[0]Wait...Have I met him before?"
+		"\b[0]Wait... Have I met him before?"
 	}
 	
-	if CurlyGuyPresent
+	if CurlyGuyPresent == 2
 	{
-		"\b[0]...That's not right."
+		"\b[0]... That's not right."
 		"\b[0]That's enough outside time for the day..."
 	}
 	
