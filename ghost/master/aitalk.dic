@@ -671,7 +671,13 @@ CurlyGuyTalk : nonoverlap
 PaintingTalk : nonoverlap_pool
 {
 	//Generic dialogues
-	"\b[0]something contemplative and sad idk"
+	"\0\b[0]Sigh... If only there were more people around... People to admire me and my art..."
+	"\0\b[0]It's always a bit slow when we're doing maintenance, isn't it?"
+	"\0\b[0]I can't say that I mind a touch of quiet now and then, but you could stand to be more conversational."
+	"\0\b[0]I should take this chance to dwell on my next piece..."
+	"\0\b[0]There's still some trash on the floor, would you mind?"
+	"\0\b[0]Sometimes I wonder if we should have more showcase pieces... It might be entertaining."
+	"\0\b[0]Do you think I should be %(somewhere) on the wall?"
 	
 	//Rain theme dialogue
 	if Theme("Rain")
