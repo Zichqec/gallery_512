@@ -68,14 +68,23 @@ OnFinishBoot
 	if DoFirstbootAgain == 1; "\![raise,OnFirstBoot.Start]"
 	else
 	{
-		"\0\b[0]Normal boot yay - GuyWidth %(GuyWidth)"
+		"\0\b[0]Welcome back, %(username)."
+	"\0\b[0]Oh, you're just in time. There was a bit of an accident and, well, watch out for glass."
+	"\0\b[0]Ah, good, I thought it was nearly time for you to make tea."
+	"\0\b[0]Did you enjoy your break? Get all of your... food... and... sleep... handled?"
+	"\0\b[0]Come, come, open the gallery, everyone's been waiting."
+	"\0\b[0]What shall we display today?"
 	}
 }
 
 OnClose
 {
-	"\0%(Refresh)Farewell."
-	"\0%(Refresh)Goodbye."
+	"\0%(Refresh)\b[0]Stepping out? Don't be long."
+	"\0%(Refresh)\b[0]Hold on, you can't just leave-"
+	"\0%(Refresh)\b[0]At least close up first, excuse me!"
+	"\0%(Refresh)\b[0]Needing a break already?"
+	"\0%(Refresh)\b[0]If only I could walk out whenever I wanted."
+	"\0%(Refresh)\b[0]Wait, we're in the middle of work!"
 	--
 	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
 }

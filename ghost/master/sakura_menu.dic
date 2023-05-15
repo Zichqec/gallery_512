@@ -240,7 +240,14 @@ OnCancelGuyCapChange
 
 OnGoodbye
 {
-	
+	"\0\b[0]It is about time to pack it up, isn't it? Time flies when you love your work."
+	"\0\b[0]Thank you for your effort today, %(username). I hope we have another good showing next time."
+	"\0\b[0]All locked up? Good, good. Remember to set the alarm when you go."
+	"\0\b[0]You've been working for a while now, hm? Go on and get some rest."
+	"\0\b[0]Heading out, are you? Take care until next time."
+	"\0\b[0]I hope you've been adequately filled with the creative spirit. Try to use it before the next opening, would you?"
+	--
+	"\w8\w8\-"
 }
 
 
