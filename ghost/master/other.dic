@@ -109,6 +109,25 @@ i need to plan out a lil guy array
 
 Refresh : all
 {
+	"\0\s[%(PaintingType)00]"
+	
+	//bandaid patch
+	LOGGING("====================================================================")
+	LOGGING("REFRESH")
+	LOGGING("PaintingType: %(PaintingType)")
+	LOGGING("Frame.Offset: %(Frame.Offset)")
+	LOGGING("Frame.Cluster: %(Frame.Cluster)")
+	LOGGING("GETTYPE(PaintingType): %(GETTYPE(PaintingType))")
+	if PaintingType == 3
+	{
+		if Frame.Offset == "Studio"; "\![anim,clear,301]"
+		else; "\i[301]"
+	}
+	if PaintingType == 4
+	{
+		if Frame.Cluster == "Gilded"; "\![anim,clear,401]"
+		else; "\i[401]"
+	}
 	for _i = 1; _i < ARRAYSIZE(SHIORI3FW.IsVisible); _i++
 	{
 		if GalleryOpen
@@ -119,7 +138,7 @@ Refresh : all
 		}
 		elseif SHIORI3FW.IsVisible[_i] != 0; "\p[%(_i)]\s[-1]"
 	}
-	"\0\s[%(PaintingType)00]"
+	"\0"
 }
 
 BalloonIsInTheWay
@@ -393,28 +412,38 @@ CurrentPaintingInfo
 //[character ID, category name, part name, option, on-1/off-0, thumbnail path]
 OnNotifyDressupInfo
 {
-	LOGGING("====================================================================")
-	LOGGING("DRESSUP INFO")
-	LOGGING; LOGGING
+	// LOGGING("====================================================================")
+	// LOGGING("DRESSUP INFO")
+	// LOGGING; LOGGING
 	Painting.Landscape = "Empty"
 	Painting.Portrait = "Empty"
 	Painting.Offset = "Empty"
 	Painting.Cluster = "Empty"
 	
+	Frame.Landscape = "Frameless"
+	Frame.Portrait = "Frameless"
+	Frame.Offset = "Frameless"
+	Frame.Cluster = "Frameless"
+	
 	foreach reference; _ref
 	{
-		LOGGING("_ref: %(_ref)")
-		LOGGING("_ref[1,C_BYTE1]: %(_ref[1,C_BYTE1])")
-		LOGGING("_ref[2,C_BYTE1]: %(_ref[2,C_BYTE1])")
-		LOGGING("_ref[4,C_BYTE1]: %(_ref[4,C_BYTE1])")
+		// LOGGING("_ref: %(_ref)")
+		// LOGGING("_ref[1,C_BYTE1]: %(_ref[1,C_BYTE1])")
+		// LOGGING("_ref[2,C_BYTE1]: %(_ref[2,C_BYTE1])")
+		// LOGGING("_ref[4,C_BYTE1]: %(_ref[4,C_BYTE1])")
 		if _ref[4,C_BYTE1] == "1"
 		{
 			if _ref[1,C_BYTE1] == "Landscape"; Painting.Landscape = _ref[2,C_BYTE1]
 			if _ref[1,C_BYTE1] == "Portrait"; Painting.Portrait = _ref[2,C_BYTE1]
 			if _ref[1,C_BYTE1] == "Offset"; Painting.Offset = _ref[2,C_BYTE1]
 			if _ref[1,C_BYTE1] == "Cluster"; Painting.Cluster = _ref[2,C_BYTE1]
+			
+			if _ref[1,C_BYTE1] == "Frame - Landscape"; Frame.Landscape = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Frame - Portrait"; Frame.Portrait = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Frame - Offset"; Frame.Offset = _ref[2,C_BYTE1]
+			if _ref[1,C_BYTE1] == "Frame - Cluster"; Frame.Cluster = _ref[2,C_BYTE1]
 		}
-		LOGGING
+		// LOGGING
 	}
 }
 
@@ -491,3 +520,43 @@ br
 	if SHIORI3FW.BalloonName == "Open Exhibition"; "\n"
 	else; " "
 }
+
+//bandaid patch
+OnDressupChanged
+{
+	LOGGING("====================================================================")
+	LOGGING("reference: %(reference)")
+	LOGGING("PaintingType: %(PaintingType)")
+	
+	
+	//if BalloonIsInTheWay; "\C"
+	--
+	if PaintingType == 3
+	{
+		if reference1 == "Studio" && reference2 == 1; Frame.Offset = "Studio" //"\![anim,clear,301]"
+		else; Frame.Offset = reference1
+		if Frame.Offset == ""; Frame.Offset = "Frameless"
+	}
+	elseif PaintingType == 4
+	{
+		if reference1 == "Gilded" && reference2 == 1; Frame.Cluster = "Gilded" //"\![anim,clear,401]"
+		else; Frame.Cluster = reference1
+		if Frame.Cluster == ""; Frame.Cluster = "Frameless"
+	}
+	--
+	Refresh
+	
+}
+
+/*
+Reference0
+The character ID of the dressup target.
+Reference1
+The part name.
+Reference2
+1 when valid, 0 when invalid.
+Reference3
+The part's category name.
+Reference4
+"script" if executed by a script, "user" if executed from the menu. [2.5.90~]
+*/

@@ -29,6 +29,13 @@ OnSakuraMenu : all
 	//"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
 	"\![*]\q[Settings,OnSettingsMenu]\n\n"
 	
+	switch GalleryOpen
+	{
+		"\![*]\q[Goodbye!,OnGoodbye]"
+		"\f[color,disable]\![*]Goodbye!\f[color,default]"
+	}
+	"\n"
+	
 	
 	"\![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
 	"\_l[0,0]\_q"
@@ -210,7 +217,7 @@ OnGuyCapMenu : all
 {
 	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\_q"
 	"Current cap: %(GuyCap)\n\n"
-	"\![open,sliderinput,OnChangeGuyCap,-1,%(GuyCap),5,100]"
+	"\![open,sliderinput,OnChangeGuyCap,-1,10,5,100]"
 	"\n"
 	"\![*]\q[Back,OnSettingsMenu]  \![*]\q[Nevermind,OnCancelGuyCapChange]\![unlock,balloonrepaint]"
 	
@@ -224,12 +231,16 @@ OnGuyCapMenu : all
 OnChangeGuyCap
 {
 	GuyCap = TOINT(reference0)
-	OnGuyCapMenu
 }
 
 OnCancelGuyCapChange
 {
 	"\![close,inputbox,OnChangeGuyCap]"
+}
+
+OnGoodbye
+{
+	
 }
 
 
@@ -367,6 +378,20 @@ OkGuysPresent
 	_guys
 }
 
+SodaGuyPresent
+{
+	ASEARCH("100",OkGuysPresent) != -1
+}
+
+JacketGuyPresent
+{
+	ASEARCH("101",OkGuysPresent) != -1
+}
+
+CurlyGuyPresent
+{
+	ASEARCH("102",OkGuysPresent) != -1
+}
 
 
 

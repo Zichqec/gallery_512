@@ -27,4 +27,4 @@ msglang,english
 // ignoreiolog, ID: OnMouse        //Ignores all OnMouse functions
 
 iolog.filter.mode,whitelist
-iolog.filter.keyword,OnNotifyDressupInfo
+iolog.filter.keyword,OnDressupChanged
