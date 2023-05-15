@@ -279,6 +279,12 @@ PretentiousGuyTalk : nonoverlap
 		"\b[0]The boat. The puddle. Paper in water. Truly profound."
 		"\b[0]The clouds are so...\w8\w8 Perfection."
 	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]It's a deep metaphor... On... Life."
+		"\b[0]I finally understand everything."
+	}
 }
 
 SweetGuyTalk : nonoverlap
@@ -329,13 +335,18 @@ SweetGuyTalk : nonoverlap
 		"\b[0]They look...Nice..."
 		"\b[0]I do like the way the contrast of the green works against the black to give the eyes a spark of life."
 		"\b[0]I hope she's happy."
-
+		"\b[0]A widow, huh? That's so sad."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]Oh... I must be early..."
+		"\b[0]Uh... Oh no."
 	}
 }
 
 FriendlyGuyTalk : nonoverlap
 {
-	"\b[0]Friendly"
 	"\b[0]I should bring my friends here."
 	"\b[0]I wonder if anyone else is having fun."
 	"\b[0]It's got so much energy! Like, it really makes you go%(br)""wow""!"
@@ -367,12 +378,14 @@ FriendlyGuyTalk : nonoverlap
 	{
 		"\b[0]I hope someone helps them!"
 		"\b[0]I bet there are some nice fish in there."
+		"\b[0]Should I try sailing?"
 	}
 	
 	if CurrentPainting == "Cosmetic Sunshine"
 	{
 		"\b[0]I hope they get where they're going without getting soaked."
 		"\b[0]Oh, I love the clouds!"
+		"\b[0]The little boat fills me with the spirit of adventure."
 	}
 	
 	if CurrentPainting == "Mr. Lifield's Widow"
@@ -380,6 +393,12 @@ FriendlyGuyTalk : nonoverlap
 		"\b[0]Wow! What a tone change!"
 		"\b[0]I wonder what she's thinking about. I bet she holds good conversation."
 		"\b[0]What a skillful artist, I don't think I could come up with something like this."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]Haha! Is it a DIY gallery??"
+		"\b[0]Oh, like a wine and paint night!"
 	}
 	}
 
@@ -410,13 +429,21 @@ UnimpressedGuyTalk : nonoverlap
 		"\b[0]Oooh, a boaaat, truly inspired."
 		"\b[0]I hope they fall in."
 		"\b[0]It'd be better if there was a seamonster."
+		"\b[0]I went sailing once, I was the best at it. Better than the captain, even."
+	}
+	
+	if Theme("Rain")
+	{
+		"\b[0]I already need to change my socks."
+		"\b[0]More unimpressive outdoors art."
 	}
 	
 	if Theme("Nature")
 	{
 		"\b[0]Another uninspired look at the outdoors."
 		"\b[0]Why is everyone so obsessed with nature?"
-		"\b[0]What a lazy theme."
+		"\b[0]What a lazy idea."
+		"\b[0]Boring."
 	}
 	
 	if CurrentPainting == "Mr. Lifield's Widow"
@@ -434,6 +461,19 @@ UnimpressedGuyTalk : nonoverlap
 		"\b[0]Have they ever heard of anatomy?"
 		"\b[0]I drew better clouds in elementrary school."
 		"\b[0]What was the inspiration for this? Generic-Core?"
+	}
+	
+	if CurrentPainting == "Cosmetic Sunshine"
+	{
+		"\b[0]What is this supposed to mean?"
+		"\b[0]I've seen more cohesive art in IKEA."
+		"\b[0]Did someone's 12 year old make this?"
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]I can't believe I paid for this."
+		"\b[0]I'll never understand this modern art craze."
 	}
 }
 
@@ -456,11 +496,19 @@ ShyGuyTalk : nonoverlap
 	if Theme("Nature")
 	{
 		"\b[0]It looks peaceful there. \w8"
+		"\b[0]It's sorta...Hypnotic."
+	}
+	
+	if Theme("Rain")
+	{
+		"\b[0]Reminds me of home."
+		"\b[0]Do other people cry when it rains?"
 	}
 	
 	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]... No. \w8"
+		"\b[0]Why does it feel like the eyes follow me..."
 	}
 	
 	if CurrentPainting == "Spring Flight in the Garden"
@@ -484,6 +532,12 @@ ShyGuyTalk : nonoverlap
 		"\b[0]There's so much ocean in the ocean."
 		"\b[0]I don't think I'm cut out to sail."
 		"\b[0]I'm glad there isn't a seamonster in this..."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]Oh... I should come back later."
+		"\b[0]Are they closed?"
 	}
 }
 
@@ -665,6 +719,28 @@ CurlyGuyTalk : nonoverlap
 		"\b[0]Would I look good in a dress?"
 		"\b[0]When was the last time I was on a swing?"
 		"\b[0]What is the swinger thinking about? Maybe nothing, maybe swinging is like meditation."
+	}
+	if SodaGuyPresent
+	{
+		"\b[0]W...Where did you get the snacks?"
+		"\b[0]Why are you hands sticky??"
+		"\b[0]He's so cute..."
+	}
+	
+	if JacketGuyPresent
+	{
+		"\b[0]Wait...Have I met him before?"
+	}
+	
+	if CurlyGuyPresent
+	{
+		"\b[0]...That's not right."
+		"\b[0]That's enough outside time for the day..."
+	}
+	
+	if CurrentPainting == "Empty"
+	{
+		"\b[0]Oh. I'm too early..."
 	}
 }
 
