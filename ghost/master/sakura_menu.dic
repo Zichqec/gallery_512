@@ -65,7 +65,7 @@ OnToggleGallery
 
 OnChangePaintingMenu : all
 {	
-	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q"
+	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q\*"
 		
 	"\f[align,center]— Canvas —\n\f[align,left]"
 	_types = ("Landscape","Portrait","Offset","Cluster")
@@ -89,7 +89,7 @@ OnChangePaintingMenu : all
 		if _type == CurrentFrame; "\![*]"
 		"\__q[OnChangePaintingFrame,%(_type)]%(_type)\__q"
 		
-		if _i % 2 == 1; "\n \n[-100]\f[align,right]"
+		if _i % 2 == 0; "\n \n[-100]\f[align,right]"
 		else; "\n\f[align,left]"
 		_i++
 	}
@@ -142,7 +142,7 @@ OnChangePainting
 
 OnCustomize : all
 {
-	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q"
+	"\C\![lock,balloonrepaint]\c\0\b[2]\![set,autoscroll,disable]\![no-pause]\_q\*"
 	"\f[align,center]— Painting balloons —\n\f[align,left]"
 	_bloons = ("Silver,0","Black,1","Copper,3","Navy,2","none","Starry,4")
 	
@@ -227,13 +227,13 @@ OnChangeGuyColor
 
 OnSettingsMenu : all
 {
-	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\![close,inputbox,OnChangeGuyCap]\_q"
+	"\C\![lock,balloonrepaint]\c\0\b[2]%(Refresh)\![set,autoscroll,disable]\![no-pause]\![close,inputbox,OnChangeGuyCap]\_q\*"
 	"\f[align,center]— Settings —\n\f[align,left]"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Change guy scaling,OnGuyScaleMenu]\n"
 	"\![*]\q[Change guy limit,OnGuyCapMenu]\n\n"
-	"\![*]\q[Replay first boot test,OnFirstBootTest]\n\n"
+	"\![*]\q[Replay first boot,OnFirstBootTest]\n\n"
 	
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
 }

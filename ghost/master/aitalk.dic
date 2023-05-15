@@ -231,13 +231,13 @@ PretentiousGuyTalk : nonoverlap
 {
 	"\b[0]Even the lighting in here is a metaphor." 
 	"\b[0]The colors in the piece represent %(colorrep)."
-	"\b[0]Few can fathom the true meaning of this piece."
-	"\b[0]This.\w8\w8\w8 This is real art."
+	"\b[0]Few can fathom the %(italic)true%(italicoff) meaning of this piece."
+	"\b[0]This.\w8\w8\w8 This is %(italic)real%(italicoff) art."
 	"\b[0]My life is enriched just by looking at this piece. It is cleansing my soul as I speak."
-	"\b[0]You should all be grateful you're allowed in here. Some of you are distinctly not worthy to be in the presence of such masterpieces."
+	"\b[2]You should all be grateful you're allowed in here. %(italic)Some%(italicoff) of you are distinctly not worthy to be in the presence of such masterpieces."
 	"\b[0]Ahh...\w8\w8\w8 Art by a true artist. Refreshing."
-	"\b[0]This gallery should be ashamed of itself; this piece alone is worth more than they could ever pay. Cheapskates!"
-	"\b[0]The spot on the rug just here - a wonderful touch! It adds such deep meaning, like the painting itself stretches beyond the canvas and into the real world around us."
+	"\b[2]This gallery should be ashamed of itself; this piece alone is worth more than they could ever pay. Cheapskates!"
+	"\b[2]The spot on the rug just here - a wonderful touch! It adds such deep meaning, like the painting itself stretches beyond the canvas and into the real world around us."
 
 	if Theme("Rain")
 	{
@@ -287,6 +287,37 @@ PretentiousGuyTalk : nonoverlap
 	{
 		"\b[0]It's a deep metaphor... On... Life."
 		"\b[0]I finally understand everything."
+	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		"\b[0]A piece such as this does not need a frame to compliment it. It stands on its own!"
+		"\b[0]A frame would merely get in the way of a piece such as this. It would muddle the meaning!"
+	}
+	
+	if CurrentFrame == "Gilded"
+	{
+		"\b[0]The choice of frame truly adds an extra layer of meaning. The rich gold color, the detailed shape."
+	}
+	
+	if CurrentFrame == "DIY"
+	{
+		"\b[2]This rustic-looking frame provokes deep thought. They could have chosen anything, and they used something so crude. What meaning must there be?"
+	}
+	
+	if CurrentFrame == "Studio"
+	{
+		"\b[2]A bold frame that makes a statement. And yet, it does not distract from the canvas it holds so securely. The depth in even the frame choice is astounding.."
+	}
+	
+	if CurrentFrame == "Laurels"
+	{
+		"\b[0]A frame that defies the traditional concept of a frame. Truly, a thought provoking addition to this work."
+	}
+	
+	if CurrentFrame == "Rosewood"
+	{
+		"\b[0]A simple, yet elegant frame, which adds to the piece without distracting you from it. This, too, is a metaphor."
 	}
 }
 
@@ -350,6 +381,36 @@ SweetGuyTalk : nonoverlap
 		"\b[0]Oh... I must be early..."
 		"\b[0]Uh, I guess I'll see if they need any help."
 	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		
+	}
+	
+	if CurrentFrame == "Gilded"
+	{
+		
+	}
+	
+	if CurrentFrame == "DIY"
+	{
+		
+	}
+	
+	if CurrentFrame == "Studio"
+	{
+		
+	}
+	
+	if CurrentFrame == "Laurels"
+	{
+		
+	}
+	
+	if CurrentFrame == "Rosewood"
+	{
+		
+	}
 }
 
 FriendlyGuyTalk : nonoverlap
@@ -408,6 +469,36 @@ FriendlyGuyTalk : nonoverlap
 		"\b[0]Haha! Is it a DIY gallery??"
 		"\b[0]Oh, like a wine and paint night!"
 	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		
+	}
+	
+	if CurrentFrame == "Gilded"
+	{
+		
+	}
+	
+	if CurrentFrame == "DIY"
+	{
+		
+	}
+	
+	if CurrentFrame == "Studio"
+	{
+		
+	}
+	
+	if CurrentFrame == "Laurels"
+	{
+		
+	}
+	
+	if CurrentFrame == "Rosewood"
+	{
+		
+	}
 }
 
 UnimpressedGuyTalk : nonoverlap
@@ -459,9 +550,9 @@ UnimpressedGuyTalk : nonoverlap
 	if CurrentPainting == "Mr. Lifield's Widow"
 	{
 		"\b[0]I've been more scared."
-		"\b[0]Come on, we've all seen that trick before."
+		"\b[0]Come on, we've all seen %(italic)that%(italicoff) trick before."
 		"\b[0]Please, brushing my teeth would be scarier than this."
-		"\b[0]This does not live up to the chills promised by the title at all."
+		"\b[0]This does not live up to the chills promised by the title at %(italic)all%(italicoff)."
 		"\b[0]Does this ""artist"" even know what ""spooky"" means?" 
 	}
 	
@@ -484,6 +575,36 @@ UnimpressedGuyTalk : nonoverlap
 	{
 		"\b[0]I can't believe I paid for this."
 		"\b[0]I'll never understand this modern art craze."
+	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		"\b[0]They couldn't even be bothered to frame this thing. They must not think it's worth much."
+	}
+	
+	if CurrentFrame == "Gilded"
+	{
+		"\b[0]What an ugly frame. WAY overstated. Get with the times."
+	}
+	
+	if CurrentFrame == "DIY"
+	{
+		"\b[0]Am I looking at... twigs? What, did they run out of money or something?"
+	}
+	
+	if CurrentFrame == "Studio"
+	{
+		"\b[0]I bet that's not real gold in that frame."
+	}
+	
+	if CurrentFrame == "Laurels"
+	{
+		"\b[0]Why are there flowers in the way of the art? Do they not clean in here?"
+	}
+	
+	if CurrentFrame == "Rosewood"
+	{
+		"\b[2]This is the most boring frame they could have chosen. Come on, try to say %(italic)something%(italicoff) with your frame choice."
 	}
 }
 
@@ -554,6 +675,36 @@ ShyGuyTalk : nonoverlap
 		"\b[0]Oh... I should come back later."
 		"\b[0]Are they closed?"
 	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		
+	}
+	
+	if CurrentFrame == "Gilded"
+	{
+		
+	}
+	
+	if CurrentFrame == "DIY"
+	{
+		
+	}
+	
+	if CurrentFrame == "Studio"
+	{
+		
+	}
+	
+	if CurrentFrame == "Laurels"
+	{
+		
+	}
+	
+	if CurrentFrame == "Rosewood"
+	{
+		
+	}
 }
 
 GenericGuyTalk : nonoverlap
@@ -597,6 +748,11 @@ GenericGuyTalk : nonoverlap
 		"\b[0]Is this a statement?"
 		"\b[0]I get it, it's like the duct tape banana. Smart."
 		"\b[0]I waited in line for this?"
+	}
+	
+	if CurrentFrame == "Frameless"
+	{
+		"\b[0]Not even a frame on it? I thought all fancy art was framed."
 	}
 }
 
