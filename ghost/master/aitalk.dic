@@ -292,7 +292,6 @@ PretentiousGuyTalk : nonoverlap
 
 SweetGuyTalk : nonoverlap
 {
-	"\b[0]Sweet"
 	"\b[0]It smells so nice here, it really enhances the experience."
 	"\b[0]I wish I'd brought my tea, next time."
 	"\b[0]They have a really great sense of shape, very consistent."
@@ -613,6 +612,7 @@ SodaGuyTalk : nonoverlap
 	"\b[0]I feel like there aren't enough college kids hanging around..."
 	"\b[0]... I should get a new set of colored pencils."
 	"\b[0]Should've worn my sneakers."
+	"\b[0]I could go for a handwitch."
 
 	if CurrentPainting == "Mr. Lifield's Widow"
 	{
@@ -800,6 +800,16 @@ PaintingTalk : nonoverlap_pool
 	"\0\b[0]There's still some trash on the floor, would you mind?"
 	"\0\b[0]Sometimes I wonder if we should have more showcase pieces... It might be entertaining."
 	"\0\b[0]Do you think I should be %(somewhere) on the wall?"
+	"\0\b[0]You know, I was famous once."
+	"\0\b[0]Please do make sure the windows are properly sealed, I can feel my paint curling."
+	"\0\b[0]Have you ever considered... The meaning of art?"
+	"\0\b[0]So... Been to any good exibitions lately?"
+	"\0\b[0]Have you ever seen paint so %(paint)?
+	"\0\b[0]One day, I'd like to travel again. You'll join me, won't you?"
+	"\0\b[0]Would I look better if there was %(environment)?"
+	"\0\b[0]I once spoke with a statue. End of story."
+	"\0\b[0]You know what I do miss? Reading."
+	"\0\b[0]Tell me a story. About an artist... \w8\w8 Please."
 	
 	//Rain theme dialogue
 	if Theme("Rain")

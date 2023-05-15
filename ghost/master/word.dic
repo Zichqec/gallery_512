@@ -85,3 +85,43 @@ somewhere
 	"morphing into 3D"
 	"integrated with a speaker system"
 }
+
+paint
+{
+	"paint-y"
+	"fresh"
+	"dry"
+	"vibrant"
+	"comfortable"
+	"glossy"
+	"lively"
+	"beautiful"
+	"shimmery"
+	"young"
+	"perfectly aged"
+	"smoothly applied"
+	"delicately brushed"
+	"textured"
+	"3D"
+	"perfect"
+	"joy inducing"
+	"fantastic"
+}
+
+environment
+{
+	"more wind"
+	"brighter lights"
+	"rainbow lighting"
+	"less wind"
+	"some orchestral music playing"
+	"a jukebox near by"
+	"a crowd"
+	"some aesthtic curtains"
+	"a bar of chocolate suspended above my frame"
+	"an uno reverse card near by"
+	"some unknowable source of power on hand"
+	"hotter air"
+	"ice cubes littering the floor"
+	"unending shadows ever seeping from the corners"
+}
