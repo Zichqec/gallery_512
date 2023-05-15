@@ -233,7 +233,7 @@ OnSettingsMenu : all
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Change guy scaling,OnGuyScaleMenu]\n"
 	"\![*]\q[Change guy limit,OnGuyCapMenu]\n\n"
-	"\![*]\q[Replay first boot test,OnFirstBoot.Start]\n\n"
+	"\![*]\q[Replay first boot test,OnFirstBootTest]\n\n"
 	
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]\![unlock,balloonrepaint]"
 }
@@ -311,6 +311,16 @@ OnChangeGuyCap
 OnCancelGuyCapChange
 {
 	"\![close,inputbox,OnChangeGuyCap]"
+}
+
+OnFirstBootTest
+{
+	GalleryOpen = 0
+	LilGuys = IARRAY
+	LilGuys ,= "painting"
+	Refresh
+	--
+	OnFirstBoot.Start
 }
 
 OnGoodbye

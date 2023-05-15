@@ -96,7 +96,7 @@ OnShellScaling
 
 OnFirstBoot.Start : all
 {
-	"\b[2]\s[100]\t\*Ah, %(username), just in time. Are you ready for another busy %(timeslot)? Today is the first showing of the new exhibition. I'll have you know, I've been hard at work putting it together.\_q"
+	"\0\b[2]%(Refresh)\t\*Ah, %(username), just in time. Are you ready for another busy %(timeslot)? Today is the first showing of the new exhibition. I'll have you know, I've been hard at work putting it together.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.NewExhibition]New exhibition?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LookingForwardToIt]I'm looking forward to it!\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetMePutMyStuffDown]Please,\_w[0] let me put my stuff down first...\__q"
@@ -104,7 +104,7 @@ OnFirstBoot.Start : all
 
 OnFirstBoot.NewExhibition : all
 {
-	"\b[2]\s[100]\t\*If you've forgotten after all of our hard work setting up the gallery, I am going to be extremely unhappy with you, %(username). There will be guests coming any time now, and you don't even know why they'll be here? Honestly.\_q"
+	"\0\b[2]%(Refresh)\t\*If you've forgotten after all of our hard work setting up the gallery, I am going to be extremely unhappy with you, %(username). There will be guests coming any time now, and you don't even know why they'll be here? Honestly.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.OkayImSorry]Okay,\_w[0] okay,\_w[0] I'm sorry\__q"
 	"\n\n\![*]\__q[OnFirstBoot.IWasJustKidding]I was just kidding!\_w[0] Of course I remember.\__q"
 	"\n\n\![*]\__q[OnFirstBoot.Technically]Technically,\_w[0] no one gets in until I say we're open,\_w[0] so...\__q"
@@ -112,7 +112,7 @@ OnFirstBoot.NewExhibition : all
 
 OnFirstBoot.OkayImSorry : all
 {
-	"\b[2]\s[100]\t\*Humph! You had better be. We have a showing of our new featured paintings today. Freshly materialized for the viewing pleasure of our guests.\_q"
+	"\0\b[2]%(Refresh)\t\*Humph! You had better be. We have a showing of our new featured paintings today. Freshly materialized for the viewing pleasure of our guests.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.Materialized]...\_w[0] Materialized?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.OhRight]Oh!\_w[0] Right!\__q"
 	"\n\n\![*]\__q[OnFirstBoot.IThoughtYouSaid]I thought you said you put it together\__q"
@@ -120,31 +120,31 @@ OnFirstBoot.OkayImSorry : all
 
 OnFirstBoot.Materialized : all
 {
-	"\b[2]\s[100]\t\*Come now, %(username). We've been working together too long for you to act like you've never seen my process before."
+	"\0\b[2]%(Refresh)\t\*Come now, %(username). We've been working together too long for you to act like you've never seen my process before."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.OhRight : all
 {
-	"\b[2]\s[100]\t\*That's right, right! You've been working too hard if you're forgetting important plans like this. \w8\w8\w8\n\nNevertheless, the work has to get done, and no one else is here to do it!"
+	"\0\b[2]%(Refresh)\t\*That's right, right! You've been working too hard if you're forgetting important plans like this. \w8\w8\w8\n\nNevertheless, the work has to get done, and no one else is here to do it!"
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.IThoughtYouSaid : all
 {
-	"\b[2]\s[100]\t\*Us, me, it all amounts to the same thing. Two halves of a well-oiled machine, and I've already done my share."
+	"\0\b[2]%(Refresh)\t\*Us, me, it all amounts to the same thing. Two halves of a well-oiled machine, and I've already done my share."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.IWasJustKidding : all
 {
-	"\b[2]\s[100]\t\*Of course you do! %(username), the truthful, hard working truth teller. Who would never waste perfectly usable time by not using it!"
+	"\0\b[2]%(Refresh)\t\*Of course you do! %(username), the truthful, hard working truth teller. Who would never waste perfectly usable time by not using it!"
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.Technically : all
 {
-	"\b[2]\s[100]\t\*Oh, is that how it's going to be? Well, technically I could let all of these artworks I've collected go. They could be free to wander the lands of myth and memory, leaving this poor gallery empty until you scrounge up the cash to start paying for pieces instead.\_q"
+	"\0\b[2]%(Refresh)\t\*Oh, is that how it's going to be? Well, technically I could let all of these artworks I've collected go. They could be free to wander the lands of myth and memory, leaving this poor gallery empty until you scrounge up the cash to start paying for pieces instead.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.IGetIt]Alright,\_w[0] I get it,\_w[0] jeeze!\__q"
 	"\n\n\![*]\__q[OnFirstBoot.AsIfYoudGiveAnything]As if you'd give anything up\__q"
 	"\n\n\![*]\__q[OnFirstBoot.SupportingLocalArtists]I do like the sound of supporting local artists\__q"
@@ -152,19 +152,19 @@ OnFirstBoot.Technically : all
 
 OnFirstBoot.IGetIt : all
 {
-	"\b[2]\s[100]\t\*Good, good! I knew you'd see reason! It just took a light shakedown to get there."
+	"\0\b[2]%(Refresh)\t\*Good, good! I knew you'd see reason! It just took a light shakedown to get there."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.AsIfYoudGiveAnything : all
 {
-	"\b[2]\s[100]\t\*Feeling bold today? Thinking I would bluff on an important day like today? \w8\w8\w8\w8\n\nWell, perhaps I would. \w8\w8That doesn't change the fact that you're the only one of us that can get things moving."
+	"\0\b[2]%(Refresh)\t\*Feeling bold today? Thinking I would bluff on an important day like today? \w8\w8\w8\w8\n\nWell, perhaps I would. \w8\w8That doesn't change the fact that you're the only one of us that can get things moving."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.SupportingLocalArtists : all
 {
-	"\b[2]\s[100]\t\*... A fine endeavor. There is no better cause one could put their time and money towards. But, surely not one you could jump right into on such short notice? There is a schedule to keep, after all. It's been distributed to the public.\_q"
+	"\0\b[2]%(Refresh)\t\*... A fine endeavor. There is no better cause one could put their time and money towards. But, surely not one you could jump right into on such short notice? There is a schedule to keep, after all. It's been distributed to the public.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.HateToDisappoint]True,\_w[0] I'd hate to disappoint anyone...\__q"
 	"\n\n\![*]\__q[OnFirstBoot.ThePublicWouldUnderstand]I'm sure the public would understand\__q"
 	"\n\n\![*]\__q[OnFirstBoot.ArtAtHome]I have some art at home that I could bring,\_w[0] actually\__q"
@@ -172,33 +172,33 @@ OnFirstBoot.SupportingLocalArtists : all
 
 OnFirstBoot.HateToDisappoint : all
 {
-	"\b[2]\s[100]\t\*Wonderful! Then let's put those silly little thoughts out of our head for today and focus on what's really important: my new exhibition. Which is waiting on you, may I remind."
+	"\0\b[2]%(Refresh)\t\*Wonderful! Then let's put those silly little thoughts out of our head for today and focus on what's really important: my new exhibition. Which is waiting on you, may I remind."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.ThePublicWouldUnderstand : all
 {
-	"\b[2]\s[100]\t\*Oh, I'm certain it would. However, don't you think it would be better for everyone if we didn't take that risk? It would be a shame to ruin the reputation of the gallery right before asking fresh new artists to allow us to feature their work.\_q"
+	"\0\b[2]%(Refresh)\t\*Oh, I'm certain it would. However, don't you think it would be better for everyone if we didn't take that risk? It would be a shame to ruin the reputation of the gallery right before asking fresh new artists to allow us to feature their work.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.BuildingUpABuzz]Building up a buzz first would help...\__q"
 	"\n\n\![*]\__q[OnFirstBoot.DigYourselfOut]How tiring is it trying to dig yourself out of this hole?\__q"
 }
 
 OnFirstBoot.BuildingUpABuzz : all
 {
-	"\b[2]\s[100]\t\*It must certainly would! Artists deserve the best of the best, and we should be here to provide! As a thriving business showcase of their talents! For the sake of art, we must make sure everyone knows we are here! That our walls are home to the very essence of creativity!"
+	"\0\b[2]%(Refresh)\t\*It must certainly would! Artists deserve the best of the best, and we should be here to provide! As a thriving business showcase of their talents! For the sake of art, we must make sure everyone knows we are here! That our walls are home to the very essence of creativity!"
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.DigYourselfOut : all
 {
-	"\b[2]\s[100]\t\*I am in no hole! I am on the wall, as you can very well see, %(username)! \w8\w8\n\nWhy don't we table this discussion for the time being and just get through the day. How does that sound?\_q"
+	"\0\b[2]%(Refresh)\t\*I am in no hole! I am on the wall, as you can very well see, %(username)! \w8\w8\n\nWhy don't we table this discussion for the time being and just get through the day. How does that sound?\_q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]Sure\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]...\__q"
 }
 
 OnFirstBoot.ArtAtHome : all
 {
-	"\b[2]\s[100]\t\*Oh, do you? And where, pray tell, did you purchase those pieces from? I would hope that someone with your experience would know how to make ethically sound purchases? There is nothing worse than an artist going underpaid for their efforts.\_q"
+	"\0\b[2]%(Refresh)\t\*Oh, do you? And where, pray tell, did you purchase those pieces from? I would hope that someone with your experience would know how to make ethically sound purchases? There is nothing worse than an artist going underpaid for their efforts.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.IDidPayThem]Yes,\_w[0] I did pay them well.\_w[0] Thanks for asking.\__q"
 	"\n\n\![*]\__q[OnFirstBoot.ImAnArtist]I'm an artist myself\__q"
 	"\n\n\![*]\__q[OnFirstBoot.Well]...\_w[0] Well...\__q"
@@ -206,7 +206,7 @@ OnFirstBoot.ArtAtHome : all
 
 OnFirstBoot.IDidPayThem : all
 {
-	"\b[2]\s[100]\t\*Ah. Wonderful. You are a boon upon the community. History shall remember your contributions, oh patron of the arts. Go and fetch your little collection, and I'll do what I can to fend off the waiting mob.\_q"
+	"\0\b[2]%(Refresh)\t\*Ah. Wonderful. You are a boon upon the community. History shall remember your contributions, oh patron of the arts. Go and fetch your little collection, and I'll do what I can to fend off the waiting mob.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.DontSeeAMob]I don't see any mob\__q"
 	"\n\n\![*]\__q[OnFirstBoot.AreYouJealous]Are you jealous?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LeaveYouAlone]I probably shouldn't leave you alone this close to opening...\__q"
@@ -214,38 +214,38 @@ OnFirstBoot.IDidPayThem : all
 
 OnFirstBoot.DontSeeAMob : all
 {
-	"\b[2]\s[100]\t\*Hmm, don't you? I wonder if that's because they heard you were changing the exhibit already...\_q"
+	"\0\b[2]%(Refresh)\t\*Hmm, don't you? I wonder if that's because they heard you were changing the exhibit already...\_q"
 	"\n\n\![*]\__q[OnFirstBoot.WowReally]Wow.\_w[0] Really?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.HaveItYourWay]Fine,\_w[0] have it your way\__q"
 }
 
 OnFirstBoot.WowReally : all
 {
-	"\b[2]\s[100]\t\*Yes, really. I have never been more serious. Word travels fast in the art world. Perhaps this loss of faith could be cured if we went back to the original plan... \w8\w8\n\nYes, I think that will suit everyone much better.\_q"
+	"\0\b[2]%(Refresh)\t\*Yes, really. I have never been more serious. Word travels fast in the art world. Perhaps this loss of faith could be cured if we went back to the original plan... \w8\w8\n\nYes, I think that will suit everyone much better.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]...\__q"
 }
 
 OnFirstBoot.HaveItYourWay : all
 {
-	"\b[2]\s[100]\t\*I'm glad you're not as unreasonable as you seem, %(username)! This is why we get along so well."
+	"\0\b[2]%(Refresh)\t\*I'm glad you're not as unreasonable as you seem, %(username)! This is why we get along so well."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.AreYouJealous : all
 {
-	"\b[2]\s[100]\t\*... I think we've bantered quite enough. It's time to get to work, or else we'll have wasted away all the time there is to waste."
+	"\0\b[2]%(Refresh)\t\*... I think we've bantered quite enough. It's time to get to work, or else we'll have wasted away all the time there is to waste."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.LeaveYouAlone : all
 {
-	"\b[2]\s[100]\t\*No, you shouldn't. Anyone could break in here while you're away and steal me. I'm very valuable, especially to artless thieves. It's your job to keep me safe, %(username)! \w8\w8\w8\n\nAnd to open the gallery."
+	"\0\b[2]%(Refresh)\t\*No, you shouldn't. Anyone could break in here while you're away and steal me. I'm very valuable, especially to artless thieves. It's your job to keep me safe, %(username)! \w8\w8\w8\n\nAnd to open the gallery."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.ImAnArtist : all
 {
-	"\b[2]\s[100]\t\*... How have I gone this long without knowing that about you?"
+	"\0\b[2]%(Refresh)\t\*... How have I gone this long without knowing that about you?"
 	"\n\n\![*]\__q[OnFirstBoot.IveBroughtItUp]I'm sure I've brought it up before\__q"
 	"\n\n\![*]\__q[OnFirstBoot.HobbiesAtWork]I don't talk about my hobbies at work\__q"
 	"\n\n\![*]\__q[OnFirstBoot.Listening]Listening isn't your strength\__q"
@@ -253,52 +253,52 @@ OnFirstBoot.ImAnArtist : all
 
 OnFirstBoot.IveBroughtItUp : all
 {
-	"\b[2]\s[100]\t\*Shame on me for forgetting! I would love to see your work sometime, %(username)! \w8\w8... Except, it should wait until after work. Which we need to be getting to! \n\nThe sooner we finish the day out, the sooner we can bond over your portfolio."
+	"\0\b[2]%(Refresh)\t\*Shame on me for forgetting! I would love to see your work sometime, %(username)! \w8\w8... Except, it should wait until after work. Which we need to be getting to! \n\nThe sooner we finish the day out, the sooner we can bond over your portfolio."
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.HobbiesAtWork : all
 {
-	"\b[2]\s[100]\t\*... A fair point. It's important to give your job your all, which is best achieved by not distracting others with your personal life! That is my personal motto, which I picked up many, many years ago, back when I...\_q"
+	"\0\b[2]%(Refresh)\t\*... A fair point. It's important to give your job your all, which is best achieved by not distracting others with your personal life! That is my personal motto, which I picked up many, many years ago, back when I...\_q"
 	"\n\n\![*]\__q[OnFirstBoot.TakeAWhile]...\_w[0] This is going to take a while...\__q"
 }
 
 OnFirstBoot.TakeAWhile : all
 {
-	"\b[2]\s[100]\t\*... And then you ended up working here, and out of the basement I was! You remember that part, don't you? It was quite the exciting day. \w8\w8\n\nNow, where were we... Oh, yes! It's time for the exhibit!"
+	"\0\b[2]%(Refresh)\t\*... And then you ended up working here, and out of the basement I was! You remember that part, don't you? It was quite the exciting day. \w8\w8\n\nNow, where were we... Oh, yes! It's time for the exhibit!"
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.Listening : all
 {
-	"\b[2]\s[100]\t\*I agree, we should wrap up this lovely little chat and get to work. Far be it from me to keep you occupied when there's everything left to do!\_q"
+	"\0\b[2]%(Refresh)\t\*I agree, we should wrap up this lovely little chat and get to work. Far be it from me to keep you occupied when there's everything left to do!\_q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]...\__q"
 }
 
 OnFirstBoot.Well : all
 {
 	DoFirstbootAgain = 1
-	"\b[2]\s[100]\t\*... \w8\w8\n\n...... \w8\w8\n\n......... \w8\w8\n\nI don't think we can work together anymore. \w8\w8"
+	"\0\b[2]%(Refresh)\t\*... \w8\w8\n\n...... \w8\w8\n\n......... \w8\w8\n\nI don't think we can work together anymore. \w8\w8"
 	"\w8\w8\-"
 }
 
 OnFirstBoot.LookingForwardToIt : all
 {
-	"\b[2]\s[100]\t\*There's the enthusiasm I expected! It's going to be busy, busy, busy... I hope you're prepared for the gallery to be crowded.\_q"
+	"\0\b[2]%(Refresh)\t\*There's the enthusiasm I expected! It's going to be busy, busy, busy... I hope you're prepared for the gallery to be crowded.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]I'm ready for it!\__q"
 	"\n\n\![*]\__q[OnFirstBoot.HowCrowded]Oh,\_w[0] uh,\_w[0] how crowded?\__q"
 }
 
 OnFirstBoot.HowCrowded : all
 {
-	"\b[2]\s[100]\t\*Extremely! I'd expect a dozen... No, a hundred visitors, all ready to meet their own personal muse within our walls!\_q"
+	"\0\b[2]%(Refresh)\t\*Extremely! I'd expect a dozen... No, a hundred visitors, all ready to meet their own personal muse within our walls!\_q"
 	"\n\n\![*]\__q[OnFirstBoot.ALotOfPeople]Isn't that a lot of people!?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.WeCanHandleThat]If you think we can handle that...\__q"
 }
 
 OnFirstBoot.ALotOfPeople : all
 {
-	"\b[2]\s[100]\t\*Nonsense! There's never too many appreciators of the arts. Every day we strive to inspire more artists! And, more importantly, to inspire more patrons! Are you ready to facilitate all this inspiration, %(username)?\_q"
+	"\0\b[2]%(Refresh)\t\*Nonsense! There's never too many appreciators of the arts. Every day we strive to inspire more artists! And, more importantly, to inspire more patrons! Are you ready to facilitate all this inspiration, %(username)?\_q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]...\_w[0] Yes?\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]Absolutely!\__q"
 	"\n\n\![*]\__q[OnFirstBoot.UhNotReally]Uh...\_w[0] Not really...\__q"
@@ -306,44 +306,44 @@ OnFirstBoot.ALotOfPeople : all
 
 OnFirstBoot.UhNotReally : all
 {
-	"\b[2]\s[100]\t\*Too bad! It's happening!"
+	"\0\b[2]%(Refresh)\t\*Too bad! It's happening!"
 	"\![raise,OnFirstBoot.LetsGo]"
 }
 
 OnFirstBoot.WeCanHandleThat : all
 {
-	"\b[2]\s[100]\t\*There is no doubt in my mind that you and I can handle any number of guests today. Have courage! We've both worked hard for this! \w8\w8\n\nThough, you still have a little more to do first.\_q\__q"
+	"\0\b[2]%(Refresh)\t\*There is no doubt in my mind that you and I can handle any number of guests today. Have courage! We've both worked hard for this! \w8\w8\n\nThough, you still have a little more to do first.\_q\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]Okay...\__q"
 }
 
 OnFirstBoot.LetMePutMyStuffDown : all
 {
-	"\b[2]\s[100]\t\*Fine, fine. Fix me a cup of tea while you're at it, would you?\_q"
+	"\0\b[2]%(Refresh)\t\*Fine, fine. Fix me a cup of tea while you're at it, would you?\_q"
 	"\n\n\![*]\__q[OnFirstBoot.SureThing]Sure thing\__q"
 	"\n\n\![*]\__q[OnFirstBoot.DontHaveAMouth]You don't have a mouth.\_w[0] Or stomach.\__q"
 }
 
 OnFirstBoot.SureThing : all
 {
-	"\b[2]\s[100]\t\*Thank you, %(username). \w8\w8\n\n*A comfortable few minutes pass between you*\w8\w8\n\nWell, then. This has been nice, but are you ready to start?\_q"
+	"\0\b[2]%(Refresh)\t\*Thank you, %(username). \w8\w8\n\n*A comfortable few minutes pass between you*\w8\w8\n\nWell, then. This has been nice, but are you ready to start?\_q"
 	"\n\n\![*]\__q[OnFirstBoot.NotYet]Not yet.\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]I am\__q"
 }
 
 OnFirstBoot.NotYet : all
 {
-	"\b[2]\s[100]\t\**A less comfortable few minutes pass between you*\w8\w8\n\n... Are you ready yet?\_q"
+	"\0\b[2]%(Refresh)\t\**A less comfortable few minutes pass between you*\w8\w8\n\n... Are you ready yet?\_q"
 	"\n\n\![*]\__q[OnFirstBoot.NotYet]Not yet.\__q"
 	"\n\n\![*]\__q[OnFirstBoot.LetsGo]I am\__q"
 }
 
 OnFirstBoot.DontHaveAMouth : all
 {
-	"\b[2]\s[100]\t\*I appreciate the start of the day aesthetic.\_q"
+	"\0\b[2]%(Refresh)\t\*I appreciate the start of the day aesthetic.\_q"
 	"\n\n\![*]\__q[OnFirstBoot.SureThing]Right...\_w[0] I'll get on that...\__q"
 }
 
 OnFirstBoot.LetsGo
 {
-	"\b[2]\s[100]\t\*So! I'll need you to sweep the floors, and make sure none of me is dusty. \nI don't want any phonecalls interrupting the exhibit; be sure to put yours on silent or lock it in the office.\nUse the nice air freshener to make sure there isn't any of that old storage must around. I don't like the orange one.\nOh, and of course, I'll need you to decide which of our masterpieces we'll be giving the spotlight to.\nDon't forget to put it in a nice frame once you've decided.\n\nOnce you've finished all of that, feel free to open the gallery at your leisure!\x"
+	"\0\b[2]%(Refresh)\t\*So! I'll need you to sweep the floors, and make sure none of me is dusty. \nI don't want any phonecalls interrupting the exhibit; be sure to put yours on silent or lock it in the office.\nUse the nice air freshener to make sure there isn't any of that old storage must around. I don't like the orange one.\nOh, and of course, I'll need you to decide which of our masterpieces we'll be giving the spotlight to.\nDon't forget to put it in a nice frame once you've decided.\n\nOnce you've finished all of that, feel free to open the gallery at your leisure!\x"
 }
