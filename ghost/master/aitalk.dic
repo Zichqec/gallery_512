@@ -195,6 +195,7 @@ PaintingInfo : array
 	
 	//Portrait
 	"Mr. Lifield's Widow,Spooky,Person"
+	"Underwater Ooo,Nature,Underwater"
 	
 	//Offset
 	"Spring Flight in the Garden,Nature,Foliage,Person"
@@ -227,7 +228,7 @@ For italic and bold:
 
 */
 
-PretentiousGuyTalk : nonoverlap
+PretentiousGuyTalk : nonoverlap_pool
 {
 	"\b[0]Even the lighting in here is a metaphor." 
 	"\b[0]The colors in the piece represent %(colorrep)."
@@ -307,7 +308,7 @@ PretentiousGuyTalk : nonoverlap
 	
 	if CurrentFrame == "Studio"
 	{
-		"\b[2]A bold frame that makes a statement. And yet, it does not distract from the canvas it holds so securely. The depth in even the frame choice is astounding.."
+		"\b[2]A bold frame that makes a statement. And yet, it does not distract from the canvas it holds so securely. The depth in even the frame choice is astounding..."
 	}
 	
 	if CurrentFrame == "Laurels"
@@ -321,7 +322,7 @@ PretentiousGuyTalk : nonoverlap
 	}
 }
 
-SweetGuyTalk : nonoverlap
+SweetGuyTalk : nonoverlap_pool
 {
 	"\b[0]It smells so nice here, it really enhances the experience."
 	"\b[0]I wish I'd brought my tea, next time."
@@ -413,7 +414,7 @@ SweetGuyTalk : nonoverlap
 	}
 }
 
-FriendlyGuyTalk : nonoverlap
+FriendlyGuyTalk : nonoverlap_pool
 {
 	"\b[0]I should bring my friends here."
 	"\b[0]I wonder if anyone else is having fun."
@@ -452,7 +453,7 @@ FriendlyGuyTalk : nonoverlap
 	
 	if CurrentPainting == "Cosmetic Sunshine"
 	{
-		"\b[0]I hope they get where they're going without getting soaked."
+		"\b[0]I hope they get where%(br)they're going without getting soaked."
 		"\b[0]Oh, I love the clouds!"
 		"\b[0]The little boat fills me with the spirit of adventure."
 	}
@@ -501,12 +502,12 @@ FriendlyGuyTalk : nonoverlap
 	}
 }
 
-UnimpressedGuyTalk : nonoverlap
+UnimpressedGuyTalk : nonoverlap_pool
 {
 	"\b[0]Unimpressed."
 	"\b[0]Is it really ONLY this big?" 
 	"\b[0]I thought there’d be more to see..."
-	"\b[0]A coffee kiosk would really help this place"
+	"\b[0]A coffee kiosk would really help this place."
 	"\b[0]Did you even try?"
 	"\b[0]You missed a spot."
 	"\b[0]Why's this even here? Looks like someone's kid drew it."
@@ -608,7 +609,7 @@ UnimpressedGuyTalk : nonoverlap
 	}
 }
 
-ShyGuyTalk : nonoverlap
+ShyGuyTalk : nonoverlap_pool
 {
 	"\b[0]I wonder if there is a bench somewhere... \w8"
 	"\b[0]I wonder if anyone else has noticed the little crack in the paint just there..."
@@ -627,7 +628,7 @@ ShyGuyTalk : nonoverlap
 	if Theme("Nature")
 	{
 		"\b[0]It looks peaceful there. \w8"
-		"\b[0]It's sorta...Hypnotic."
+		"\b[0]It's sorta... Hypnotic."
 	}
 	
 	if Theme("Rain")
@@ -648,7 +649,6 @@ ShyGuyTalk : nonoverlap
 		"\b[0]I bet it's so quiet there..."
 		"\b[0]I would never have the patience to tend a garden like that."
 		"\b[0]This reminds me of a book."
-		
 	}
 	
 	if CurrentPainting == "Cosmetic Sunshine"
@@ -707,7 +707,7 @@ ShyGuyTalk : nonoverlap
 	}
 }
 
-GenericGuyTalk : nonoverlap
+GenericGuyTalk : nonoverlap_pool
 {
 	"\b[0]Where is the bathroom?"
 	"\b[0]I'm getting tired."
@@ -756,7 +756,7 @@ GenericGuyTalk : nonoverlap
 	}
 }
 
-SodaGuyTalk : nonoverlap
+SodaGuyTalk : nonoverlap_pool
 {
 	"\b[0]I wonder if this place does the weird cheese platters?"
 	"\b[0]I expected it to smell more artsy in here..."
@@ -800,7 +800,7 @@ SodaGuyTalk : nonoverlap
 	}
 }
 
-JacketGuyTalk : nonoverlap
+JacketGuyTalk : nonoverlap_pool
 {
 	"\b[0]Pretty neat."
 	"\b[0]Nice vibes here."
@@ -916,7 +916,7 @@ JacketGuyTalk : nonoverlap
 	}
 }
 
-CurlyGuyTalk : nonoverlap
+CurlyGuyTalk : nonoverlap_pool
 {	 
 	"\b[0]Hm, it's relaxing in here. I should find somewhere to sit and read."
 	"\b[0]... Do I know that guy?"

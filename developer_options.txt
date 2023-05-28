@@ -1,0 +1,2 @@
+.gitignore,nonar,noupdate
+open_exhibition_gtg/,noupdate

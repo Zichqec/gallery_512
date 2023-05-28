@@ -98,7 +98,7 @@ OnChangePaintingMenu : all
 	
 	"\f[align,center]— Painting —\n\f[align,left]"
 	_landscapes = ("Expedition of the Monarch's Triumph")
-	_portraits = ("Mr. Lifield's Widow")
+	_portraits = ("Mr. Lifield's Widow","Underwater Ooo")
 	_offsets = ("Spring Flight in the Garden")
 	_clusters = ("Cosmetic Sunshine")
 	_paintings = IARRAY
@@ -125,7 +125,7 @@ OnChangePaintingType
 	PaintingType = reference0
 	Refresh
 	--
-	OnChangePaintingMenu
+	"\C\![raise,OnChangePaintingMenu]"
 }
 
 OnChangePaintingFrame
@@ -399,7 +399,7 @@ OnAddLilGuy2 : all
 	_left_edge = TOINT(WalkBorder[0][0])
 	_right_edge = TOINT(WalkBorder[0][1])
 	_width = ABS(ABS(WalkBorder[1]) - ABS(WalkBorder[0]))
-	_rand_spot = RAND(DisplayWidth - GuyWidth)
+	_rand_spot = RAND(_width - GuyWidth)
 	
 	_time = ((GuyWidth + _rand_spot) * 2) * GuySpeed
 	

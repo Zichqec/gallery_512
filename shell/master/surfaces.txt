@@ -74,6 +74,136 @@ surface200
 	animation20001.pattern8,overlay,20001,100,0,0
 	animation20001.pattern9,overlay,-1,100,0,0
 	
+	animation20100.interval,bind
+	animation20100.pattern0,overlay,20100,0,0,0
+	
+	animation20101.interval,bind + random,15
+	animation20101.pattern0,overlay,20101,0,0,0
+	animation20101.pattern1,overlay,20102,100,0,0
+	animation20101.pattern2,overlay,20103,100,0,0
+	animation20101.pattern3,overlay,20104,100,0,0
+	animation20101.pattern4,overlay,20105,100,0,0
+	animation20101.pattern5,overlay,20106,100,0,0
+	animation20101.pattern6,overlay,20107,100,0,0
+	animation20101.pattern7,overlay,20108,100,0,0
+	animation20101.pattern8,overlay,20109,100,0,0
+	animation20101.pattern9,overlay,20110,100,0,0
+	animation20101.pattern10,overlay,20111,100,0,0
+	animation20101.pattern11,overlay,20112,100,0,0
+	animation20101.pattern12,overlay,20113,100,0,0
+	animation20101.pattern13,overlay,20114,100,0,0
+	animation20101.pattern14,overlay,20115,100,0,0
+	animation20101.pattern15,overlay,20116,100,0,0
+	animation20101.pattern16,overlay,20117,100,0,0
+	animation20101.pattern17,overlay,20118,100,0,0
+	animation20101.pattern18,overlay,20119,100,0,0
+	animation20101.pattern19,overlay,20120,100,0,0
+	animation20101.pattern20,overlay,20121,100,0,0
+	animation20101.pattern21,overlay,20122,100,0,0
+	animation20101.pattern22,overlay,-1,100,0,0
+	
+	animation20102.interval,bind + always
+	animation20102.pattern0,overlay,20123,0,0,0
+	animation20102.pattern1,overlay,20124,200,0,0
+	animation20102.pattern2,overlay,20123,200,0,0
+	animation20102.pattern3,overlay,20124,200,0,0
+	animation20102.pattern4,overlay,20125,200,0,0
+	animation20102.pattern5,overlay,20126,200,0,0
+	animation20102.pattern6,overlay,20127,200,0,0
+	animation20102.pattern7,overlay,20126,200,0,0
+	animation20102.pattern8,overlay,20127,200,0,0
+	animation20102.pattern9,overlay,20125,200,0,0
+	animation20102.pattern10,overlay,20124,200,0,0
+	animation20102.pattern11,overlay,20123,200,0,0
+	animation20102.pattern12,overlay,20124,200,0,0
+	animation20102.pattern13,overlay,20124,200,0,0
+	
+	// animation20102.interval,bind + always
+	// animation20102.pattern0,overlay,20123,0,0,0
+	// animation20102.pattern1,overlay,20124,300,0,0
+	// animation20102.pattern2,overlay,20123,300,0,0
+	// animation20102.pattern3,overlay,20124,300,0,0
+	// animation20102.pattern4,overlay,20125,200,0,0
+	// animation20102.pattern5,overlay,20126,200,0,0
+	// animation20102.pattern6,overlay,20127,200,0,0
+	// animation20102.pattern7,overlay,20128,200,0,0
+	// animation20102.pattern8,overlay,20129,300,0,0
+	// animation20102.pattern9,overlay,20128,300,0,0
+	// animation20102.pattern10,overlay,20129,300,0,0
+	// animation20102.pattern11,overlay,20128,300,0,0
+	// animation20102.pattern12,overlay,20127,300,0,0
+	// animation20102.pattern13,overlay,20126,200,0,0
+	// animation20102.pattern14,overlay,20125,200,0,0
+	// animation20102.pattern15,overlay,20124,200,0,0
+	// animation20102.pattern16,overlay,20124,300,0,0
+	
+	animation20103.interval,bind + random,10
+	animation20103.pattern0,overlay,20130,0,0,0
+	animation20103.pattern1,overlay,20131,20,0,0
+	animation20103.pattern2,overlay,20132,20,0,0
+	animation20103.pattern3,overlay,20133,20,0,0
+	animation20103.pattern4,overlay,20134,20,0,0
+	animation20103.pattern5,overlay,20135,20,0,0
+	animation20103.pattern6,overlay,20136,20,0,0
+	animation20103.pattern7,overlay,20137,20,0,0
+	animation20103.pattern8,overlay,20138,20,0,0
+	animation20103.pattern9,overlay,20139,20,0,0
+	animation20103.pattern10,overlay,20140,20,0,0
+	animation20103.pattern11,overlay,20141,20,0,0
+	animation20103.pattern12,overlay,20142,20,0,0
+	animation20103.pattern13,overlay,20143,20,0,0
+	animation20103.pattern14,overlay,20144,20,0,0
+	animation20103.pattern15,overlay,20145,20,0,0
+	animation20103.pattern16,overlay,20146,20,0,0
+	animation20103.pattern17,overlay,20147,20,0,0
+	animation20103.pattern18,overlay,20148,20,0,0
+	animation20103.pattern19,overlay,20149,20,0,0
+	animation20103.pattern20,overlay,20150,20,0,0
+	animation20103.pattern21,overlay,20151,20,0,0
+	animation20103.pattern22,overlay,20152,20,0,0
+	animation20103.pattern23,overlay,20153,20,0,0
+	animation20103.pattern24,overlay,20154,20,0,0
+	animation20103.pattern25,overlay,20155,20,0,0
+	animation20103.pattern26,overlay,20156,20,0,0
+	animation20103.pattern27,overlay,20157,20,0,0
+	animation20103.pattern28,overlay,20158,20,0,0
+	animation20103.pattern29,overlay,20159,20,0,0
+	animation20103.pattern30,overlay,20160,20,0,0
+	animation20103.pattern31,overlay,20161,20,0,0
+	animation20103.pattern32,overlay,20162,20,0,0
+	animation20103.pattern33,overlay,20163,20,0,0
+	animation20103.pattern34,overlay,20164,20,0,0
+	animation20103.pattern35,overlay,20165,20,0,0
+	animation20103.pattern36,overlay,20166,20,0,0
+	animation20103.pattern37,overlay,20167,20,0,0
+	animation20103.pattern38,overlay,-1,20,0,0
+	
+	animation20104.interval,bind + random,4
+	animation20104.pattern0,overlay,20168,0,0,0
+	animation20104.pattern1,overlay,20169,15,0,0
+	animation20104.pattern2,overlay,20170,15,0,0
+	animation20104.pattern3,overlay,20171,15,0,0
+	animation20104.pattern4,overlay,20172,15,0,0
+	animation20104.pattern5,overlay,20173,15,0,0
+	animation20104.pattern6,overlay,20174,15,0,0
+	animation20104.pattern7,overlay,20175,15,0,0
+	animation20104.pattern8,overlay,20176,15,0,0
+	animation20104.pattern9,overlay,20177,15,0,0
+	animation20104.pattern10,overlay,20178,15,0,0
+	animation20104.pattern11,overlay,20179,15,0,0
+	animation20104.pattern12,overlay,20180,15,0,0
+	animation20104.pattern13,overlay,20181,15,0,0
+	animation20104.pattern14,overlay,20182,15,0,0
+	animation20104.pattern15,overlay,20183,15,0,0
+	animation20104.pattern16,overlay,20184,15,0,0
+	animation20104.pattern17,overlay,20185,15,0,0
+	animation20104.pattern18,overlay,20186,15,0,0
+	animation20104.pattern19,overlay,20187,15,0,0
+	animation20104.pattern20,overlay,20188,15,0,0
+	animation20104.pattern21,overlay,20189,15,0,0
+	animation20104.pattern22,overlay,20190,15,0,0
+	animation20104.pattern23,overlay,-1,15,0,0
+	
 	//Frames
 	animation2000002.interval,bind
 	animation2000002.pattern0,overlay,202,0,0,0

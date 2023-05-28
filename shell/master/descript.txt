@@ -26,6 +26,12 @@ sakura.bindgroup10000.name,Landscape,Expedition of the Monarch's Triumph
 sakura.bindgroup20000.name,Portrait,Mr. Lifield's Widow
 sakura.bindgroup20000.addid,20001
 
+sakura.bindgroup20100.name,Portrait,Underwater Ooo
+sakura.bindgroup20100.addid,20101
+sakura.bindgroup20100.addid,20102
+sakura.bindgroup20100.addid,20103
+sakura.bindgroup20100.addid,20104
+
 sakura.bindgroup30000.name,Offset,Spring Flight in the Garden
 
 sakura.bindgroup40000.name,Cluster,Cosmetic Sunshine

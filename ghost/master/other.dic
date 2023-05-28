@@ -551,7 +551,7 @@ OnDressupChanged
 	LOGGING("PaintingType: %(PaintingType)")
 	
 	
-	//if BalloonIsInTheWay; "\C"
+	//if BalloonIsInTheWay; "\C" //TODO i had to uncomment this in order to get the balloon not to flicker in the menus. unsure why it's commented, but i do want to gut this whole thing and fix it proper anyways
 	--
 	if PaintingType == 3
 	{
