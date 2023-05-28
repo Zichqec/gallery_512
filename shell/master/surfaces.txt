@@ -14,7 +14,7 @@ descript
 surface100
 {
 	//Frameless
-	animation101.interval,runonce
+	animation101.interval,bind
 	animation101.pattern0,overlay,101,0,0,0
 	
 	//Boat
@@ -37,6 +37,9 @@ surface100
 	animation10000.pattern15,overlay,10001,100,0,0
 	
 	//Frames
+	animation1000001.interval,bind
+	animation1000001.pattern0,overlay,101,0,0,0
+	
 	animation1000002.interval,bind
 	animation1000002.pattern0,overlay,102,0,0,0
 	
@@ -56,7 +59,7 @@ surface100
 surface200
 {
 	//Frameless
-	animation201.interval,runonce
+	animation201.interval,bind
 	animation201.pattern0,overlay,201,0,0,0
 	
 	animation20000.interval,bind
@@ -118,41 +121,6 @@ surface200
 	animation20102.pattern12,overlay,20129,200,0,0
 	animation20102.pattern13,overlay,20126,200,0,0
 	animation20102.pattern14,overlay,20126,200,0,0
-	
-	// animation20102.interval,bind + always
-	// animation20102.pattern0,overlay,20123,0,0,0
-	// animation20102.pattern1,overlay,20124,200,0,0
-	// animation20102.pattern2,overlay,20123,200,0,0
-	// animation20102.pattern3,overlay,20124,200,0,0
-	// animation20102.pattern4,overlay,20125,200,0,0
-	// animation20102.pattern5,overlay,20126,200,0,0
-	// animation20102.pattern6,overlay,20127,200,0,0
-	// animation20102.pattern7,overlay,20126,200,0,0
-	// animation20102.pattern8,overlay,20127,200,0,0
-	// animation20102.pattern9,overlay,20125,200,0,0
-	// animation20102.pattern10,overlay,20124,200,0,0
-	// animation20102.pattern11,overlay,20123,200,0,0
-	// animation20102.pattern12,overlay,20124,200,0,0
-	// animation20102.pattern13,overlay,20124,200,0,0
-	
-	// animation20102.interval,bind + always
-	// animation20102.pattern0,overlay,20123,0,0,0
-	// animation20102.pattern1,overlay,20124,300,0,0
-	// animation20102.pattern2,overlay,20123,300,0,0
-	// animation20102.pattern3,overlay,20124,300,0,0
-	// animation20102.pattern4,overlay,20125,200,0,0
-	// animation20102.pattern5,overlay,20126,200,0,0
-	// animation20102.pattern6,overlay,20127,200,0,0
-	// animation20102.pattern7,overlay,20128,200,0,0
-	// animation20102.pattern8,overlay,20129,300,0,0
-	// animation20102.pattern9,overlay,20128,300,0,0
-	// animation20102.pattern10,overlay,20129,300,0,0
-	// animation20102.pattern11,overlay,20128,300,0,0
-	// animation20102.pattern12,overlay,20127,300,0,0
-	// animation20102.pattern13,overlay,20126,200,0,0
-	// animation20102.pattern14,overlay,20125,200,0,0
-	// animation20102.pattern15,overlay,20124,200,0,0
-	// animation20102.pattern16,overlay,20124,300,0,0
 	
 	animation20103.interval,bind + random,10
 	animation20103.pattern0,overlay,20130,0,0,0
@@ -222,6 +190,9 @@ surface200
 	animation20104.pattern23,overlay,-1,15,0,0
 	
 	//Frames
+	animation2000001.interval,bind
+	animation2000001.pattern0,overlay,201,0,0,0
+	
 	animation2000002.interval,bind
 	animation2000002.pattern0,overlay,202,0,0,0
 	
@@ -241,7 +212,7 @@ surface200
 surface300
 {
 	//Frameless
-	animation301.interval,runonce
+	animation301.interval,bind
 	animation301.pattern0,overlay,301,0,0,0
 	
 	animation30000.interval,bind + always
@@ -260,6 +231,9 @@ surface300
 	animation30000.pattern12,overlay,30000,200,0,0
 	
 	//Frames
+	animation3000001.interval,bind
+	animation3000001.pattern0,overlay,301,0,0,0
+	
 	animation3000002.interval,bind
 	animation3000002.pattern0,overlay,302,0,0,0
 	
@@ -279,7 +253,7 @@ surface300
 surface400
 {
 	//Frameless
-	animation401.interval,runonce
+	animation401.interval,bind
 	animation401.pattern0,overlay,401,0,0,0
 	
 	animation40000.interval,bind
@@ -302,6 +276,9 @@ surface400
 	animation40002.pattern7,overlay,40004,700-1500,0,0
 	
 	//Frames
+	animation4000001.interval,bind
+	animation4000001.pattern0,overlay,401,0,0,0
+	
 	animation4000002.interval,bind
 	animation4000002.pattern0,overlay,402,0,0,0
 

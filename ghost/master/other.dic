@@ -110,24 +110,6 @@ i need to plan out a lil guy array
 Refresh : all
 {
 	"\0\s[%(PaintingType)00]"
-	
-	//bandaid patch
-	LOGGING("====================================================================")
-	LOGGING("REFRESH")
-	LOGGING("PaintingType: %(PaintingType)")
-	LOGGING("Frame.Offset: %(Frame.Offset)")
-	LOGGING("Frame.Cluster: %(Frame.Cluster)")
-	LOGGING("GETTYPE(PaintingType): %(GETTYPE(PaintingType))")
-	if PaintingType == 3
-	{
-		if Frame.Offset == "Studio"; "\![anim,clear,301]"
-		else; "\i[301]"
-	}
-	if PaintingType == 4
-	{
-		if Frame.Cluster == "Gilded"; "\![anim,clear,401]"
-		else; "\i[401]"
-	}
 	for _i = 1; _i < ARRAYSIZE(SHIORI3FW.IsVisible); _i++
 	{
 		if GalleryOpen
@@ -542,43 +524,3 @@ br
 	if SHIORI3FW.BalloonName == "Open Exhibition"; "\n"
 	else; " "
 }
-
-//bandaid patch
-OnDressupChanged
-{
-	LOGGING("====================================================================")
-	LOGGING("reference: %(reference)")
-	LOGGING("PaintingType: %(PaintingType)")
-	
-	
-	//if BalloonIsInTheWay; "\C" //TODO i had to uncomment this in order to get the balloon not to flicker in the menus. unsure why it's commented, but i do want to gut this whole thing and fix it proper anyways
-	--
-	if PaintingType == 3
-	{
-		if reference1 == "Studio" && reference2 == 1; Frame.Offset = "Studio" //"\![anim,clear,301]"
-		else; Frame.Offset = reference1
-		if Frame.Offset == ""; Frame.Offset = "Frameless"
-	}
-	elseif PaintingType == 4
-	{
-		if reference1 == "Gilded" && reference2 == 1; Frame.Cluster = "Gilded" //"\![anim,clear,401]"
-		else; Frame.Cluster = reference1
-		if Frame.Cluster == ""; Frame.Cluster = "Frameless"
-	}
-	--
-	Refresh
-	
-}
-
-/*
-Reference0
-The character ID of the dressup target.
-Reference1
-The part name.
-Reference2
-1 when valid, 0 when invalid.
-Reference3
-The part's category name.
-Reference4
-"script" if executed by a script, "user" if executed from the menu. [2.5.90~]
-*/

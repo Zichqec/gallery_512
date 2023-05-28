@@ -54,15 +54,34 @@ sakura.bindgroup40000.addid,40002
 // sakura.bindgroup401.name,Frame - Cluster,Frameless
 //See if addid will work for adding these on ones where they are required???
 
+sakura.bindgroup1000001.default,1
+sakura.bindoption1000001.group,Frame - Landscape,mustselect
+sakura.bindgroup2000001.default,1
+sakura.bindoption2000001.group,Frame - Portrait,mustselect
+sakura.bindgroup3000001.default,1
+sakura.bindoption3000001.group,Frame - Offset,mustselect
+sakura.bindgroup4000001.default,1
+sakura.bindoption4000001.group,Frame - Cluster,mustselect
+
+
+sakura.bindgroup1000001.name,Frame - Landscape,Frameless
+sakura.bindgroup2000001.name,Frame - Portrait,Frameless
+sakura.bindgroup3000001.name,Frame - Offset,Frameless
+sakura.bindgroup4000001.name,Frame - Cluster,Frameless
+
 sakura.bindgroup1000002.name,Frame - Landscape,Gilded
 sakura.bindgroup2000002.name,Frame - Portrait,Gilded
 sakura.bindgroup3000002.name,Frame - Offset,Gilded
 sakura.bindgroup4000002.name,Frame - Cluster,Gilded
 
 sakura.bindgroup1000003.name,Frame - Landscape,DIY
+sakura.bindgroup1000003.addid,101
 sakura.bindgroup2000003.name,Frame - Portrait,DIY
+sakura.bindgroup2000003.addid,201
 sakura.bindgroup3000003.name,Frame - Offset,DIY
+sakura.bindgroup3000003.addid,301
 sakura.bindgroup4000003.name,Frame - Cluster,DIY
+sakura.bindgroup4000003.addid,401
 
 sakura.bindgroup1000004.name,Frame - Landscape,Studio
 sakura.bindgroup2000004.name,Frame - Portrait,Studio
@@ -70,9 +89,13 @@ sakura.bindgroup3000004.name,Frame - Offset,Studio
 sakura.bindgroup4000004.name,Frame - Cluster,Studio
 
 sakura.bindgroup1000005.name,Frame - Landscape,Laurels
+sakura.bindgroup1000005.addid,101
 sakura.bindgroup2000005.name,Frame - Portrait,Laurels
+sakura.bindgroup2000005.addid,201
 sakura.bindgroup3000005.name,Frame - Offset,Laurels
+sakura.bindgroup3000005.addid,301
 sakura.bindgroup4000005.name,Frame - Cluster,Laurels
+sakura.bindgroup4000005.addid,401
 
 sakura.bindgroup1000006.name,Frame - Landscape,Rosewood
 sakura.bindgroup2000006.name,Frame - Portrait,Rosewood
