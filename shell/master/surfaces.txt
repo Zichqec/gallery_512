@@ -105,18 +105,35 @@ surface200
 	animation20102.interval,bind + always
 	animation20102.pattern0,overlay,20123,0,0,0
 	animation20102.pattern1,overlay,20124,200,0,0
-	animation20102.pattern2,overlay,20123,200,0,0
-	animation20102.pattern3,overlay,20124,200,0,0
-	animation20102.pattern4,overlay,20125,200,0,0
-	animation20102.pattern5,overlay,20126,200,0,0
-	animation20102.pattern6,overlay,20127,200,0,0
-	animation20102.pattern7,overlay,20126,200,0,0
-	animation20102.pattern8,overlay,20127,200,0,0
-	animation20102.pattern9,overlay,20125,200,0,0
-	animation20102.pattern10,overlay,20124,200,0,0
-	animation20102.pattern11,overlay,20123,200,0,0
-	animation20102.pattern12,overlay,20124,200,0,0
-	animation20102.pattern13,overlay,20124,200,0,0
+	animation20102.pattern2,overlay,20125,200,0,0
+	animation20102.pattern3,overlay,20123,200,0,0
+	animation20102.pattern4,overlay,20124,200,0,0
+	animation20102.pattern5,overlay,20125,200,0,0
+	animation20102.pattern6,overlay,20126,200,0,0
+	animation20102.pattern7,overlay,20127,200,0,0
+	animation20102.pattern8,overlay,20128,200,0,0
+	animation20102.pattern9,overlay,20129,200,0,0
+	animation20102.pattern10,overlay,20127,200,0,0
+	animation20102.pattern11,overlay,20128,200,0,0
+	animation20102.pattern12,overlay,20129,200,0,0
+	animation20102.pattern13,overlay,20126,200,0,0
+	animation20102.pattern14,overlay,20126,200,0,0
+	
+	// animation20102.interval,bind + always
+	// animation20102.pattern0,overlay,20123,0,0,0
+	// animation20102.pattern1,overlay,20124,200,0,0
+	// animation20102.pattern2,overlay,20123,200,0,0
+	// animation20102.pattern3,overlay,20124,200,0,0
+	// animation20102.pattern4,overlay,20125,200,0,0
+	// animation20102.pattern5,overlay,20126,200,0,0
+	// animation20102.pattern6,overlay,20127,200,0,0
+	// animation20102.pattern7,overlay,20126,200,0,0
+	// animation20102.pattern8,overlay,20127,200,0,0
+	// animation20102.pattern9,overlay,20125,200,0,0
+	// animation20102.pattern10,overlay,20124,200,0,0
+	// animation20102.pattern11,overlay,20123,200,0,0
+	// animation20102.pattern12,overlay,20124,200,0,0
+	// animation20102.pattern13,overlay,20124,200,0,0
 	
 	// animation20102.interval,bind + always
 	// animation20102.pattern0,overlay,20123,0,0,0
